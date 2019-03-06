@@ -15,7 +15,7 @@ class LoginForm extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={{flexDirection:'row'}}>
+        <View style={styles.inputElement}>
           <Input 
             containerStyle={styles.inputContainer}
             inputContainerStyle={styles.inputsContainer}
@@ -23,7 +23,7 @@ class LoginForm extends Component {
             placeholder="usuario"
           />
         </View> 
-        <View style={{flexDirection:'row'}}>
+        <View style={styles.inputElement}>
           <Input 
             containerStyle={styles.inputContainer}
             inputContainerStyle={styles.inputsContainer}
@@ -42,13 +42,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignContent: 'center',
   },
-  inputContainer: {
-    flex: 0.8,
-    shadowColor: '#000',
+  inputElement: {
+    flexDirection:'row',
+    shadowColor: '#ff00ff',
     shadowOffset: { width: 10, height: 10 },
     shadowOpacity: 1,
-    shadowRadius: 2,  
-    elevation: 5
+    shadowRadius: 2,
+
+  },
+  inputContainer: {
+    flex: 0.8, 
   },
   inputsContainer: {
     margin: 'auto',
@@ -57,11 +60,13 @@ const styles = StyleSheet.create({
     height: 55,
     marginTop: 10,
     borderRadius: 15,
+    backgroundColor: '#fff',
   },
   inputs: {
     fontSize:20,
     lineHeight:55,
-    textAlign: 'center',
+    textAlign: 'center', 
+    shadowColor: 'rgba(0, 0, 0, 0.7)',
   },
 });
 

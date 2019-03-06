@@ -10,7 +10,7 @@ import {
 class CheckOptions extends Component {
   render() {
     return (
-      <View>
+      <View> 
         <View style={styles.containercheckOption} >
           <Switch style={styles.inlineSwitch}/>
           <Text style={styles.inlineText}>
@@ -37,13 +37,15 @@ const styles = StyleSheet.create({
     flexWrap: 'nowrap', 
     alignItems: 'flex-start',
     justifyContent: 'center',
-    paddingTop: 5
+    paddingBottom: 10
   },
   inlineText: {
-    flex:0.7    
+    textAlign: 'justify',
+    flex:0.7,
   },
   inlineSwitch: {
-    flex:0.2
+    flex:0.2,
+    marginRight: 10,
   }
 });
 

@@ -21,7 +21,7 @@ class LoginComponent extends Component {
           style={styles.backImage}
           source={require('./../../../assets/images/loginBack.jpg')}
         >
-        <ScrollView>
+        <ScrollView style={styles.scollViewContainer}>
           <Image
             style={styles.imageLogo}
             source={require('./../../../assets/images/logo.png')}
@@ -45,21 +45,27 @@ class LoginComponent extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ff00ff',
+    backgroundColor: '#fff',
     alignItems: 'center',
     alignContent: 'center'
+  },
+  scrollViewContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   imageLogo: {
     width: 140,
     height: 140,
     resizeMode: 'contain',
-    marginTop: 40,
-    marginBottom: 20,
+    marginTop: 30,
+    marginBottom: 15,
     alignSelf: 'center',
   },
   welcomeText: {
-    fontSize: 19,
+    width: 300,
+    fontSize: 18,
     marginBottom: 10,
+    alignSelf: 'center',
     fontFamily: 'open-sans-regular',
     textAlign: 'center',
   },
@@ -75,8 +81,8 @@ const styles = StyleSheet.create({
     height: '100%'
   },
   loginButton: {
-    width: 100,
-    height: 50,
+    width: 150,
+    height: 40,
     margin: 'auto',
     alignSelf: 'center',
     backgroundColor: '#e77c22',
@@ -85,7 +91,6 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     paddingLeft: 10,
     paddingRight: 10,
-    marginTop: 20,
     marginBottom: 15,
   }
 });
