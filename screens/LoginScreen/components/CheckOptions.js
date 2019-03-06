@@ -11,15 +11,15 @@ class CheckOptions extends Component {
   render() {
     return (
       <View>
-        <View style={styles.checkOption} >
-          <Switch style={{flexWrap:'wrap'}}/>
-          <Text >
+        <View style={styles.containercheckOption} >
+          <Switch style={styles.inlineSwitch}/>
+          <Text style={styles.inlineText}>
             Si acepto que mis datos personales sean transferidos a los terceros indicados para cumplir con las finalidades descritas.
           </Text>
         </View>
-        <View style={styles.checkOption} >
-          <Switch style={styles.inline}/>
-          <Text style={styles.inline}>
+        <View style={styles.containercheckOption} >
+          <Switch style={styles.inlineSwitch}/>
+          <Text style={styles.inlineText}>
             Aviso de Privacidad
           </Text>
         </View> 
@@ -36,10 +36,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'nowrap', 
     alignItems: 'flex-start',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    paddingTop: 5
   },
-  inline: {
-
+  inlineText: {
+    flex:0.7    
+  },
+  inlineSwitch: {
+    flex:0.2
   }
 });
 

@@ -50,15 +50,16 @@ const styles = StyleSheet.create({
     alignContent: 'center'
   },
   imageLogo: {
-    width: 150,
-    height: 150,
+    width: 140,
+    height: 140,
     resizeMode: 'contain',
-    marginTop: 60,
-    marginBottom: 30,
+    marginTop: 40,
+    marginBottom: 20,
     alignSelf: 'center',
   },
   welcomeText: {
-    fontSize: 21,
+    fontSize: 19,
+    marginBottom: 10,
     fontFamily: 'open-sans-regular',
     textAlign: 'center',
   },
@@ -66,8 +67,8 @@ const styles = StyleSheet.create({
     fontSize: 21,
     fontFamily: 'open-sans-semibold',
     textAlign: 'center', 
-    marginTop: 15,
-    marginBottom: 10,
+    marginTop: 20,
+    marginBottom: 15,
   },
   backImage: {
     width: '100%', 
