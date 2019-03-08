@@ -46,7 +46,13 @@ Home.navigationOptions = {
   ),
 };
 
-export default createStackNavigator({
-  LoginScreen,
-  Home
+const Routes = createStackNavigator({
+  LoginScreen: {
+    screen: LoginScreen;
+  },
+  Home: {
+    screen: Home,
+  }
 });
+
+export { Routes };

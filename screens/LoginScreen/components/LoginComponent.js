@@ -37,7 +37,7 @@ class LoginComponent extends Component {
             ¿Olvidaste tu contraseña?
           </Text>
           <CheckOptions/>
-          <Button title='Entrar' onPress={()=>{console.log('Going home');navigation.navigate('Home');}} buttonStyle={styles.loginButton} />
+          <Button title='Entrar' onPress={()=>{navigation.navigate('Home');console.log('Going home');}} buttonStyle={styles.loginButton} />
         </ScrollView>
         </ImageBackground>
       </View>
