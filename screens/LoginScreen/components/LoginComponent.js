@@ -14,7 +14,10 @@ import {
 } from 'react-native';
 
 class LoginComponent extends Component {
+
   render() {
+    const { navigation } = this.props;
+    console.log(this.props);
     return (
       <View style={styles.container}>
        <ImageBackground
@@ -34,7 +37,7 @@ class LoginComponent extends Component {
             ¿Olvidaste tu contraseña?
           </Text>
           <CheckOptions/>
-          <Button title='Entrar' onPress={()=>{}} buttonStyle={styles.loginButton} />
+          <Button title='Entrar' onPress={()=>{console.log('Going home');navigation.navigate('Home');}} buttonStyle={styles.loginButton} />
         </ScrollView>
         </ImageBackground>
       </View>

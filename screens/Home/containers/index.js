@@ -11,7 +11,7 @@ import {
   TextInput,
 } from 'react-native';
 
-class LoginScreen extends Component {
+class HomeScreen extends Component {
   constructor(props) {
     super(props);
 
@@ -35,11 +35,11 @@ class LoginScreen extends Component {
     return (
       <ScrollView >
         { this.state.fontLoaded ? (
-          <LoginComponent {...this.props} />
+          <Text>Cargado</Text>
         ) : <Text>Loading....</Text> }
       </ScrollView>
       );
   }
 }
 
-export default LoginScreen;
+export default HomeScreen;
