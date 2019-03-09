@@ -3,12 +3,14 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
+  ImageBackground,
   View,
   Text,
   Switch,
+  TextInput,
 } from 'react-native';
 import { 
-  Input,
+  Input, 
   CheckBox, } from 'react-native-elements';
 
 class LoginForm extends Component {
@@ -16,20 +18,30 @@ class LoginForm extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.inputElement}>
-          <Input 
-            containerStyle={styles.inputContainer}
-            inputContainerStyle={styles.inputsContainer}
-            inputStyle={styles.inputs}
-            placeholder="usuario"
-          />
+          <ImageBackground 
+            style={styles.backImage}
+            source={require('./../../../assets/images/inputBack.png')}
+          >
+            <Input 
+              containerStyle={styles.inputContainer}
+              inputContainerStyle={styles.inputsContainer}
+              inputStyle={styles.inputs}
+              placeholder="usuario"
+            />
+          </ImageBackground>
         </View> 
         <View style={styles.inputElement}>
-          <Input 
-            containerStyle={styles.inputContainer}
-            inputContainerStyle={styles.inputsContainer}
-            inputStyle={styles.inputs}
-            placeholder="contraseña"
-          />
+        <ImageBackground 
+            style={styles.backImage}
+            source={require('./../../../assets/images/inputBack.png')}
+          >
+            <Input 
+              containerStyle={styles.inputContainer}
+              inputContainerStyle={styles.inputsContainer}
+              inputStyle={styles.inputs}
+              placeholder="contraseña"
+            />
+          </ImageBackground>
         </View>
       </View>
     );
@@ -44,30 +56,36 @@ const styles = StyleSheet.create({
   },
   inputElement: {
     flexDirection:'row',
-    shadowColor: '#ff00ff',
-    shadowOffset: { width: 10, height: 10 },
-    shadowOpacity: 1,
-    shadowRadius: 2,
-
+    flex: 0.8, 
+    height: 55,
+    borderWidth: 1,
+    borderColor: '#74757e',
+    margin: 0,
+    marginTop: 10,
+    borderRadius: 15,
+    padding: 0,
+    overflow: 'hidden'
   },
   inputContainer: {
     flex: 0.8, 
   },
   inputsContainer: {
-    margin: 'auto',
-    borderWidth: 1,
-    borderColor: '#74757e',
-    height: 55,
-    marginTop: 10,
+    flex: 1,
     borderRadius: 15,
-    backgroundColor: '#fff',
-  },
+    borderColor: 'transparent',
+    },
   inputs: {
     fontSize:20,
-    lineHeight:55,
+    lineHeight:20,
     textAlign: 'center', 
-    shadowColor: 'rgba(0, 0, 0, 0.7)',
+    backgroundColor: 'transparent',
+    overflow: 'hidden'
   },
+  backImage: {
+    flex: 0.8,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
 });
 
 

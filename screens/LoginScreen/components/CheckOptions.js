@@ -31,21 +31,23 @@ class CheckOptions extends Component {
 const styles = StyleSheet.create({
   containercheckOption: {
     flex: 1,
-    fontSize: 18,
     fontFamily: 'open-sans-regular',
     flexDirection: 'row',
     flexWrap: 'nowrap', 
     alignItems: 'flex-start',
     justifyContent: 'center',
-    paddingBottom: 10
+    paddingBottom: 13,
   },
   inlineText: {
+    flex: 0.8,
+    fontSize: 13,
     textAlign: 'justify',
-    flex:0.7,
+    alignSelf: 'center',
   },
   inlineSwitch: {
     flex:0.2,
     marginRight: 10,
+    alignSelf: 'center',
   }
 });
 

@@ -1,15 +1,12 @@
 'use strict';
-
 import React, { Component } from 'react';
-import LoginComponent from './../components/LoginComponent';
-
 import {
-  ScrollView,
-  View,
-  Image,
   Text,
-  TextInput,
+  View,
+  StyleSheet,
 } from 'react-native';
+import ScreenContainer from './../../../components/ScreenContainer';
+import HomeComponent from './../components/HomeComponent';
 
 class HomeScreen extends Component {
   constructor(props) {
@@ -33,13 +30,21 @@ class HomeScreen extends Component {
 
   render() {
     return (
-      <ScrollView >
+      <ScreenContainer>
         { this.state.fontLoaded ? (
-          <Text>Cargado</Text>
-        ) : <Text>Loading....</Text> }
-      </ScrollView>
+          <HomeComponent style={styles.screenContainer} />
+          ) : <Text >Loading....</Text> 
+        }
+      </ScreenContainer>
       );
   }
 }
+
+const styles = StyleSheet.create({
+  screenContainer: {
+    alignSelf: 'center',
+    backgroundColor: 'blue'
+  }
+});
 
 export default HomeScreen;

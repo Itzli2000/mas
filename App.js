@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes } from './components/Login/NoAuthRoutes';
+import { Routes } from './navigation/AppNavigator';
 import {
   StyleSheet,
   View,

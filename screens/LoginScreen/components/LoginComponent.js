@@ -17,52 +17,34 @@ class LoginComponent extends Component {
 
   render() {
     const { navigation } = this.props;
-    console.log(this.props);
     return (
-      <View style={styles.container}>
-       <ImageBackground
-          style={styles.backImage}
-          source={require('./../../../assets/images/loginBack.jpg')}
-        >
-        <ScrollView style={styles.scollViewContainer}>
-          <Image
-            style={styles.imageLogo}
-            source={require('./../../../assets/images/logo.png')}
-          />
-          <Text style={styles.welcomeText}>
-            Esta es una aplicación para empleados staff de ManpowerGroup
-          </Text>
-          <LoginForm />
-          <Text style={styles.passwordFogotText}>
-            ¿Olvidaste tu contraseña?
-          </Text>
-          <CheckOptions/>
-          <Button title='Entrar' onPress={()=>{navigation.navigate('Home');console.log('Going home');}} buttonStyle={styles.loginButton} />
-        </ScrollView>
-        </ImageBackground>
+      <View>
+        <Image
+          style={styles.imageLogo}
+          source={require('./../../../assets/images/logo.png')}
+        />
+        <Text style={styles.welcomeText}>
+          Esta es una aplicación para empleados staff de ManpowerGroup
+        </Text>
+        <LoginForm />
+        <Text style={styles.passwordFogotText}>
+          ¿Olvidaste tu contraseña?
+        </Text>
+        <CheckOptions/>
+        <Button title='Entrar' onPress={(e)=>{navigation.navigate('Home');console.log(e);}} buttonStyle={styles.loginButton} />
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    alignContent: 'center'
-  },
-  scrollViewContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   imageLogo: {
     width: 140,
     height: 140,
     resizeMode: 'contain',
     marginTop: 30,
     marginBottom: 15,
-    alignSelf: 'center',
+    alignSelf: 'center', 
   },
   welcomeText: {
     width: 300,
@@ -78,10 +60,6 @@ const styles = StyleSheet.create({
     textAlign: 'center', 
     marginTop: 20,
     marginBottom: 15,
-  },
-  backImage: {
-    width: '100%', 
-    height: '100%'
   },
   loginButton: {
     width: 150,

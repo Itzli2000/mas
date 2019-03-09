@@ -2,14 +2,10 @@
 
 import React, { Component } from 'react';
 import LoginComponent from './../components/LoginComponent';
-
 import {
-  ScrollView,
-  View,
-  Image,
   Text,
-  TextInput,
 } from 'react-native';
+import ScreenContainer from './../../../components/ScreenContainer';
 
 class LoginScreen extends Component {
   constructor(props) {
@@ -33,11 +29,11 @@ class LoginScreen extends Component {
 
   render() {
     return (
-      <ScrollView >
+      <ScreenContainer>
         { this.state.fontLoaded ? (
           <LoginComponent {...this.props} />
         ) : <Text>Loading....</Text> }
-      </ScrollView>
+      </ScreenContainer>
       );
   }
 }
