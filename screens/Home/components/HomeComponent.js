@@ -9,7 +9,11 @@ import {
   ScrollView,
   FlatList,
   Image,
+  Dimensions
 } from 'react-native';
+
+const screenHeight = Dimensions.get('window').height;
+const innerScroll = screenHeight - 80;
 
 
 const tasks=[
@@ -60,13 +64,28 @@ class HomeComponent extends Component {
   render() {
     const { navigation } = this.props;
     return (
-      <View style={{flex:1}}> 
-        <View style={styles.topBar}></View>
+      <View style={{height:screenHeight}}> 
+        <View style={styles.topBar}>
+          <Image
+            style={styles.navIcon}
+            source={require('./../../../assets/images/qr.png')}
+          />
+          <Image
+            style={styles.navIcon}
+            source={require('./../../../assets/images/location.png')}
+          />
+          <Image
+            style={styles.navIcon}
+            source={require('./../../../assets/images/notification.png')}
+          />
+        </View>
         <Image
             style={styles.imageLogo}
             source={require('./../../../assets/images/logo.png')}
           />
         <ScrollView contentContainerStyle={styles.scrollViewContainer}>
+        <Text style={styles.date}>Jueves 21 de febrero del 2019</Text>
+        <Text h3 style={styles.userName}>Bienvenido Carlos Morales</Text>
         <View style={styles.container}>
           <CardComponent 
             title='Tareas por cumplir'
@@ -141,22 +160,41 @@ class HomeComponent extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: '100%',
   },
   scrollViewContainer: {
-    flexGrow: 0.9,
   },
   topBar: {
+    flexDirection: 'row',
     backgroundColor: '#292b33',
     minHeight: 80,
+    paddingTop: 10,
+    justifyContent:'flex-end',
+    alignItems: 'center',
   },
   imageLogo: {
-    width: 100,
-    height: 100,
+    width: 90,
+    height: 90,
     resizeMode: 'contain',
     position: 'absolute',
-    top: 10,
-    left: 50,
+    top: 15,
+    left: 30,
+  },
+  navIcon: {
+    resizeMode: 'contain',
+    width: 40,
+    height: 40,
+    marginRight: 10,
+  },
+  date: {
+    textAlign: 'right',
+    paddingRight: 20,
+    paddingTop: 15
+  },
+  userName: {
+    marginTop: 40,
+    marginBottom: 40,
+    textAlign: 'center',
+    fontFamily: 'open-sans-extrabold',
   },
   column: {
     flex: 0.5,
