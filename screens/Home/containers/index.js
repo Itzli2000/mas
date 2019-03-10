@@ -32,7 +32,7 @@ class HomeScreen extends Component {
     return (
       <ScreenContainer>
         { this.state.fontLoaded ? (
-          <HomeComponent style={styles.screenContainer} />
+          <HomeComponent />
           ) : <Text >Loading....</Text> 
         }
       </ScreenContainer>
@@ -42,8 +42,6 @@ class HomeScreen extends Component {
 
 const styles = StyleSheet.create({
   screenContainer: {
-    alignSelf: 'center',
-    backgroundColor: 'blue'
   }
 });
 

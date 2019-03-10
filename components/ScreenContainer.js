@@ -15,9 +15,7 @@ class ScreenContainer extends Component {
         style={styles.backImage}
         source={require('./../assets/images/loginBack.jpg')}
         >
-          <ScrollView contentContainerStyle={styles.scrollViewContainer}>
-            {children}
-          </ScrollView>
+          {children}
         </ImageBackground> 
       </View>
       );
@@ -30,9 +28,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center'
-  },
-  scrollViewContainer: {
-    flex:0,
   },
   backImage: {
     width: '100%', 

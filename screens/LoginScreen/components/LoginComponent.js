@@ -18,26 +18,31 @@ class LoginComponent extends Component {
   render() {
     const { navigation } = this.props;
     return (
-      <View>
-        <Image
-          style={styles.imageLogo}
-          source={require('./../../../assets/images/logo.png')}
-        />
-        <Text style={styles.welcomeText}>
-          Esta es una aplicación para empleados staff de ManpowerGroup
-        </Text>
-        <LoginForm />
-        <Text style={styles.passwordFogotText}>
-          ¿Olvidaste tu contraseña?
-        </Text>
-        <CheckOptions/>
-        <Button title='Entrar' onPress={(e)=>{navigation.navigate('Home');console.log(e);}} buttonStyle={styles.loginButton} />
+      <View style={{flex:1}}>
+        <ScrollView contentContainerStyle={styles.scrollViewContainer}>
+          <Image
+            style={styles.imageLogo}
+            source={require('./../../../assets/images/logo.png')}
+          />
+          <Text style={styles.welcomeText}>
+            Esta es una aplicación para empleados staff de ManpowerGroup
+          </Text>
+          <LoginForm />
+          <Text style={styles.passwordFogotText}>
+            ¿Olvidaste tu contraseña?
+          </Text>
+          <CheckOptions/>
+          <Button title='Entrar' onPress={(e)=>{navigation.navigate('Home');console.log(e);}} buttonStyle={styles.loginButton} />
+        </ScrollView>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  scrollViewContainer: {
+    flexGrow: 0.95,
+  },
   imageLogo: {
     width: 140,
     height: 140,
