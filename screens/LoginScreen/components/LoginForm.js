@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   inputElement: {
     flexDirection:'row',
     flex: 0.8, 
-    height: 55,
+    height: 50,
     borderWidth: 1,
     borderColor: '#74757e',
     margin: 0,

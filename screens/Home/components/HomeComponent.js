@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import ProgressCircle from 'react-native-progress-circle';
 import AnimatedBar from "react-native-animated-bar";
 import CardComponent from './../../../components/CardComponent';
+
+import { AnimatedCircularProgress } from 'react-native-circular-progress-svg';
+
 import {
   StyleSheet,
   View,
@@ -51,7 +54,7 @@ class HomeComponent extends Component {
           progress: state.progress + 0.1,
         };
       });
-    }, 1000);
+    }, 100);
   }
 
   renderTaskList = (data) => {
@@ -62,6 +65,7 @@ class HomeComponent extends Component {
   }
 
   render() {
+    console.log(this.state.progress);
     const { navigation } = this.props;
     return (
       <View style={{height:screenHeight}}> 
@@ -90,10 +94,10 @@ class HomeComponent extends Component {
           <CardComponent 
             title='Tareas por cumplir'
           >
-            <View style={styles.column}>
+            <View style={[styles.column, styles.columnLeft]}>
               {this.renderTaskList(tasks)}
             </View>
-            <View style={styles.column}>
+            <View style={[styles.column, styles.columnRight]}>
               <ProgressCircle
                   percent={30}
                   radius={35}
@@ -109,46 +113,58 @@ class HomeComponent extends Component {
           <CardComponent 
             title='Avance'
           >
-            <View style={styles.column}>
+            <View style={[styles.column, styles.columnLeft]}>
               {this.renderTaskList(advance)}
             </View>
-            <View style={styles.column}>
+            <View style={[styles.column, styles.columnRight]}>
               <AnimatedBar
-                progress={50}
+                progress={this.state.progress}
                 height={5}
                 borderColor="#000"
                 fillColor="green"
-                barColor="blue"
+                barColor="#FFF"
                 borderRadius={100}
-                duration={3000}
               />
               <AnimatedBar
-                progress={50}
+                progress={this.state.progress}
                 height={5}
                 borderColor="#000"
                 fillColor="#FFF"
-                barColor="blue"
+                barColor="green"
                 borderRadius={100}
-                duration={3000}
+                duration={300}
               />
               <AnimatedBar
-                progress={50}
+                progress={this.state.progress}
                 height={5}
                 borderColor="#000"
                 fillColor="#efefef"
-                barColor="blue"
+                barColor="#00ff00"
                 borderRadius={100}
-                duration={3000}
               />
             </View>
           </CardComponent>
           <CardComponent 
             title='Pendientes'
           >
-            <View style={styles.column}>
+            <View style={[styles.column, styles.columnLeft]}>
               {this.renderTaskList(pending)}
             </View>
-            <View style={styles.column}>
+            <View style={[styles.column, styles.columnRight]}>
+            <AnimatedCircularProgress
+              size={200}
+              width={3}
+              fill={60}
+              tintColor="#00e0ff"
+              backgroundColor="#3d5875">
+              {
+                (fill) => (
+                  <Text>
+                    60
+                  </Text>
+                )
+              }
+            </AnimatedCircularProgress>
             </View>
           </CardComponent>
         </View>
@@ -197,10 +213,15 @@ const styles = StyleSheet.create({
     fontFamily: 'open-sans-extrabold',
   },
   column: {
-    flex: 0.5,
     flexDirection: 'column',
     justifyContent: 'space-around',
     alignItems: 'center'
+  },
+  columnLeft: {
+    flex: 0.6
+  },
+  columnRight: {
+    flex: 0.4
   },
   flatItem: {
     padding: 5,
