@@ -3,8 +3,6 @@ import ProgressCircle from 'react-native-progress-circle';
 import AnimatedBar from "react-native-animated-bar";
 import CardComponent from './../../../components/CardComponent';
 
-import { AnimatedCircularProgress } from 'react-native-circular-progress-svg';
-
 import {
   StyleSheet,
   View,
@@ -151,20 +149,6 @@ class HomeComponent extends Component {
               {this.renderTaskList(pending)}
             </View>
             <View style={[styles.column, styles.columnRight]}>
-            <AnimatedCircularProgress
-              size={200}
-              width={3}
-              fill={60}
-              tintColor="#00e0ff"
-              backgroundColor="#3d5875">
-              {
-                (fill) => (
-                  <Text>
-                    60
-                  </Text>
-                )
-              }
-            </AnimatedCircularProgress>
             </View>
           </CardComponent>
         </View>

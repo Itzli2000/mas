@@ -11,7 +11,6 @@
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-animated-bar": "^0.2.0",
-    "react-native-circular-progress-svg": "^0.2.0",
     "react-native-elements": "^1.1.0",
     "react-native-progress-circle": "^2.0.1",
     "react-native-svg": "^5.5.1",
