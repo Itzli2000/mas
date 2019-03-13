@@ -30,7 +30,8 @@ class CheckOptions extends Component {
 
 const styles = StyleSheet.create({
   containercheckOption: {
-    flex: 1,
+    width: '100%',
+    margin: 'auto',
     fontFamily: 'open-sans-regular',
     flexDirection: 'row',
     flexWrap: 'nowrap', 
@@ -39,13 +40,13 @@ const styles = StyleSheet.create({
     paddingBottom: 13,
   },
   inlineText: {
-    flex: 0.8,
+    width: '70%',
     fontSize: 13,
     textAlign: 'justify',
     alignSelf: 'center',
   },
   inlineSwitch: {
-    flex:0.2,
+    width: '20%',
     marginRight: 10,
     alignSelf: 'center',
   }

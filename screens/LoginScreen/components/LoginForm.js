@@ -50,14 +50,13 @@ class LoginForm extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: 'center',
     alignContent: 'center',
   },
   inputElement: {
     flexDirection:'row',
-    flex: 0.8, 
     height: 50,
+    maxWidth: 300,
     borderWidth: 1,
     borderColor: '#74757e',
     margin: 0,
@@ -67,7 +66,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden'
   },
   inputContainer: {
-    flex: 0.8, 
+    height: 50,
   },
   inputsContainer: {
     flex: 1,

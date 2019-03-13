@@ -18,30 +18,39 @@ class LoginComponent extends Component {
   render() {
     const { navigation } = this.props;
     return (
-      <View style={{flex:1}}>
         <ScrollView contentContainerStyle={styles.scrollViewContainer}>
-          <Image
-            style={styles.imageLogo}
-            source={require('./../../../assets/images/logo.png')}
-          />
-          <Text style={styles.welcomeText}>
-            Esta es una aplicación para empleados staff de ManpowerGroup
-          </Text>
-          <LoginForm />
-          <Text style={styles.passwordFogotText}>
-            ¿Olvidaste tu contraseña?
-          </Text>
-          <CheckOptions/>
-          <Button title='Entrar' onPress={(e)=>{navigation.navigate('Home');console.log(e);}} buttonStyle={styles.loginButton} />
+          <View style={styles.loginContainer}>
+            <Image
+              style={styles.imageLogo}
+              source={require('./../../../assets/images/logo.png')}
+            />
+            <Text style={styles.welcomeText}>
+              Esta es una aplicación para empleados staff de ManpowerGroup
+            </Text>
+            <LoginForm />
+            <Text style={styles.passwordFogotText}>
+              ¿Olvidaste tu contraseña?
+            </Text>
+            <CheckOptions/>
+            <Button title='Entrar' onPress={(e)=>{navigation.navigate('Home');console.log(e);}} buttonStyle={styles.loginButton} />
+          </View>
         </ScrollView>
-      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
   scrollViewContainer: {
-    flexGrow: 0.95,
+    // backgroundColor: 'red',
+    flexGrow: 0,
+    height: '100%',
+    justifyContent: 'center',
+  },
+  loginContainer: {
+    maxWidth: 350,
+    width: '90%',
+    // backgroundColor:'purple',
+    alignSelf:'center'
   },
   imageLogo: {
     width: 140,
