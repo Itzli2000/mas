@@ -1,6 +1,8 @@
 'use strict';
 import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Dimensions } from 'react-native';
+
+const screenWidth = Dimensions.get('window').width;
 
 class CardComponent extends Component {
   constructor(props) {
@@ -34,7 +36,8 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
   containerStyle: {
-    flex: 0.8,
+    maxWidth: 450,
+    width: '90%',
     backgroundColor: '#FFF',
     borderColor: '#afb5ba',
     borderWidth: 1,
@@ -46,7 +49,7 @@ const styles = StyleSheet.create({
     fontFamily: 'open-sans-bold',
     color: '#FFFFFF',
     paddingLeft: 15,
-    fontSize: 15,
+    fontSize: (screenWidth <= 600 ? 15 : 18),
     height: 30,
     lineHeight: 30,
   },
@@ -55,7 +58,7 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
     flexDirection: 'row',
-    flexWrap: 'nowrap'
+    flexWrap: 'nowrap',
   }
 });
 

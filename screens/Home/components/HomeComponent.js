@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 
 const screenHeight = Dimensions.get('window').height;
+const screenWidth = Dimensions.get('window').width;
 const innerScroll = screenHeight - 80;
 
 
@@ -85,10 +86,10 @@ class HomeComponent extends Component {
             style={styles.imageLogo}
             source={require('./../../../assets/images/logo.png')}
           />
-        <ScrollView contentContainerStyle={styles.scrollViewContainer}>
+        <ScrollView>
         <Text style={styles.date}>Jueves 21 de febrero del 2019</Text>
         <Text h3 style={styles.userName}>Bienvenido Carlos Morales</Text>
-        <View style={styles.container}>
+        <View>
           <CardComponent 
             title='Tareas por cumplir'
           >
@@ -97,8 +98,9 @@ class HomeComponent extends Component {
             </View>
             <View style={[styles.column, styles.columnRight]}>
               <ProgressCircle
+                  styel={styles.progressBar}
                   percent={30}
-                  radius={35}
+                  radius={screenWidth <= 600 ? 35 : 45}
                   borderWidth={10}
                   color="#3399FF"
                   shadowColor="#cacbce"
@@ -117,27 +119,26 @@ class HomeComponent extends Component {
             <View style={[styles.column, styles.columnRight]}>
               <AnimatedBar
                 progress={this.state.progress}
-                height={5}
-                borderColor="#000"
-                fillColor="green"
-                barColor="#FFF"
+                height={screenWidth <= 600 ? 7 : 10}
+                borderColor="#c8ced6"
+                fillColor="#c8ced6"
+                barColor="#3887b8"
                 borderRadius={100}
               />
               <AnimatedBar
                 progress={this.state.progress}
-                height={5}
-                borderColor="#000"
-                fillColor="#FFF"
-                barColor="green"
+                height={screenWidth <= 600 ? 7 : 10}
+                borderColor="#c8ced6"
+                fillColor="#c8ced6"
+                barColor="#6e8f82"
                 borderRadius={100}
-                duration={300}
               />
               <AnimatedBar
                 progress={this.state.progress}
-                height={5}
-                borderColor="#000"
-                fillColor="#efefef"
-                barColor="#00ff00"
+                height={screenWidth <= 600 ? 7 : 10}
+                borderColor="#c8ced6"
+                fillColor="#c8ced6"
+                barColor="#3887b8"
                 borderRadius={100}
               />
             </View>
@@ -159,10 +160,6 @@ class HomeComponent extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-  },
-  scrollViewContainer: {
-  },
   topBar: {
     flexDirection: 'row',
     backgroundColor: '#292b33',
@@ -186,30 +183,34 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   date: {
+    fontSize: (screenWidth <= 600 ? 15 : 17),
     textAlign: 'right',
     paddingRight: 20,
     paddingTop: 15
   },
   userName: {
-    marginTop: 40,
-    marginBottom: 40,
+    marginTop: (screenWidth <= 600 ? 25 : 40),
+    marginBottom: (screenWidth <= 600 ? 25 : 40),
+    fontSize: (screenWidth <= 600 ? 17 : 20),
     textAlign: 'center',
     fontFamily: 'open-sans-extrabold',
   },
   column: {
     flexDirection: 'column',
     justifyContent: 'space-around',
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingTop: 10,
+    paddingBottom: 10,
   },
   columnLeft: {
-    flex: 0.6
+    width: '60%',
   },
   columnRight: {
-    flex: 0.4
+    width: '40%',
   },
   flatItem: {
     padding: 5,
-    fontSize: 13,
+    fontSize: (screenWidth <= 600 ? 13 : 15),
     height: 30,
     color: '#000',
   },
