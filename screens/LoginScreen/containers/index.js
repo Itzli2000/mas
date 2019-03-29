@@ -11,29 +11,27 @@ class LoginScreen extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      fontLoaded: false,
-    };
+    // this.state = {
+    //   fontLoaded: false,
+    // };
   }
 
 
-  async componentWillMount() {
-    await Expo.Font.loadAsync({
-      'open-sans-bold': require('./../../../assets/fonts/OpenSans-Bold.ttf'),
-      'open-sans-regular': require('./../../../assets/fonts/OpenSans-Regular.ttf'),
-      'open-sans-semibold': require('./../../../assets/fonts/OpenSans-SemiBold.ttf'),
-      'open-sans-extrabold': require('./../../../assets/fonts/OpenSans-ExtraBold.ttf'),
-    });
-    this.setState({ fontLoaded: true });
-  }
+  // async componentWillMount() {
+  //   await Expo.Font.loadAsync({
+  //     'open-sans-bold': require('./../../../assets/fonts/OpenSans-Bold.ttf'),
+  //     'open-sans-regular': require('./../../../assets/fonts/OpenSans-Regular.ttf'),
+  //     'open-sans-semibold': require('./../../../assets/fonts/OpenSans-SemiBold.ttf'),
+  //     'open-sans-extrabold': require('./../../../assets/fonts/OpenSans-ExtraBold.ttf'),
+  //   });
+  //   this.setState({ fontLoaded: true });
+  // }
 
 
   render() {
     return (
       <ScreenContainer>
-        { this.state.fontLoaded ? (
           <LoginComponent {...this.props} />
-        ) : <Text>Loading....</Text> }
       </ScreenContainer>
       );
   }

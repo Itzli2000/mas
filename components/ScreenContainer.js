@@ -1,6 +1,7 @@
 'use strict';
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, ImageBackground, View, } from 'react-native';
+import { ScrollView, ImageBackground, View, } from 'react-native';
+import { ApplicationStyles as styles, Images } from './../Themes';
 
 class ScreenContainer extends Component {
   constructor(props) {
@@ -10,10 +11,10 @@ class ScreenContainer extends Component {
   render() {
     const { children } = this.props;
     return (
-      <View style={styles.container}>
+      <View style={styles.screenContainer}>
         <ImageBackground
-        style={styles.backImage}
-        source={require('./../assets/images/loginBack.jpg')}
+        style={styles.screenBackImage}
+        source={Images.loginBack}
         >
           {children}
         </ImageBackground> 
@@ -21,18 +22,5 @@ class ScreenContainer extends Component {
       );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  backImage: {
-    width: '100%', 
-    height: '100%',
-  }
-});
 
 export default ScreenContainer;
