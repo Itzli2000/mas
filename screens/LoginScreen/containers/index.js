@@ -11,27 +11,35 @@ class LoginScreen extends Component {
   constructor(props) {
     super(props);
 
-    // this.state = {
-    //   fontLoaded: false,
-    // };
+    this.state = {
+      fontLoaded: false,
+    };
   }
 
 
-  // async componentWillMount() {
-  //   await Expo.Font.loadAsync({
-  //     'open-sans-bold': require('./../../../assets/fonts/OpenSans-Bold.ttf'),
-  //     'open-sans-regular': require('./../../../assets/fonts/OpenSans-Regular.ttf'),
-  //     'open-sans-semibold': require('./../../../assets/fonts/OpenSans-SemiBold.ttf'),
-  //     'open-sans-extrabold': require('./../../../assets/fonts/OpenSans-ExtraBold.ttf'),
-  //   });
-  //   this.setState({ fontLoaded: true });
-  // }
+  async componentWillMount() {
+    await Expo.Font.loadAsync({
+      'open-sans-bold': require('./../../../fonts/OpenSans-Bold.ttf'),
+      'open-sans-regular': require('./../../../fonts/OpenSans-Regular.ttf'),
+      'open-sans-semibold': require('./../../../fonts/OpenSans-SemiBold.ttf'),
+      'open-sans-extrabold': require('./../../../fonts/OpenSans-ExtraBold.ttf'),
+    });
+    this.setState({ fontLoaded: true });
+  }
+
+  validateUserLogIn = () => {
+    console.log('redirecting');
+    this.props.navigation.navigate('Home');
+  }
+
 
 
   render() {
     return (
       <ScreenContainer>
-          <LoginComponent {...this.props} />
+        { this.state.fontLoaded ? (
+          <LoginComponent {...this.props} validateUserLogIn={this.validateUserLogIn} />
+        ) : <Text>Loading....</Text> }
       </ScreenContainer>
       );
   }

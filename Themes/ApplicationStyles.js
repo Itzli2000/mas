@@ -28,7 +28,7 @@ const ApplicationStyles = {
   },
   cardTitleStyles: {
     backgroundColor: '#e77c22',
-    fontFamily: Fonts.type.bold,
+    fontFamily: 'open-sans-bold',
     color: '#FFFFFF',
     paddingLeft: 15,
     fontSize: (screenWidth <= 600 ? 15 : 18),
@@ -87,7 +87,7 @@ const ApplicationStyles = {
     marginBottom: (screenWidth <= 600 ? 25 : 40),
     fontSize: (screenWidth <= 600 ? 17 : 20),
     textAlign: 'center',
-    fontFamily: Fonts.type.boldExtra,
+    fontFamily: 'open-sans-extrabold',
   },
   homeComponentColumn: {
     flexDirection: 'column',
@@ -112,7 +112,7 @@ const ApplicationStyles = {
   checkOptionContainer: {
     width: '100%',
     margin: 'auto',
-    fontFamily: Fonts.type.regular,
+    fontFamily: 'open-sans-regular',
     flexDirection: 'row',
     flexWrap: 'nowrap', 
     alignItems: 'flex-start',
@@ -154,12 +154,12 @@ const ApplicationStyles = {
     fontSize: 18,
     marginBottom: 10,
     alignSelf: 'center',
-    fontFamily: Fonts.type.regular,
+    fontFamily: 'open-sans-regular',
     textAlign: 'center',
   },
   loginPasswordFogotText: {
     fontSize: 21,
-    fontFamily: Fonts.type.semiBold,
+    fontFamily: 'open-sans-semibold',
     textAlign: 'center', 
     marginTop: 20,
     marginBottom: 15,

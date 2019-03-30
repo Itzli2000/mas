@@ -7,7 +7,9 @@
     "eject": "expo eject"
   },
   "rnpm": {
-    "assets": ["fonts"]
+    "assets": [
+      "fonts"
+    ]
   },
   "dependencies": {
     "expo": "^32.0.0",

@@ -16,6 +16,7 @@ import {
 class LoginComponent extends Component {
 
   render() {
+    console.log(this.props);
     const { navigation } = this.props;
     return (
         <ScrollView contentContainerStyle={styles.loginScrollViewContainer}>
@@ -32,7 +33,7 @@ class LoginComponent extends Component {
               ¿Olvidaste tu contraseña?
             </Text>
             <CheckOptions/>
-            <Button title='Entrar' onPress={(e)=>{navigation.navigate('Home');console.log(e);}} buttonStyle={styles.loginButton} />
+            <Button title='Entrar' onPress={()=>this.props.validateUserLogIn()} buttonStyle={styles.loginButton} />
           </View>
         </ScrollView>
     );

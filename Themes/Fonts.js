@@ -1,15 +1,3 @@
-const type = {
-    bold: 'OpenSans-Bold',
-    boldItalic: 'OpenSans-BoldItalic',
-    boldExtra: 'OpenSans-ExtraBold',
-    boldExtraItalic: 'OpenSans-ExtraBoldItalic',
-    italic: 'OpenSans-Italic',
-    light: 'OpenSans-Light',
-    lightItalic: 'OpenSans-LightItalic',
-    regular: 'OpenSans',
-    semiBold: 'OpenSans-SemiBold',
-}
-
 const size = {
     h1: 38,
     h2: 34,
@@ -25,22 +13,18 @@ const size = {
 }
 
 const style = {   
-    title:{
-        fontFamily: type.bold,        
+    title:{     
         fontSize: size.h5
     },
     normal: {
-        fontFamily: type.regular,
         fontSize: size.regular
     },
     description: {
-        fontFamily: type.regular,
         fontSize: size.medium
     }
 }
 
 export default {
-    type,
     size,
     style
 }
