@@ -5,6 +5,8 @@ const images = {
     loginBack: require('./../images/loginBack.jpg'),
     notification: require('./../images/notification.png'),
     qr: require('./../images/qr.png'),
+    menuIcon: require('./../images/menuIcon.png'),
+    userDemo: require('./../images/userDemo.jpg'),
 }
 
 export default images

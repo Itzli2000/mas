@@ -8,6 +8,21 @@ const screenWidth = Dimensions.get('window').width;
 const innerScroll = screenHeight - 80;
 
 const ApplicationStyles = {
+  // General styles
+  mainScrollContainer:{
+    backgroundColor:Colors.white,
+  },
+  row:{
+    flexDirection: 'row',
+    width:'100%',
+    justifyContent: 'center'
+  },
+  column:{
+    flexDirection: 'column',
+  },
+  pbDefault:{
+    paddingBottom:20,
+  },
   // Card Component Styles
   cardContainer: {
     flex: 1,
@@ -28,7 +43,7 @@ const ApplicationStyles = {
   },
   cardTitleStyles: {
     backgroundColor: '#e77c22',
-    fontFamily: 'open-sans-bold',
+    fontFamily: 'gotham-bold',
     color: '#FFFFFF',
     paddingLeft: 15,
     fontSize: (screenWidth <= 600 ? 15 : 18),
@@ -53,41 +68,81 @@ const ApplicationStyles = {
     width: '100%', 
     height: '100%',
   },
-  // Home screen component styles
-  homeComponentTopBar: {
-    flexDirection: 'row',
-    backgroundColor: '#292b33',
+  // Float Menu styles
+  MenuHide: {
+    left:'-120%',
+  },
+  MenuShow: {
+    left:0,
+  },
+  menuIconContainer:{
+    width: 40, 
+    height: 40,
+    marginRight: 10,
+    marginRight: 'auto',
+    marginLeft: 10,
+  },
+  // User card styles
+  userCardTopBar: {
     minHeight: 80,
-    paddingTop: 10,
+    paddingTop: 25,
     justifyContent:'flex-end',
     alignItems: 'center',
   },
-  homeComponentImageLogo: {
-    width: 90,
-    height: 90,
-    resizeMode: 'contain',
-    position: 'absolute',
-    top: 15,
-    left: 30,
+  userCardfloatMenu:{
+    width:'100%',
+    height:'100%',
+    position:'absolute',
+    zIndex: 100,
+    top:80,
+    backgroundColor: 'red'
   },
-  homeComponentNavIcon: {
+  userCardPhotoContainer:{
+    width: '25%',
+    maxWidth: 110,
+    justifyContent:'center',
+    alignItems: 'center',
+  },
+  userCardDataContainer:{
+    width: '65%',
+    justifyContent:'center',
+    alignItems: 'center',
+  },
+  userCardPhoto:{
+    width:100,
+    height:100,
+  },
+  userCardMenuIcon: {
     resizeMode: 'contain',
-    width: 40,
-    height: 40,
+    width: '100%', 
+    height: '100%',
+  },
+  userCardImageLogo: {
+    resizeMode: 'contain',
+    width: 60, 
+    height: 60,
     marginRight: 10,
   },
+  userCardNavIcon: {
+    resizeMode: 'contain',
+    width: 45,
+    height: 45,
+    marginRight: 10,
+  },
+
+  // Home screen component styles
   homeComponentDate: {
-    fontSize: (screenWidth <= 600 ? 15 : 17),
-    textAlign: 'right',
-    paddingRight: 20,
-    paddingTop: 15
+    fontFamily: 'gotham-bold',
+    fontSize: (screenWidth <= 600 ? 13 : 17),
+    color: Colors.white,
+    textAlign: 'center',
   },
   homeComponentUserName: {
     marginTop: (screenWidth <= 600 ? 25 : 40),
     marginBottom: (screenWidth <= 600 ? 25 : 40),
     fontSize: (screenWidth <= 600 ? 17 : 20),
     textAlign: 'center',
-    fontFamily: 'open-sans-extrabold',
+    fontFamily: 'gotham-bold',
   },
   homeComponentColumn: {
     flexDirection: 'column',
@@ -112,28 +167,31 @@ const ApplicationStyles = {
   checkOptionContainer: {
     width: '100%',
     margin: 'auto',
-    fontFamily: 'open-sans-regular',
+    fontFamily: 'gotham-regular',
     flexDirection: 'row',
     flexWrap: 'nowrap', 
     alignItems: 'flex-start',
     justifyContent: 'center',
-    paddingBottom: 13,
+    marginBottom: 20,
   },
   checkOptionInlineText: {
     width: '70%',
-    fontSize: 13,
+    fontSize: 14,
+    paddingLeft:10,
     textAlign: 'justify',
     alignSelf: 'center',
+    color: Colors.white,
   },
   checkOptionInlineSwitch: {
     width: '20%',
-    marginRight: 10,
+    paddingRight: 30,
     alignSelf: 'center',
+    backgroundColor: 'red'
   },
   // Login component styles
   loginScrollViewContainer: {
     flexGrow: 0,
-    height: '100%',
+    minHeight: '100%',
     justifyContent: 'center',
   },
   loginContainer: {
@@ -145,54 +203,58 @@ const ApplicationStyles = {
     width: 140,
     height: 140,
     resizeMode: 'contain',
-    marginTop: 30,
+    marginTop: 50,
     marginBottom: 15,
     alignSelf: 'center', 
   },
   loginWelcomeText: {
     width: 300,
-    fontSize: 18,
-    marginBottom: 10,
+    fontSize: 17,
+    lineHeight: 20,
+    marginBottom: 50,
+    color: Colors.blueText,
     alignSelf: 'center',
-    fontFamily: 'open-sans-regular',
+    fontFamily: 'gotham-medium',
     textAlign: 'center',
   },
   loginPasswordFogotText: {
-    fontSize: 21,
-    fontFamily: 'open-sans-semibold',
-    textAlign: 'center', 
-    marginTop: 20,
-    marginBottom: 15,
+    fontSize: 19,
+    fontFamily: 'gotham-regular',
+    textAlign: 'center',
+    color: Colors.white, 
+    marginTop: 25,
+    marginBottom: 25,
   },
   loginButton: {
     width: 150,
     height: 40,
     margin: 'auto',
     alignSelf: 'center',
-    backgroundColor: '#e77c22',
-    borderColor: 'white',
+    backgroundColor: Colors.orange,
     borderWidth: 1,
-    borderRadius: 12,
+    borderRadius: 20,
     paddingLeft: 10,
     paddingRight: 10,
-    marginBottom: 15,
+    marginTop: 40,
+    marginBottom: 70,
   },
   // Login Form Component Styles
-    loginFormContainer: {
+  loginFormContainer: {
     alignItems: 'center',
     alignContent: 'center',
   },
   loginFormInputElement: {
     flexDirection:'row',
     height: 50,
-    maxWidth: 300,
+    maxWidth: 250,
     borderWidth: 1,
-    borderColor: '#74757e',
+    borderColor: Colors.white,
     margin: 0,
-    marginTop: 10,
+    marginTop: 25,
     borderRadius: 15,
     padding: 0,
-    overflow: 'hidden'
+    overflow: 'hidden',
+    backgroundColor: Colors.white,
   },
   loginFormInputContainer: {
     height: 50,
@@ -205,14 +267,11 @@ const ApplicationStyles = {
   loginFormInputs: {
     fontSize:20,
     lineHeight:20,
+    fontFamily: 'gotham-medium',
+    color: Colors.orangeText,
     textAlign: 'center', 
     backgroundColor: 'transparent',
     overflow: 'hidden'
-  },
-  loginFormBackImage: {
-    flex: 0.8,
-    justifyContent: 'center',
-    alignItems: 'center'
   },
 };
 

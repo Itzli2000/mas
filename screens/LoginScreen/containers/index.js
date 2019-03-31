@@ -6,6 +6,7 @@ import {
   Text,
 } from 'react-native';
 import ScreenContainer from './../../../components/ScreenContainer';
+import SplashScreen from './../../../components/SplashScreen';
 
 class LoginScreen extends Component {
   constructor(props) {
@@ -19,16 +20,14 @@ class LoginScreen extends Component {
 
   async componentWillMount() {
     await Expo.Font.loadAsync({
-      'open-sans-bold': require('./../../../fonts/OpenSans-Bold.ttf'),
-      'open-sans-regular': require('./../../../fonts/OpenSans-Regular.ttf'),
-      'open-sans-semibold': require('./../../../fonts/OpenSans-SemiBold.ttf'),
-      'open-sans-extrabold': require('./../../../fonts/OpenSans-ExtraBold.ttf'),
+      'gotham-regular': require('./../../../fonts/GothamBook.otf'),
+      'gotham-medium': require('./../../../fonts/GothamMedium.ttf'),
+      'gotham-bold': require('./../../../fonts/GothamBold.ttf'),
     });
     this.setState({ fontLoaded: true });
   }
 
   validateUserLogIn = () => {
-    console.log('redirecting');
     this.props.navigation.navigate('Home');
   }
 
@@ -39,7 +38,7 @@ class LoginScreen extends Component {
       <ScreenContainer>
         { this.state.fontLoaded ? (
           <LoginComponent {...this.props} validateUserLogIn={this.validateUserLogIn} />
-        ) : <Text>Loading....</Text> }
+        ) : <SplashScreen /> }
       </ScreenContainer>
       );
   }

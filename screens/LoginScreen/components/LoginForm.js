@@ -11,37 +11,29 @@ import {
 import { 
   Input, 
   CheckBox, } from 'react-native-elements';
-import { ApplicationStyles as styles, Images } from './../../../Themes';
+import { ApplicationStyles as styles, Images, Colors } from './../../../Themes';
 
 class LoginForm extends Component {
   render() {
     return (
       <View style={styles.loginFormContainer}>
         <View style={styles.loginFormInputElement}>
-          <ImageBackground 
-            style={styles.loginFormBackImage}
-            source={Images.inputBack}
-          >
             <Input 
               containerStyle={styles.loginFormInputContainer}
               inputContainerStyle={styles.loginFormInputsContainer}
               inputStyle={styles.loginFormInputs}
+              placeholderTextColor={Colors.orangeText}
               placeholder="usuario"
             />
-          </ImageBackground>
         </View> 
         <View style={styles.loginFormInputElement}>
-        <ImageBackground 
-            style={styles.loginFormBackImage}
-            source={Images.inputBack}
-          >
             <Input 
               containerStyle={styles.loginFormInputContainer}
               inputContainerStyle={styles.loginFormInputsContainer}
               inputStyle={styles.loginFormInputs}
+              placeholderTextColor={Colors.orangeText}
               placeholder="contraseña"
             />
-          </ImageBackground>
         </View>
       </View>
     );

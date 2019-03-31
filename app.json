@@ -12,8 +12,8 @@
     "orientation": "portrait",
     "icon": "./images/logo.png",
     "splash": {
-      "image": "./images/logo.png",
-      "resizeMode": "contain",
+      "image": "./images/splash.png",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {

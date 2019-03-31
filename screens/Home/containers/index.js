@@ -18,9 +18,9 @@ class HomeScreen extends Component {
 
   async componentWillMount() {
     await Expo.Font.loadAsync({
-      'open-sans-bold': require('./../../../fonts/OpenSans-Bold.ttf'),
-      'open-sans-regular': require('./../../../fonts/OpenSans-Regular.ttf'),
-      'open-sans-semibold': require('./../../../fonts/OpenSans-SemiBold.ttf'),
+      'gotham-regular': require('./../../../fonts/GothamBook.otf'),
+      'gotham-medium': require('./../../../fonts/GothamMedium.ttf'),
+      'gotham-bold': require('./../../../fonts/GothamBold.ttf'),
     });
     this.setState({ fontLoaded: true });
   }
