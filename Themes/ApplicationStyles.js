@@ -95,7 +95,8 @@ const ApplicationStyles = {
     position:'absolute',
     zIndex: 100,
     top:80,
-    backgroundColor: 'red'
+    backgroundColor: Colors.menuBackground,
+    opacity: 0.9,
   },
   userCardPhotoContainer:{
     width: '25%',

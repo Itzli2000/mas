@@ -8,6 +8,7 @@ const colors = {
     inactive: '#d3d3d3',
     userCardStart: '#7e97c0',
     userCardStop: '#466ea5',
+    menuBackground: '#38393b',
 }
 
 export default colors
