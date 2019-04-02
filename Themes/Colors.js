@@ -9,6 +9,11 @@ const colors = {
     userCardStart: '#7e97c0',
     userCardStop: '#466ea5',
     menuBackground: '#38393b',
+    greenStart: '#8db5a5',
+    greenStop: '#6f9083',
+    orangeStart: '',
+    orangeStop: '',
+
 }
 
 export default colors

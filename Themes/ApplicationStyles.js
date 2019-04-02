@@ -35,23 +35,25 @@ const ApplicationStyles = {
   cardContainerStyle: {
     maxWidth: 450,
     width: '90%',
-    backgroundColor: '#FFF',
-    borderColor: '#afb5ba',
-    borderWidth: 1,
+    // backgroundColor: '#FFF',
+    // borderColor: '#afb5ba',
+    // borderWidth: 1,
     borderRadius: 15,
     overflow: 'hidden',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   cardTitleStyles: {
-    backgroundColor: '#e77c22',
+    // backgroundColor: '#e77c22',
     fontFamily: 'gotham-bold',
-    color: '#FFFFFF',
+    color: Colors.white,
     paddingLeft: 15,
-    fontSize: (screenWidth <= 600 ? 15 : 18),
+    fontSize: (screenWidth <= 600 ? 20 : 25),
     height: 30,
     lineHeight: 30,
   },
   cardBodyStyle: {
-    backgroundColor:'#dbe6f0',
+    // backgroundColor:'#dbe6f0',
     paddingLeft: 15,
     paddingRight: 15,
     flexDirection: 'row',
@@ -113,6 +115,19 @@ const ApplicationStyles = {
     width:100,
     height:100,
   },
+  userCardDate: {
+    fontFamily: 'gotham-bold',
+    fontSize: (screenWidth <= 600 ? 13 : 17),
+    color: Colors.white,
+    textAlign: 'center',
+  },
+  userCardUserName: {
+    marginTop: (screenWidth <= 600 ? 25 : 40),
+    marginBottom: (screenWidth <= 600 ? 25 : 40),
+    fontSize: (screenWidth <= 600 ? 17 : 20),
+    textAlign: 'center',
+    fontFamily: 'gotham-bold',
+  },
   userCardMenuIcon: {
     resizeMode: 'contain',
     width: '100%', 
@@ -132,33 +147,20 @@ const ApplicationStyles = {
   },
 
   // Home screen component styles
-  homeComponentDate: {
-    fontFamily: 'gotham-bold',
-    fontSize: (screenWidth <= 600 ? 13 : 17),
-    color: Colors.white,
-    textAlign: 'center',
-  },
-  homeComponentUserName: {
-    marginTop: (screenWidth <= 600 ? 25 : 40),
-    marginBottom: (screenWidth <= 600 ? 25 : 40),
-    fontSize: (screenWidth <= 600 ? 17 : 20),
-    textAlign: 'center',
-    fontFamily: 'gotham-bold',
-  },
-  homeComponentColumn: {
+  fullCardInnerColumn: {
     flexDirection: 'column',
     justifyContent: 'space-around',
     alignItems: 'center',
     paddingTop: 10,
     paddingBottom: 10,
   },
-  homeComponentColumnLeft: {
+  fullCardInnerColumnLeft: {
     width: '60%',
   },
-  homeComponentColumnRight: {
+  fullCardInnerColumnRight: {
     width: '40%',
   },
-  homeComponentFlatItem: {
+  fullCardInnerFlatItem: {
     padding: 5,
     fontSize: (screenWidth <= 600 ? 13 : 15),
     height: 30,

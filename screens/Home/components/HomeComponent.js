@@ -3,7 +3,7 @@ import ProgressCircle from 'react-native-progress-circle';
 import AnimatedBar from "react-native-animated-bar";
 import CardComponent from './../../../components/CardComponent';
 import UserCard from './../../../components/UserCard';
-import { ApplicationStyles as styles, Images } from './../../../Themes';
+import { ApplicationStyles as styles, Images, Colors } from './../../../Themes';
 
 import {
   View,
@@ -18,21 +18,18 @@ const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
 
 
-const tasks=[
-  {key: '5 visitas de 10 por día'},
-  {key: '30 visitas al mes'},
-  {key: '5 reportes de entrega'},
+const complete=[
+  {key: 'menuIcon'},
+  {key: 'logo'},
+  {key: 'qr'},
   ]
 
-const advance=[
+const medium=[
   {key: '5 visitas de 10 por día'},
   {key: '30 visitas al mes'},
-  {key: '5 reportes de entrega'},
   ]
 
-const pending=[
-  {key: '5 visitas de 10 por día'},
-  {key: '30 visitas al mes'},
+const uncomplete=[
   ]
 
 class HomeComponent extends Component {
@@ -59,78 +56,22 @@ class HomeComponent extends Component {
   renderTaskList = (data) => {
     return <FlatList
             data={data}
-            renderItem={({item}) => <Text style={styles.homeComponentFlatItem}>{item.key}</Text>}
+            renderItem={({item}) => <Image style={styles.userCardMenuIcon} source={Images.menuIcon} />}
           />
   }
 
   render() {
-    console.log(this.state.progress);
     const { navigation } = this.props;
     return (
         <UserCard userCardData={()=>this.renderUserCardData()}>
-          <Text h3 style={styles.homeComponentUserName}>Bienvenido Carlos Morales</Text>
+          <Text h3 style={styles.userCardUserName}>Bienvenido Carlos Morales</Text>
           <View>
             <CardComponent 
               title='Tareas por cumplir'
+              startColor={Colors.userCardStart}
+              endColor={Colors.userCardStop}
             >
-              <View style={[styles.homeComponentColumn, styles.homeComponentColumnLeft]}>
-                {this.renderTaskList(tasks)}
-              </View>
-              <View style={[styles.homeComponentColumn, styles.homeComponentColumnRight]}>
-                <ProgressCircle
-                    styel={styles.homeComponentProgressBar}
-                    percent={30}
-                    radius={screenWidth <= 600 ? 35 : 45}
-                    borderWidth={10}
-                    color="#3399FF"
-                    shadowColor="#cacbce"
-                    bgColor="#fff"
-                >
-                    <Text style={{ fontSize: 18 }}>{'30%'}</Text>
-                </ProgressCircle>
-              </View>
-            </CardComponent>
-            <CardComponent 
-              title='Avance'
-            >
-              <View style={[styles.homeComponentColumn, styles.homeComponentColumnLeft]}>
-                {this.renderTaskList(advance)}
-              </View>
-              <View style={[styles.homeComponentColumn, styles.homeComponentColumnRight]}>
-                <AnimatedBar
-                  progress={this.state.progress}
-                  height={screenWidth <= 600 ? 7 : 10}
-                  borderColor="#c8ced6"
-                  fillColor="#c8ced6"
-                  barColor="#3887b8"
-                  borderRadius={100}
-                />
-                <AnimatedBar
-                  progress={this.state.progress}
-                  height={screenWidth <= 600 ? 7 : 10}
-                  borderColor="#c8ced6"
-                  fillColor="#c8ced6"
-                  barColor="#6e8f82"
-                  borderRadius={100}
-                />
-                <AnimatedBar
-                  progress={this.state.progress}
-                  height={screenWidth <= 600 ? 7 : 10}
-                  borderColor="#c8ced6"
-                  fillColor="#c8ced6"
-                  barColor="#3887b8"
-                  borderRadius={100}
-                />
-              </View>
-            </CardComponent>
-            <CardComponent 
-              title='Pendientes'
-            >
-              <View style={[styles.homeComponentColumn, styles.homeComponentColumnLeft]}>
-                {this.renderTaskList(pending)}
-              </View>
-              <View style={[styles.homeComponentColumn, styles.homeComponentColumnRight]}>
-              </View>
+                {this.renderTaskList(complete)}
             </CardComponent>
           </View>
         </UserCard>

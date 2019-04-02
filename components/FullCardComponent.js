@@ -1,28 +1,26 @@
 'use strict';
 import React, { Component } from 'react';
 import {  View, Text } from 'react-native';
-import { ApplicationStyles as styles, Colors } from './../Themes';
+import { ApplicationStyles as styles } from './../Themes';
 import { LinearGradient } from 'expo';
 
-class CardComponent extends Component {
+class FullCardComponent extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    const { props } = this;
-    const { children, title } = props;
-    const { startColor, endColor } = props;
+    const { children } = this.props;
     return (
       <View style={styles.cardContainer}>
         <View
           style={styles.cardContainerStyle}
         >
           <LinearGradient
-              style={[styles.screenBackImage, styles.row]}
-              colors={[(startColor ? startColor : Colors.greenStart), (endColor ? endColor : Colors.greenStop)]}
+              style={styles.screenBackImage}
+              colors={['#8db5a5', '#6f9083']}
             >
-              <Text h4 style={styles.cardTitleStyles}>{title.toUpperCase()}</Text>
+              <Text h4 style={styles.cardTitleStyles}>{this.props.title.toUpperCase()}</Text>
               <View style={styles.cardBodyStyle}>
                 {children}
               </View>
@@ -33,4 +31,4 @@ class CardComponent extends Component {
   }
 }
 
-export default CardComponent;
+export default FullCardComponent;

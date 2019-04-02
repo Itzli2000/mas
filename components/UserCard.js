@@ -67,7 +67,7 @@ class UserCard extends Component {
 							/>
 						</View>
 						<View style={[styles.column, styles.userCardDataContainer]}>
-							<Text style={styles.homeComponentDate}>Jueves 21 de febrero del 2019</Text>
+							<Text style={styles.userCardDate}>Jueves 21 de febrero del 2019</Text>
 						</View>
 					</View>
 				</View>
