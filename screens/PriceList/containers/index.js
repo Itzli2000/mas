@@ -1,12 +1,12 @@
 'use strict';
 import React, { Component } from 'react';
 import ScreenContainer from './../../../components/ScreenContainer';
-import HomeComponent from './../components/HomeComponent';
+import PriceListComponent from './../components/PriceListComponent';
 import {
   Text,
 } from 'react-native';
 
-class HomeScreen extends Component {
+class PriceListScreen extends Component {
   constructor(props) {
     super(props);
 
@@ -30,7 +30,7 @@ class HomeScreen extends Component {
     return (
       <ScreenContainer {...this.props}>
         { this.state.fontLoaded ? (
-          <HomeComponent />
+          <PriceListComponent />
           ) : <Text >Loading....</Text> 
         }
       </ScreenContainer>
@@ -38,4 +38,4 @@ class HomeScreen extends Component {
   }
 }
 
-export default HomeScreen;
+export default PriceListScreen;

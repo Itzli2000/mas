@@ -25,7 +25,6 @@ class UserCard extends Component {
 	render() {
 		const{ props } = this;
     	const { children } = props;
-    	console.log(this.state);
 		return (
 		  <View>
           	<ScrollView style={styles.mainScrollContainer}>
@@ -40,10 +39,12 @@ class UserCard extends Component {
 								source={Images.menuIcon}
 				        	/>
 			        	</TouchableOpacity>
+						<TouchableOpacity activeOpacity = { .5 } onPress={()=>props.navigatePrice()}>
 						<Image
 							style={styles.userCardImageLogo}
 							source={Images.logo}
 						/>
+			        	</TouchableOpacity>
 						<Image
 							style={styles.userCardNavIcon}
 							source={Images.qr}

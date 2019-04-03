@@ -14,7 +14,7 @@ class FullCardComponent extends Component {
     return (
       <View style={styles.cardContainer}>
         <View
-          style={styles.cardContainerStyle}
+          style={styles.fullCardContainerStyle}
         >
           <LinearGradient
               style={styles.screenBackImage}

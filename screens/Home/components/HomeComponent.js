@@ -53,10 +53,14 @@ class HomeComponent extends Component {
     }, 100);
   }
 
+  navigatePrice = () => {
+    this.props.navigation.navigate('PriceList');
+  }
+
   render() {
     const { navigation } = this.props;
     return (
-        <UserCard userCardData={()=>this.renderUserCardData()}>
+        <UserCard userCardData={()=>this.renderUserCardData()} navigatePrice={this.navigatePrice}>
           <View>
             <CardComponent 
               title='Tareas por cumplir'

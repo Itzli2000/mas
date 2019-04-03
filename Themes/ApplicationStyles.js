@@ -45,6 +45,17 @@ const ApplicationStyles = {
     alignItems: 'center',
     minHeight: 150,
   },
+  fullCardContainerStyle: {
+    maxWidth: 650,
+    width: '100%',
+    borderRadius: 0,
+    overflow: 'hidden',
+    justifyContent: 'center',
+    alignItems: 'center',
+    minHeight: 150,
+    marginTop: 20,
+    marginBottom: 20,
+  },
   cardBackgorund: {
     justifyContent: 'center',
   },
