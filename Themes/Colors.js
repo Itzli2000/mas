@@ -11,8 +11,8 @@ const colors = {
     menuBackground: '#38393b',
     greenStart: '#8db5a5',
     greenStop: '#6f9083',
-    orangeStart: '',
-    orangeStop: '',
+    orangeStart: '#fb7925',
+    orangeStop: '#fb7925',
 
 }
 

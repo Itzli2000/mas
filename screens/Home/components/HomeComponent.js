@@ -53,25 +53,37 @@ class HomeComponent extends Component {
     }, 100);
   }
 
-  renderTaskList = (data) => {
-    return <FlatList
-            data={data}
-            renderItem={({item}) => <Image style={styles.userCardMenuIcon} source={Images.menuIcon} />}
-          />
-  }
-
   render() {
     const { navigation } = this.props;
     return (
         <UserCard userCardData={()=>this.renderUserCardData()}>
-          <Text h3 style={styles.userCardUserName}>Bienvenido Carlos Morales</Text>
           <View>
             <CardComponent 
               title='Tareas por cumplir'
               startColor={Colors.userCardStart}
               endColor={Colors.userCardStop}
             >
-                {this.renderTaskList(complete)}
+                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
+                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
+                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
+            </CardComponent>
+            <CardComponent 
+              title='Tareas por cumplir'
+              startColor={Colors.orangeStart}
+              endColor={Colors.orangeStop}
+            >
+                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
+                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
+                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
+            </CardComponent>
+            <CardComponent 
+              title='Tareas por cumplir'
+              startColor={Colors.greenStart}
+              endColor={Colors.greenStop}
+            >
+                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
+                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
+                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
             </CardComponent>
           </View>
         </UserCard>

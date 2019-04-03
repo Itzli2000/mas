@@ -30,7 +30,8 @@ const ApplicationStyles = {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 20
+    marginTop: 10,
+    marginBottom: 10,
   },
   cardContainerStyle: {
     maxWidth: 450,
@@ -42,29 +43,44 @@ const ApplicationStyles = {
     overflow: 'hidden',
     justifyContent: 'center',
     alignItems: 'center',
+    minHeight: 150,
+  },
+  cardBackgorund: {
+    justifyContent: 'center',
+  },
+  cardTitleContainer: {
+    width: '100%',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+  cardTitleIcon: {
+    resizeMode: 'contain',
+    width: 27,
+    height: 27,
   },
   cardTitleStyles: {
     // backgroundColor: '#e77c22',
     fontFamily: 'gotham-bold',
     color: Colors.white,
     paddingLeft: 15,
-    fontSize: (screenWidth <= 600 ? 20 : 25),
+    fontSize: (screenWidth <= 600 ? 17 : 25),
     height: 30,
     lineHeight: 30,
   },
   cardBodyStyle: {
     // backgroundColor:'#dbe6f0',
-    paddingLeft: 15,
-    paddingRight: 15,
+    padding: 10,
     flexDirection: 'row',
     flexWrap: 'nowrap',
+    justifyContent: 'flex-end',
   },
   // ScreenContainer Component Styles
   screenContainer: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    minHeight: screenHeight,
   },
   screenBackImage: {
     width: '100%', 
@@ -122,9 +138,16 @@ const ApplicationStyles = {
     textAlign: 'center',
   },
   userCardUserName: {
-    marginTop: (screenWidth <= 600 ? 25 : 40),
-    marginBottom: (screenWidth <= 600 ? 25 : 40),
+    marginBottom: (screenWidth <= 600 ? 15 : 20),
     fontSize: (screenWidth <= 600 ? 17 : 20),
+    color: Colors.white,
+    textAlign: 'center',
+    fontFamily: 'gotham-bold',
+  },
+  userCardUserSubtitle: {
+    marginTop: (screenWidth <= 600 ? 15 : 20),
+    fontSize: (screenWidth <= 600 ? 14 : 19),
+    color: Colors.white,
     textAlign: 'center',
     fontFamily: 'gotham-bold',
   },
@@ -146,6 +169,13 @@ const ApplicationStyles = {
     marginRight: 10,
   },
 
+  // Home screen component styles
+  homeCardIcon: {
+    resizeMode: 'contain',
+    width: 30,
+    height: 30,
+    marginRight: 5,
+  },
   // Home screen component styles
   fullCardInnerColumn: {
     flexDirection: 'column',

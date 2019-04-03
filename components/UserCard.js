@@ -68,6 +68,8 @@ class UserCard extends Component {
 						</View>
 						<View style={[styles.column, styles.userCardDataContainer]}>
 							<Text style={styles.userCardDate}>Jueves 21 de febrero del 2019</Text>
+							<Text h3 style={styles.userCardUserSubtitle}>Bienvenido</Text>
+							<Text h3 style={styles.userCardUserName}>Carlos Morales</Text>
 						</View>
 					</View>
 				</View>
