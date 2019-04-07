@@ -30,8 +30,8 @@ const ApplicationStyles = {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 10,
-    marginBottom: 10,
+    marginTop: 20,
+    marginBottom: 20,
   },
   cardContainerStyle: {
     maxWidth: 450,
@@ -41,6 +41,15 @@ const ApplicationStyles = {
     justifyContent: 'center',
     alignItems: 'center',
     minHeight: 150,
+  },
+  fullCardContainer: {
+    flex: 1,
+    backgroundColor: 'transparent',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 10,
+    marginBottom: 5,
   },
   fullCardContainerStyle: {
     maxWidth: 650,
@@ -66,10 +75,21 @@ const ApplicationStyles = {
     width: 27,
     height: 27,
   },
+  fullCardTitleContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 40,
+  },
+  cardIconStyles: {
+    paddingLeft:15,
+    color: Colors.white,
+    fontSize: (screenWidth <= 600 ? 23 : 30),
+  },
   cardTitleStyles: {
+    paddingLeft:10,
     fontFamily: 'gotham-bold',
     color: Colors.white,
-    paddingLeft: 15,
     fontSize: (screenWidth <= 600 ? 17 : 25),
     height: 30,
     lineHeight: 30,
@@ -79,6 +99,13 @@ const ApplicationStyles = {
     flexDirection: 'row',
     flexWrap: 'nowrap',
     justifyContent: 'flex-end',
+  },
+  fullCardBody: {
+    fontSize: 17,
+    fontFamily: 'gotham-bold',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: Colors.white
   },
   // ScreenContainer Component Styles
   screenContainer: {

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import {  View, Text } from 'react-native';
 import { ApplicationStyles as styles } from './../Themes';
 import { LinearGradient } from 'expo';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 class FullCardComponent extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class FullCardComponent extends Component {
   render() {
     const { children } = this.props;
     return (
-      <View style={styles.cardContainer}>
+      <View style={styles.fullCardContainer}>
         <View
           style={styles.fullCardContainerStyle}
         >
@@ -20,7 +21,10 @@ class FullCardComponent extends Component {
               style={styles.screenBackImage}
               colors={['#8db5a5', '#6f9083']}
             >
-              <Text h4 style={styles.cardTitleStyles}>{this.props.title.toUpperCase()}</Text>
+              <View style={styles.fullCardTitleContainer}>
+                <Icon style={styles.cardIconStyles} name={this.props.icon} /> 
+                <Text h4 style={styles.cardTitleStyles}>{this.props.title.toUpperCase()}</Text>
+              </View>
               <View style={styles.cardBodyStyle}>
                 {children}
               </View>
