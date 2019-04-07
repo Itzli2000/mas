@@ -30,7 +30,7 @@ class PriceListScreen extends Component {
     return (
       <ScreenContainer {...this.props}>
         { this.state.fontLoaded ? (
-          <PriceListComponent />
+          <PriceListComponent {...this.props} />
           ) : <Text >Loading....</Text> 
         }
       </ScreenContainer>

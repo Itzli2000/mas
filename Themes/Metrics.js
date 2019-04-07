@@ -4,6 +4,7 @@ const { width, height } = Dimensions.get('window');
 
 // Used via Metrics.baseMargin
 const metrics = {
+    menuIcon: 15,
     marginHorizontal: 10,
     marginVertical: 10,
     section: 25,
@@ -32,4 +33,4 @@ const metrics = {
     }
 }
 
-export default metrics
+export default metrics;

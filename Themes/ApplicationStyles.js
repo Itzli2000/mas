@@ -36,9 +36,6 @@ const ApplicationStyles = {
   cardContainerStyle: {
     maxWidth: 450,
     width: '90%',
-    // backgroundColor: '#FFF',
-    // borderColor: '#afb5ba',
-    // borderWidth: 1,
     borderRadius: 15,
     overflow: 'hidden',
     justifyContent: 'center',
@@ -70,7 +67,6 @@ const ApplicationStyles = {
     height: 27,
   },
   cardTitleStyles: {
-    // backgroundColor: '#e77c22',
     fontFamily: 'gotham-bold',
     color: Colors.white,
     paddingLeft: 15,
@@ -79,7 +75,6 @@ const ApplicationStyles = {
     lineHeight: 30,
   },
   cardBodyStyle: {
-    // backgroundColor:'#dbe6f0',
     padding: 10,
     flexDirection: 'row',
     flexWrap: 'nowrap',
@@ -104,12 +99,96 @@ const ApplicationStyles = {
   MenuShow: {
     left:0,
   },
+  cardfloatMenuData: {
+    width: '80%',
+    maxWidth: 300,
+  },
   menuIconContainer:{
     width: 40, 
     height: 40,
     marginRight: 10,
     marginRight: 'auto',
     marginLeft: 10,
+  },
+  menuUserData:{
+    paddingTop: 10,
+    paddingBottom: 10,
+    borderBottomColor: Colors.orange,
+    borderBottomWidth: 1,
+    paddingBottom:15,
+    marginBottom:20,
+    width:'95%',
+    margin: 'auto',
+  },
+  menuUserPhotoContainer: {
+    width: 75,
+    height: 75,
+    justifyContent:'center',
+    alignItems: 'center',
+    borderRadius: 50,
+    overflow: 'hidden',
+  },
+  menuUserPhoto: {
+    width: '100%',
+    height: '100%',
+  },
+  menuUserDataContainer:{
+    width: '65%',
+    justifyContent:'center',
+    alignItems: 'flex-start',
+    marginLeft:15,
+  },
+  menuUserUserName: {
+    marginTop: (screenWidth <= 600 ? 10 : 15),
+    fontSize: (screenWidth <= 600 ? 20 : 25),
+    color: Colors.white,
+    textAlign: 'right',
+    fontFamily: 'gotham-bold',
+  },
+  menuUserUserSubtitle: {
+    marginTop: (screenWidth <= 600 ? 7 : 10),
+    fontSize: (screenWidth <= 600 ? 14 : 19),
+    color: Colors.white,
+    textAlign: 'right',
+    fontFamily: 'gotham-bold',
+  },
+  menuLinks:{
+    color: Colors.white,
+    paddingTop:7,
+    paddingBottom:7,
+    flexDirection: 'row',
+    alignItems: 'flex-start'
+  },
+  menuLinksText: {
+    fontSize: (screenWidth <= 600 ? 20 : 30),
+    color: Colors.white,
+  },
+  menuIcons:{
+    fontSize: (screenWidth <= 600 ? 17 : 30),
+    color: Colors.white,
+  },
+  menuIconsContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: (screenWidth <= 600 ? 30 : 50),
+    height: (screenWidth <= 600 ? 30 : 50),
+  },
+  menuIconsContainerBottom: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: (screenWidth <= 600 ? 30 : 50),
+    height: (screenWidth <= 600 ? 30 : 50),
+    borderRadius: (screenWidth <= 600 ? 15 : 25),
+    backgroundColor: Colors.white,
+  },
+  menuIconsBottom:{
+    fontSize: (screenWidth <= 600 ? 20 : 30),
+    color: Colors.orange,
+    padding:4,
+  },
+  menuListBottom:{
+    borderTopColor: Colors.orange,
+    borderTopWidth: 1,
   },
   // User card styles
   userCardTopBar: {
@@ -126,12 +205,15 @@ const ApplicationStyles = {
     top:80,
     backgroundColor: Colors.menuBackground,
     opacity: 0.9,
+    alignItems: 'center',
   },
   userCardPhotoContainer:{
-    width: '25%',
-    maxWidth: 110,
+    width: 100,
+    height: 100,
     justifyContent:'center',
     alignItems: 'center',
+    borderRadius: 50,
+    overflow: 'hidden',
   },
   userCardDataContainer:{
     width: '65%',

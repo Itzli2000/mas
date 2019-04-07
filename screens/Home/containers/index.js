@@ -30,7 +30,7 @@ class HomeScreen extends Component {
     return (
       <ScreenContainer {...this.props}>
         { this.state.fontLoaded ? (
-          <HomeComponent />
+          <HomeComponent {...this.props} />
           ) : <Text >Loading....</Text> 
         }
       </ScreenContainer>

@@ -67,7 +67,7 @@ class PriceListComponent extends Component {
     console.log(this.state.progress);
     const { navigation } = this.props;
     return (
-        <UserCard userCardData={()=>this.renderUserCardData()}>
+        <UserCard  {...this.props} userCardData={()=>this.renderUserCardData()}>
           <Text h3 style={styles.userCardUserName}>Bienvenido Carlos Morales</Text>
           <View>
             <FullCardComponent 

@@ -28,8 +28,8 @@ class LoginScreen extends Component {
   }
 
   validateUserLogIn = () => {
-    this.props.navigation.navigate('PriceList');
-    // this.props.navigation.navigate('Home');
+    // this.props.navigation.navigate('PriceList');
+    this.props.navigation.navigate('Home');
   }
 
 

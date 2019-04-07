@@ -53,21 +53,16 @@ class HomeComponent extends Component {
     }, 100);
   }
 
-  navigatePrice = () => {
-    this.props.navigation.navigate('PriceList');
-  }
-
   render() {
-    const { navigation } = this.props;
     return (
-        <UserCard userCardData={()=>this.renderUserCardData()} navigatePrice={this.navigatePrice}>
+        <UserCard {...this.props} userCardData={()=>this.renderUserCardData()}>
           <View>
             <CardComponent 
               title='Tareas por cumplir'
               startColor={Colors.userCardStart}
               endColor={Colors.userCardStop}
             >
-                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
+                <Image onPress={()=>this.props.validateUserLogIn()} style={styles.homeCardIcon} source={Images.menuIcon} />
                 <Image style={styles.homeCardIcon} source={Images.menuIcon} />
                 <Image style={styles.homeCardIcon} source={Images.menuIcon} />
             </CardComponent>
