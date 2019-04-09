@@ -47,7 +47,7 @@ const pending=[
   },
  ]
 
-class VisitasComponent extends Component {
+class VisitsComponent extends Component {
   constructor(props) {
     super(props);
   
@@ -133,4 +133,4 @@ class VisitasComponent extends Component {
 }
 
 
-export default VisitasComponent;
+export default VisitsComponent;

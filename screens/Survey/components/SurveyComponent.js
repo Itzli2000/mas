@@ -19,7 +19,7 @@ import {
 const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
 
-class EncuestaComponent extends Component {
+class SurveyComponent extends Component {
   constructor(props) {
     super(props);
   
@@ -116,8 +116,8 @@ class EncuestaComponent extends Component {
                 <TouchableOpacity activeOpacity = { .5 } onPress={()=>alert('Getting camera')}>
                   <Icon style={styles.surveyIconStyles} name="camera" />
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity = { .5 } onPress={()=>alert('SAving survey')}>
-                  <Icon style={styles.surveyIconStyles} name="check-square" />
+                <TouchableOpacity activeOpacity = { .5 } onPress={()=>alert('Saving survey')}>
+                  <Icon style={styles.surveyIconStyles} name="check-square"/>
                 </TouchableOpacity>
               </View>
             </View>
@@ -128,4 +128,4 @@ class EncuestaComponent extends Component {
 }
 
 
-export default EncuestaComponent;
+export default SurveyComponent;

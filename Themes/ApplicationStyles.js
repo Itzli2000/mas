@@ -452,7 +452,7 @@ const ApplicationStyles = {
   // Survey screen
   surveyContainer: {
     marginTop: 50,
-    backgroundColor: Colors.greenStart,
+    backgroundColor: Colors.userCardStart,
     paddingLeft: 15,
     paddingRight: 15,
     justifyContent:'center',
