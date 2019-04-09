@@ -38,17 +38,14 @@ const tasks=[
     percentage: 100,
   },
  ]
-
-const advance=[
-  {key: '5 visitas de 10 por día'},
-  {key: '30 visitas al mes'},
-  {key: '5 reportes de entrega'},
-  ]
-
 const pending=[
-  {key: '5 visitas de 10 por día'},
-  {key: '30 visitas al mes'},
-  ]
+  {
+    key: 'Porcentaje de cumplimiento',
+    icon: 'clock-o',
+    description: '5 visitas de 10 por día',
+    percentage: 50,
+  },
+ ]
 
 class PriceListComponent extends Component {
   constructor(props) {
@@ -61,7 +58,7 @@ class PriceListComponent extends Component {
  
   componentDidMount() {
     const interval = setInterval(() => {
-      if (this.state.progress > 0.9) return clearInterval(interval);
+      if (this.state.progress > 0.4) return clearInterval(interval);
  
       this.setState(state => {
         return {
@@ -92,6 +89,34 @@ class PriceListComponent extends Component {
     });
   }
 
+  renderPendingList = (data) => {
+    return  data.map((item, index) => {
+      return (
+          <FullCardComponent
+            key={index} 
+            icon={item.icon}
+            title={item.key}
+            startColor={Colors.orangeStart}
+            stopColor={Colors.orangeStop}
+          >
+            <View style={[styles.fullCardInnerColumn, styles.fullCardInnerColumnLeft]}>
+               <Text style={styles.fullCardBody}>{'  '}{item.description}</Text>
+            </View>
+            <View style={[styles.fullCardInnerColumn, styles.fullCardInnerColumnRight]}>
+              <AnimatedBar
+                progress={this.state.progress}
+                height={10}
+                borderColor="#DDD"
+                fillColor="tomato"
+                barColor={Colors.white}
+                borderRadius={5}
+              />
+            </View>           
+          </FullCardComponent>
+        )
+    });
+  }
+
   render() {
     console.log(this.state.progress);
     const { navigation } = this.props;
@@ -99,6 +124,7 @@ class PriceListComponent extends Component {
         <UserCard  {...this.props} userCardData={()=>this.renderUserCardData()}>
           <View>
             {this.renderTaskList(tasks)}
+            {this.renderPendingList(pending)}
           </View>
         </UserCard>
       );
