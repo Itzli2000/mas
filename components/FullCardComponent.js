@@ -11,7 +11,7 @@ class FullCardComponent extends Component {
   }
 
   render() {
-    const { children } = this.props;
+    const { children, startColor, stopColor } = this.props;
     return (
       <View style={styles.fullCardContainer}>
         <View
@@ -19,7 +19,7 @@ class FullCardComponent extends Component {
         >
           <LinearGradient
               style={styles.screenBackImage}
-              colors={['#8db5a5', '#6f9083']}
+              colors={[(startColor ? startColor : Colors.greenStart), (stopColor ? stopColor : Colors.greenStop)]}
             >
               <View style={styles.fullCardTitleContainer}>
                 <Icon style={styles.cardIconStyles} name={this.props.icon} /> 

@@ -12,6 +12,8 @@ const ApplicationStyles = {
   mainScrollContainer:{
     backgroundColor:Colors.white,
   },
+  circularGrap: {
+  },
   darkPicker: {
     backgroundColor: Colors.black,
     color: Colors.white,

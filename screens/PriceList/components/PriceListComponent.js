@@ -3,7 +3,7 @@ import AnimatedBar from "react-native-animated-bar";
 import FullCardComponent from './../../../components/FullCardComponent';
 import UserCard from './../../../components/UserCard';
 import PercentCircle from 'react-native-percent-circle';
-import { ApplicationStyles as styles, Images } from './../../../Themes';
+import { ApplicationStyles as styles, Images, Colors } from './../../../Themes';
 
 import {
   View,
@@ -78,12 +78,14 @@ class PriceListComponent extends Component {
             key={index} 
             icon={item.icon}
             title={item.key}
+            startColor={Colors.userCardStart}
+            stopColor={Colors.userCardStop}
           >
             <View style={[styles.fullCardInnerColumn, styles.fullCardInnerColumnLeft]}>
                <Text style={styles.fullCardBody}>{'  '}{item.description}</Text>
             </View>
             <View style={[styles.fullCardInnerColumn, styles.fullCardInnerColumnRight]}>
-              <PercentCircle style={{width:100, height:100}} percent={item.percentage} animationType="Quad.easeInOut"/>
+              <PercentCircle style={styles.circularGrap} percent={item.percentage} radius={40} fontColor={Colors.white} lineWidth={10} fontSize={20} lineCap={'round'} animationType="Circ.easeInOut"/>
             </View>           
           </FullCardComponent>
         )
@@ -95,7 +97,6 @@ class PriceListComponent extends Component {
     const { navigation } = this.props;
     return (
         <UserCard  {...this.props} userCardData={()=>this.renderUserCardData()}>
-        <PercentCircle percent={90} animationType="Quad.easeInOut"/>
           <View>
             {this.renderTaskList(tasks)}
           </View>
