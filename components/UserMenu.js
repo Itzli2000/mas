@@ -20,17 +20,17 @@ const menuItems=[
     {
       name: 'Exhibiciones',
       icon: 'shopping-basket',
-      navigate: 'PriceList'
+      navigate: 'Home'
     },
     {
       name: 'Inventarios',
       icon: 'archive',
-      navigate: 'PriceList'
+      navigate: 'Visitas'
     },
     {
       name: 'Encuestas',
       icon: 'clipboard',
-      navigate: 'PriceList'
+      navigate: 'Encuestas'
     },
     {
       name: 'Generales',
