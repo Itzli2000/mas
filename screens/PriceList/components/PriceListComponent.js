@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import ProgressCircle from 'react-native-progress-circle';
 import AnimatedBar from "react-native-animated-bar";
 import FullCardComponent from './../../../components/FullCardComponent';
 import UserCard from './../../../components/UserCard';
+import PercentCircle from 'react-native-percent-circle';
 import { ApplicationStyles as styles, Images } from './../../../Themes';
 
 import {
@@ -83,16 +83,7 @@ class PriceListComponent extends Component {
                <Text style={styles.fullCardBody}>{'  '}{item.description}</Text>
             </View>
             <View style={[styles.fullCardInnerColumn, styles.fullCardInnerColumnRight]}>
-              <ProgressCircle
-                  percent={item.percentage}
-                  radius={screenWidth <= 600 ? 35 : 45}
-                  borderWidth={10}
-                  color="#3399FF" 
-                  shadowColor="#cacbce"
-                  bgColor="#fff"
-              >
-                  <Text style={{ fontSize: 18 }}>{item.percentage}</Text>
-              </ProgressCircle>
+              <PercentCircle style={{width:100, height:100}} percent={item.percentage} animationType="Quad.easeInOut"/>
             </View>           
           </FullCardComponent>
         )
@@ -104,6 +95,7 @@ class PriceListComponent extends Component {
     const { navigation } = this.props;
     return (
         <UserCard  {...this.props} userCardData={()=>this.renderUserCardData()}>
+        <PercentCircle percent={90} animationType="Quad.easeInOut"/>
           <View>
             {this.renderTaskList(tasks)}
           </View>

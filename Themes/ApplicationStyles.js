@@ -88,6 +88,7 @@ const ApplicationStyles = {
     justifyContent: 'center',
     alignItems: 'center',
     height: 40,
+    marginTop:20,
   },
   cardIconStyles: {
     paddingLeft:15,

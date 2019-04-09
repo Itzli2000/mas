@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import ProgressCircle from 'react-native-progress-circle';
+import React, { Component } from 'react'; 
 import AnimatedBar from "react-native-animated-bar";
 import CardComponent from './../../../components/CardComponent';
 import UserCard from './../../../components/UserCard';
