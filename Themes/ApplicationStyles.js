@@ -12,6 +12,16 @@ const ApplicationStyles = {
   mainScrollContainer:{
     backgroundColor:Colors.white,
   },
+  darkPicker: {
+    backgroundColor: Colors.black,
+    color: Colors.white,
+    borderRadius:20,
+    marginLeft:10,
+  },
+  centered: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   row:{
     flexDirection: 'row',
     width:'100%',
@@ -49,7 +59,6 @@ const ApplicationStyles = {
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 10,
-    marginBottom: 5,
   },
   fullCardContainerStyle: {
     maxWidth: 650,
@@ -60,7 +69,6 @@ const ApplicationStyles = {
     alignItems: 'center',
     minHeight: 150,
     marginTop: 20,
-    marginBottom: 20,
   },
   cardBackgorund: {
     justifyContent: 'center',
@@ -295,6 +303,19 @@ const ApplicationStyles = {
     width: 30,
     height: 30,
     marginRight: 5,
+  },
+  homeFirstSection: {
+    paddingTop: 20,
+    paddingBottom: 20,
+  },
+  homePickerIcon: {
+    position: 'absolute',
+    right: 10,
+    top: 5,
+    width:25,
+    height: 25,
+    resizeMode: 'contain',
+    zIndex: 100,
   },
   // Home screen component styles
   fullCardInnerColumn: {

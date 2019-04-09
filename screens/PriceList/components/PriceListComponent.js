@@ -87,7 +87,7 @@ class PriceListComponent extends Component {
                   percent={item.percentage}
                   radius={screenWidth <= 600 ? 35 : 45}
                   borderWidth={10}
-                  color="#3399FF"
+                  color="#3399FF" 
                   shadowColor="#cacbce"
                   bgColor="#fff"
               >

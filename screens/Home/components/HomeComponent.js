@@ -11,7 +11,8 @@ import {
   ScrollView,
   FlatList,
   Image,
-  Dimensions
+  Dimensions,
+  Picker
 } from 'react-native';
 
 const screenHeight = Dimensions.get('window').height;
@@ -57,6 +58,40 @@ class HomeComponent extends Component {
     return (
         <UserCard {...this.props} userCardData={()=>this.renderUserCardData()}>
           <View>
+            <View style={[styles.row, styles.centered, styles.homeFirstSection]}>
+              <Image style={styles.homeCardIcon} source={Images.filterIcon} />
+              <Text>Categoría</Text>
+              <View style={styles.darkPicker}>
+                <Image style={styles.homePickerIcon} source={Images.arrow}/>
+                <Picker
+                  selectedValue={this.state.language}
+                  style={{ height: 30, width: 150, color: 'white' }}
+                  onValueChange={(itemValue, itemIndex) =>
+                    this.setState({language: itemValue})
+                  }> 
+                  <Picker.Item label="Automotríz" value="A" />
+                  <Picker.Item label="Automotríz 1" value="A1" />
+                  <Picker.Item label="Automotríz 2" value="A2" />
+                </Picker>
+              </View>
+            </View>
+            <View style={[styles.row, styles.centered]}>
+              <Image style={styles.homeCardIcon} source={Images.filterIcon} />
+              <Text>Subcategoría</Text>
+              <View style={styles.darkPicker}>
+                <Image style={styles.homePickerIcon} source={Images.arrow}/>
+                <Picker
+                  selectedValue={this.state.language}
+                  style={{ height: 30, width: 150, color: 'white' }}
+                  onValueChange={(itemValue, itemIndex) =>
+                    this.setState({language: itemValue})
+                  }> 
+                  <Picker.Item label="Automotríz" value="A" />
+                  <Picker.Item label="Automotríz 1" value="A1" />
+                  <Picker.Item label="Automotríz 2" value="A2" />
+                </Picker>
+              </View>
+            </View>
             <CardComponent 
               title='Tareas por cumplir'
               startColor={Colors.userCardStart}

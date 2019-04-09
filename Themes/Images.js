@@ -7,6 +7,8 @@ const images = {
     qr: require('./../images/qr.png'),
     menuIcon: require('./../images/menuIcon.png'),
     userDemo: require('./../images/userDemo.jpg'),
+    filterIcon: require('./../images/filterIcon.png'),
+    arrow: require('./../images/arrow.png'),
 }
 
 export default images
