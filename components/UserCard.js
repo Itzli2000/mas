@@ -3,7 +3,11 @@
 import React, { Component } from 'react';
 import { ApplicationStyles as styles, Images, Colors } from './../Themes';
 import { LinearGradient } from 'expo';
+import moment from "moment";
+import 'moment/locale/es';
 import { View, Image, TouchableOpacity, ScrollView, Text } from 'react-native';
+
+moment.locale('es');
 
 import UserMenu from './UserMenu';
 
@@ -74,7 +78,7 @@ class UserCard extends Component {
 										/>
 								</View>
 								<View style={[styles.column, styles.userCardDataContainer]}>
-									<Text style={styles.userCardDate}>Jueves 21 de febrero del 2019</Text>
+									<Text style={styles.userCardDate}>{moment().format('dddd LL')}</Text>
 									<Text h3 style={styles.userCardUserSubtitle}>Bienvenido</Text>
 									<Text h3 style={styles.userCardUserName}>Carlos Morales</Text>
 								</View>

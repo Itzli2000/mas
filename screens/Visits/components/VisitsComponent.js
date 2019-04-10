@@ -12,7 +12,8 @@ import {
   ScrollView,
   FlatList,
   Image,
-  Dimensions
+  Dimensions,
+  TouchableOpacity,
 } from 'react-native';
 
 const screenHeight = Dimensions.get('window').height;
@@ -71,12 +72,12 @@ class VisitsComponent extends Component {
                <View style={[styles.transparentCardBody, styles.row]}>
                  <View style={[styles.column, styles.centered]}>
                    {item.checkIn != null && <Text style={styles.visitTextIn}><Icon name={'clock-o'} />  {moment(item.checkIn, "HH mm").format('hh:mm A')}</Text>}
-                   {item.checkOut != null && <Text style={styles.visitTextOut}><Icon name={'clock-o'} />  {moment(item.checkOut, "HH mm").format('hh:mm A')}</Text>}
+                   {(item.checkOut != null && item.checkIn != null) && <Text style={styles.visitTextOut}><Icon name={'clock-o'} />  {moment(item.checkOut, "HH mm").format('hh:mm A')}</Text>}
                  </View>
                  <View style={[styles.column, styles.centered]}>
                    {item.checkIn === null && <Button title='Entrada' onPress={()=>{}} buttonStyle={[styles.visitButton,styles.buttonGreen]} />}
                    {item.checkOut === null && <Button title='Salida' onPress={()=>{}} buttonStyle={[styles.visitButton,styles.buttonRed]} />}
-                   {(item.checkOut != null && item.checkIn != null) && <Text style={styles.visitTextComplete}><Icon style={styles.visitCompleteIcon} name={'cloud-upload'} /></Text>}
+                   {(item.checkOut != null && item.checkIn != null) && <TouchableOpacity activeOpacity = { .5 } ><Text style={styles.visitTextComplete}><Icon style={styles.visitCompleteIcon} name={'cloud-upload'} /></Text></TouchableOpacity>}
                  </View>
                </View>
             </View>           
@@ -92,7 +93,9 @@ class VisitsComponent extends Component {
         <UserCard  {...this.props} userCardData={()=>this.renderUserCardData()}>
           <View style={{backgroundColor: Colors.gray}}>
             <SearchBar
-              placeholder="Búsqueda"
+              containerStyle={{backgroundColor: 'rgba(255,255,255,0)', borderWidth: 0, borderColor: 'rgba(255,255,255,0)'}}
+              inputContainerStyle={{backgroundColor: 'rgba(255,255,255,1)', borderWidth: 0, borderColor: 'rgba(255,255,255,0)', width: '90%', borderRadius: 10, marginLeft: 'auto', marginRight: 'auto'}}
+              placeholder="Visita"
               onChangeText={this.updateSearch}
               value={search}
             />
