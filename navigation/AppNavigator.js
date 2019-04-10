@@ -3,8 +3,8 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 import LoginScreen from './../screens/LoginScreen/containers';
 import HomeScreen from './../screens/Home/containers';
 import PriceListScreen from './../screens/PriceList/containers';
-import VisitasScreen from './../screens/Visitas/containers';
-import EncuestaScreen from './../screens/Encuestas/containers';
+import VisitsScreen from './../screens/Visits/containers';
+import SurveyScreen from './../screens/Survey/containers';
 
 const NoAuthRoutes = createStackNavigator({
   Login: { 
@@ -26,13 +26,13 @@ const NoAuthRoutes = createStackNavigator({
     }
   },
   Encuestas: { 
-    screen: EncuestaScreen,
+    screen: SurveyScreen,
     navigationOptions: {
       header: null
     }
   },
   Visitas: { 
-    screen: VisitasScreen,
+    screen: VisitsScreen,
     navigationOptions: {
       header: null
     }

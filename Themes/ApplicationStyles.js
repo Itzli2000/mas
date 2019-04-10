@@ -12,7 +12,9 @@ const ApplicationStyles = {
   mainScrollContainer:{
     backgroundColor:Colors.white,
   },
-  circularGrap: {
+  floatRight: {
+    marginLeft: 'auto',
+    width: '80%',
   },
   darkPicker: {
     backgroundColor: Colors.black,
@@ -500,6 +502,97 @@ const ApplicationStyles = {
     padding:15,
     color: Colors.white,
     fontSize: (screenWidth <= 600 ? 55 : 65),
+  },
+  // Full card transparent styles
+  
+  transparentCardContainer: {
+    flex: 1,
+    width: '100%',
+    maxWidth: 1000,
+    backgroundColor: 'transparent',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 'auto',
+    marginTop: 20,
+  },
+  transparentCardContainerStyle: {
+    borderRadius: 0,
+    overflow: 'hidden',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderBottomColor: Colors.blackTransparent,
+    borderBottomWidth: 2
+  },
+  transparentCardTitleContainer: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    height: 40,
+  },
+  transparentcardTitleStyles: {
+    paddingLeft:50,
+    fontFamily: 'gotham-bold',
+    color: Colors.black,
+    fontSize: (screenWidth <= 600 ? 17 : 25),
+  },
+  transparentcardSubtitleStyles: {
+    paddingLeft:50,
+    fontFamily: 'gotham-bold',
+    color: Colors.black,
+    fontSize: (screenWidth <= 600 ? 15 : 20),
+  },
+  transparentCardIconStyles: {
+    position: 'absolute',
+    top: 7,
+    left: 15,
+    color: Colors.black,
+    fontSize: (screenWidth <= 600 ? 30 : 45),
+  },
+  transparentCardBody: {
+    fontSize: 17,
+    fontFamily: 'gotham-bold',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    color: Colors.black,
+    margin: 0,
+  },
+  // Visit screen styles
+  visitButton: {
+    width: 100,
+    height: 40,
+    marginLeft: 10,
+    borderWidth: 0,
+    borderRadius: 5,
+  },
+  buttonGreen:{
+    backgroundColor: Colors.green,
+  },
+  buttonRed:{
+    backgroundColor: Colors.red,
+  },
+  visitTextIn:{
+    color: Colors.green,
+    fontSize: (screenWidth <= 600 ? 15 : 18),
+  },
+  visitTextOut:{
+    color: Colors.red,
+    fontSize: (screenWidth <= 600 ? 15 : 18),
+  },
+  visitTextComplete:{
+    backgroundColor: Colors.orange,
+    color: Colors.white,
+    width: 40,
+    height: 40,
+    marginLeft: 10,
+    textAlign: 'center',
+    borderRadius: 20,
+  },
+  visitCompleteIcon: {
+    fontSize: 22,
+    lineHeight: 40,
+    padding: 0,
+    margin: 0,
   },
 };
 

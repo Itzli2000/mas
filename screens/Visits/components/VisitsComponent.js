@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import AnimatedBar from "react-native-animated-bar";
-import FullCardComponent from './../../../components/FullCardComponent';
+import TransparentCard from './../../../components/TransparentCard';
 import UserCard from './../../../components/UserCard';
-import PercentCircle from 'react-native-percent-circle';
+import { Button, SearchBar  } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import moment from "moment";
 import { ApplicationStyles as styles, Images, Colors } from './../../../Themes';
 
 import {
@@ -20,112 +21,82 @@ const screenWidth = Dimensions.get('window').width;
 
 const tasks=[
   {
-    key: 'Porcentaje de cumplimiento',
-    icon: 'clock-o',
-    description: '5 visitas de 10 por día',
-    percentage: 50,
+    key: 'Superama Satelite',
+    icon: 'map-marker',
+    address: 'Avenida Siempreviva 742',
+    checkIn: '11:20',
+    checkOut: null,
   },
   {
-    key: 'Porcentaje de cumplimiento',
-    icon: 'clock-o',
-    description: '7 visitas de 10 por día',
-    percentage: 70,
+    key: 'Superama Rosario',
+    icon: 'map-marker',
+    address: 'Avenida Siempreviva 742',
+    checkIn: '17:03',
+    checkOut: '19:00',
   },
   {
-    key: 'Porcentaje de cumplimiento',
-    icon: 'clock-o',
-    description: '10 visitas de 10 por día',
-    percentage: 100,
-  },
- ]
-const pending=[
-  {
-    key: 'Porcentaje de cumplimiento',
-    icon: 'clock-o',
-    description: '5 visitas de 10 por día',
-    percentage: 50,
+    key: 'Superama Tlalnepantla',
+    icon: 'map-marker',
+    address: 'Avenida Siempreviva 742',
+    checkIn: null,
+    checkOut: '0:00',
   },
  ]
 
 class VisitsComponent extends Component {
   constructor(props) {
     super(props);
-  
-    this.state = {
-    progress: 0,
-    };
-  }
- 
-  componentDidMount() {
-    const interval = setInterval(() => {
-      if (this.state.progress > 0.4) return clearInterval(interval);
- 
-      this.setState(state => {
-        return {
-          progress: state.progress + 0.1,
-        };
-      });
-    }, 100);
   }
 
-  renderTaskList = (data) => {
+  state = {
+    search: '',
+  };
+
+  updateSearch = search => {
+    this.setState({ search });
+  };
+
+  renderVisitsList = (data) => {
     return  data.map((item, index) => {
       return (
-          <FullCardComponent
+          <TransparentCard
             key={index} 
             icon={item.icon}
             title={item.key}
-            startColor={Colors.userCardStart}
-            stopColor={Colors.userCardStop}
+            subTitle={item.address}
+            startColor={Colors.gray}
+            stopColor={Colors.gray}
           >
-            <View style={[styles.fullCardInnerColumn, styles.fullCardInnerColumnLeft]}>
-               <Text style={styles.fullCardBody}>{'  '}{item.description}</Text>
-            </View>
-            <View style={[styles.fullCardInnerColumn, styles.fullCardInnerColumnRight]}>
-              <PercentCircle style={styles.circularGrap} percent={item.percentage} radius={40} fontColor={Colors.white} lineWidth={10} fontSize={20} lineCap={'round'} animationType="Circ.easeInOut"/>
+            <View style={[styles.fullCardInnerColumn, styles.fullCardInnerColumnLeft, styles.floatRight]}>
+               <View style={[styles.transparentCardBody, styles.row]}>
+                 <View style={[styles.column, styles.centered]}>
+                   {item.checkIn != null && <Text style={styles.visitTextIn}><Icon name={'clock-o'} />  {moment(item.checkIn, "HH mm").format('hh:mm A')}</Text>}
+                   {item.checkOut != null && <Text style={styles.visitTextOut}><Icon name={'clock-o'} />  {moment(item.checkOut, "HH mm").format('hh:mm A')}</Text>}
+                 </View>
+                 <View style={[styles.column, styles.centered]}>
+                   {item.checkIn === null && <Button title='Entrada' onPress={()=>{}} buttonStyle={[styles.visitButton,styles.buttonGreen]} />}
+                   {item.checkOut === null && <Button title='Salida' onPress={()=>{}} buttonStyle={[styles.visitButton,styles.buttonRed]} />}
+                   {(item.checkOut != null && item.checkIn != null) && <Text style={styles.visitTextComplete}><Icon style={styles.visitCompleteIcon} name={'cloud-upload'} /></Text>}
+                 </View>
+               </View>
             </View>           
-          </FullCardComponent>
-        )
-    });
-  }
-
-  renderPendingList = (data) => {
-    return  data.map((item, index) => {
-      return (
-          <FullCardComponent
-            key={index} 
-            icon={item.icon}
-            title={item.key}
-            startColor={Colors.orangeStart}
-            stopColor={Colors.orangeStop}
-          >
-            <View style={[styles.fullCardInnerColumn, styles.fullCardInnerColumnLeft]}>
-               <Text style={styles.fullCardBody}>{'  '}{item.description}</Text>
-            </View>
-            <View style={[styles.fullCardInnerColumn, styles.fullCardInnerColumnRight]}>
-              <AnimatedBar
-                progress={this.state.progress}
-                height={10}
-                borderColor="#DDD"
-                fillColor="tomato"
-                barColor={Colors.white}
-                borderRadius={5}
-              />
-            </View>           
-          </FullCardComponent>
+          </TransparentCard>
         )
     });
   }
 
   render() {
-    console.log(this.state.progress);
+    const { search } = this.state;
     const { navigation } = this.props;
     return (
         <UserCard  {...this.props} userCardData={()=>this.renderUserCardData()}>
-          <View>
-          <Text>Visitas</Text>
-            {this.renderTaskList(tasks)}
-            {this.renderPendingList(pending)}
+          <View style={{backgroundColor: Colors.gray}}>
+            <SearchBar
+              placeholder="Búsqueda"
+              onChangeText={this.updateSearch}
+              value={search}
+            />
+            {this.renderVisitsList(tasks)}
           </View>
         </UserCard>
       );
