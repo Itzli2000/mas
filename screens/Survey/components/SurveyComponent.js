@@ -112,8 +112,8 @@ class SurveyComponent extends Component {
                 onChangeText={(text) => this.setState({observations:text})}
                 value={this.state.observations}/>
               </View>
-              <View style={styles.row}>
-                <TouchableOpacity activeOpacity = { .5 } onPress={()=>alert('Getting camera')}>
+              <View style={[styles.row, styles.centered]}>
+                <TouchableOpacity activeOpacity = { .5 } onPress={()=>this.props.navigation.navigate('Captura')}>
                   <Icon style={styles.surveyIconStyles} name="camera" />
                 </TouchableOpacity>
                 <TouchableOpacity activeOpacity = { .5 } onPress={()=>alert('Saving survey')}>

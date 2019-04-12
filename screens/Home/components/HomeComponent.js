@@ -92,15 +92,17 @@ class HomeComponent extends Component {
               </View>
             </View>
             <CardComponent 
+              {...this.props}
               title='Tareas por cumplir'
               startColor={Colors.userCardStart}
               endColor={Colors.userCardStop}
             >
-                <Image onPress={()=>this.props.validateUserLogIn()} style={styles.homeCardIcon} source={Images.menuIcon} />
+                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
                 <Image style={styles.homeCardIcon} source={Images.menuIcon} />
                 <Image style={styles.homeCardIcon} source={Images.menuIcon} />
             </CardComponent>
             <CardComponent 
+              {...this.props}
               title='Tareas por cumplir'
               startColor={Colors.orangeStart}
               endColor={Colors.orangeStop}
@@ -110,6 +112,7 @@ class HomeComponent extends Component {
                 <Image style={styles.homeCardIcon} source={Images.menuIcon} />
             </CardComponent>
             <CardComponent 
+              {...this.props}
               title='Tareas por cumplir'
               startColor={Colors.greenStart}
               endColor={Colors.greenStop}

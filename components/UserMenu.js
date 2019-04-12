@@ -15,17 +15,17 @@ const menuItems=[
     {
       name: 'Ventas',
       icon: 'line-chart',
-      navigate: 'Captura'
+      navigate: 'Home'
     },
     {
       name: 'Exhibiciones',
       icon: 'shopping-basket',
-      navigate: 'Home'
+      navigate: 'Visitas'
     },
     {
       name: 'Inventarios',
       icon: 'archive',
-      navigate: 'Visitas'
+      navigate: 'Home'
     },
     {
       name: 'Encuestas',
@@ -40,7 +40,7 @@ const menuItems=[
     {
       name: 'Tareas',
       icon: 'list-alt',
-      navigate: 'PriceList'
+      navigate: 'Home'
     },
     {
       name: 'Planogramas',

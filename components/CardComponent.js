@@ -1,6 +1,6 @@
 'use strict';
 import React, { Component } from 'react';
-import {  View, Text, Image } from 'react-native';
+import {  View, Text, Image, TouchableOpacity } from 'react-native';
 import { ApplicationStyles as styles, Colors, Images } from './../Themes';
 import { LinearGradient } from 'expo';
 
@@ -18,6 +18,7 @@ class CardComponent extends Component {
         <View
           style={styles.cardContainerStyle}
         >
+        <TouchableOpacity activeOpacity = { .5 } onPress={()=>{this.props.navigation.navigate('Encuestas')}}>
           <LinearGradient
               style={[styles.screenBackImage, styles.cardBackgorund]}
               colors={[(startColor ? startColor : Colors.greenStart), (endColor ? endColor : Colors.greenStop)]}
@@ -30,6 +31,7 @@ class CardComponent extends Component {
                 {children}
               </View>
           </LinearGradient>
+          </TouchableOpacity>
         </View>
       </View>
       );
