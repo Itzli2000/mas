@@ -5,6 +5,7 @@ import HomeScreen from './../screens/Home/containers';
 import PriceListScreen from './../screens/PriceList/containers';
 import VisitsScreen from './../screens/Visits/containers';
 import SurveyScreen from './../screens/Survey/containers';
+import ImageCaptureScreen from './../screens/ImageCapture/containers';
 
 const NoAuthRoutes = createStackNavigator({
   Login: { 
@@ -33,6 +34,12 @@ const NoAuthRoutes = createStackNavigator({
   },
   Visitas: { 
     screen: VisitsScreen,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Captura: { 
+    screen: ImageCaptureScreen,
     navigationOptions: {
       header: null
     }

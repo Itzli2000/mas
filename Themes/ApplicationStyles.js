@@ -22,6 +22,15 @@ const ApplicationStyles = {
     borderRadius:20,
     marginLeft:10,
   },
+  textDivider: {
+    height: 15,
+    borderColor: 'rgba(255,255,255,0)',
+    width: '90%',
+    margin: 'auto',
+    marginBottom: 15,
+    borderBottomColor: Colors.white,
+    borderWidth: 1,
+  },
   centered: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -29,7 +38,7 @@ const ApplicationStyles = {
   row:{
     flexDirection: 'row',
     width:'100%',
-    justifyContent: 'center'
+    alignItems: 'center',
   },
   column:{
     flexDirection: 'column',
@@ -593,6 +602,97 @@ const ApplicationStyles = {
     lineHeight: 40,
     padding: 0,
     margin: 0,
+  },
+  // Capture image screen
+  imageCaptureHeader: {
+    backgroundColor: Colors.black,
+    paddingTop: 10,
+    paddingBottom: 10,
+  },
+  imageCaptureHeaderText: {
+    color: Colors.white,
+    fontSize: 20,
+    marginLeft: 15,
+  },
+  imageCaptureBreadcrumb:{
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    marginTop: 10,
+    marginBottom: 10,
+  },
+  imageCaptureIconContainer:{
+    backgroundColor: Colors.orange,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 25,
+  },
+  imageCaptureIcon:{
+    fontSize: 25,
+    lineHeight: 40,
+    color: Colors.white,
+  },
+  imageCaptureIconText: {
+    color: Colors.black,
+    fontSize: 30,
+    marginLeft: 10,
+  },
+  imageCaptureBodyContainer:{
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    marginLeft: 5,
+    marginRight: 5,
+    backgroundColor: Colors.orange,
+  },
+  imageCaptureTitle:{
+    fontSize: 25,
+    textAlign: 'center',
+    padding: 10,
+    fontFamily: 'gotham-bold',
+    color: Colors.white,
+  },
+  imageCaptureInputPrice: {
+    backgroundColor: Colors.white,
+    width: '50%',
+    color: Colors.black,
+    borderRadius: 10,
+    margin: 10,
+    paddingLeft: 10,
+  },
+  imageCaptureText: {
+    backgroundColor: Colors.white,
+    margin: 10,
+    borderRadius: 15,
+    color: Colors.black,
+    paddingLeft: 10,
+    marginBottom: 50,
+  },
+  imageCaptureSection:{
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    paddingTop: 30,
+    marginLeft: 5,
+    marginRight: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: Colors.userCardStart,
+  },
+  imageCapturePhotoContainer:{
+    width: 150,
+    height: 150,
+    borderRadius: 50,
+    overflow: 'hidden',
+  },
+  imageCapturePhoto:{
+    width:150,
+    height:150,
+  },
+  imageCaptureDataContainer:{
+    width: '45%',
+    justifyContent:'center',
+    alignItems: 'center',
   },
 };
 

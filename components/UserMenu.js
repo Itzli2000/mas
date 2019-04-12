@@ -15,7 +15,7 @@ const menuItems=[
     {
       name: 'Ventas',
       icon: 'line-chart',
-      navigate: 'Home'
+      navigate: 'Captura'
     },
     {
       name: 'Exhibiciones',
