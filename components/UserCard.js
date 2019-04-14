@@ -51,10 +51,12 @@ class UserCard extends Component {
 										source={Images.location}
 									/>
 								</TouchableOpacity>
+								<TouchableOpacity activeOpacity = { .5 } onPress={()=>this.props.navigation.navigate('Notificaciones')}>
 								<Image
 									style={styles.userCardNavIcon}
 									source={Images.notification}
 								/>
+								</TouchableOpacity>
 							</View>
 							<View style={[styles.row, styles.pbDefault]}>
 								<View style={[styles.column, styles.userCardPhotoContainer]}>
