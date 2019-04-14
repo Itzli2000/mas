@@ -11,14 +11,14 @@ class CardComponent extends Component {
 
   render() {
     const { props } = this;
-    const { children, title } = props;
+    const { children, title, navigate } = props;
     const { startColor, endColor } = props;
     return (
       <View style={styles.cardContainer}>
         <View
           style={styles.cardContainerStyle}
         >
-        <TouchableOpacity activeOpacity = { .5 } onPress={()=>{this.props.navigation.navigate('Encuestas')}}>
+        <TouchableOpacity activeOpacity = { .5 } onPress={()=>{this.props.navigation.navigate(navigate ? navigate : 'Encuestas')}}>
           <LinearGradient
               style={[styles.screenBackImage, styles.cardBackgorund]}
               colors={[(startColor ? startColor : Colors.greenStart), (endColor ? endColor : Colors.greenStop)]}

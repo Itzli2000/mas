@@ -71,6 +71,7 @@ class TasksComponent extends Component {
             </View>
             <CardComponent 
               {...this.props}
+              navigate='TareasActivas'
               title='Tareas por cumplir'
               startColor={Colors.userCardStart}
               endColor={Colors.userCardStop}
@@ -81,6 +82,7 @@ class TasksComponent extends Component {
             </CardComponent>
             <CardComponent 
               {...this.props}
+              navigate='TareasActivas'
               title='Tareas por cumplir'
               startColor={Colors.orangeStart}
               endColor={Colors.orangeStop}
@@ -91,6 +93,7 @@ class TasksComponent extends Component {
             </CardComponent>
             <CardComponent 
               {...this.props}
+              navigate='TareasActivas'
               title='Tareas por cumplir'
               startColor={Colors.greenStart}
               endColor={Colors.greenStop}

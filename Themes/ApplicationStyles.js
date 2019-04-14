@@ -11,6 +11,8 @@ const ApplicationStyles = {
   // General styles
   mainScrollContainer:{
     backgroundColor:Colors.white,
+    minHeight: '100%',
+    flexGrow: 1,
   },
   floatRight: {
     marginLeft: 'auto',
@@ -734,6 +736,28 @@ const ApplicationStyles = {
     borderRadius:15,
     color: Colors.white,
     marginRight:10,
+  },
+  // Tasks Active screen
+  taskActiveContainer: {
+    width: '100%',
+    flex: 1,
+    flexGrow: 1,
+    backgroundColor: Colors.greenStart,
+    textAlign: 'center',
+  },
+  taskActiveButton: {
+    width: '80%',
+    height: 40,
+    margin: 'auto',
+    alignSelf: 'center',
+    backgroundColor: Colors.white,
+    borderWidth: 1,
+    borderWidth: 0,
+    borderRadius: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
+    marginTop: 20,
+    marginBottom: 30,
   },
 };
 

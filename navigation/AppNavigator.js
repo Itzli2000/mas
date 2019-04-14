@@ -8,6 +8,7 @@ import VisitsMapScreen from './../screens/VisitsMap/containers';
 import SurveyScreen from './../screens/Survey/containers';
 import ImageCaptureScreen from './../screens/ImageCapture/containers';
 import TasksScreen from './../screens/Tasks/containers';
+import TasksActiveScreen from './../screens/TasksActive/containers';
 
 const NoAuthRoutes = createStackNavigator({
   Login: { 
@@ -54,6 +55,12 @@ const NoAuthRoutes = createStackNavigator({
   },
   Tareas: { 
     screen: TasksScreen,
+    navigationOptions: {
+      header: null
+    }
+  },
+  TareasActivas: { 
+    screen: TasksActiveScreen,
     navigationOptions: {
       header: null
     }
