@@ -9,26 +9,12 @@ import { View, Image, TouchableOpacity, ScrollView, Text } from 'react-native';
 
 moment.locale('es');
 
-import UserMenu from './UserMenu';
-
 class UserCard extends Component {
 	constructor(props) {
 	  super(props);
 	
 	  this.state = {
-	  	menu:false
 	  };
-	}
-
-	toogleMenu = () => {
-		if (this.state.menu === false)
-			this.setState({menu:true});
-		else
-			this.setState({menu:false});
-	}
-
-	hideMenu = () => {
-			this.setState({menu:false});
 	}
 
 
@@ -43,7 +29,7 @@ class UserCard extends Component {
 			        >
 						<View style={styles.userCardTopBar}>
 							<View style={styles.row}>
-								<TouchableOpacity style={styles.menuIconContainer} activeOpacity = { .5 } onPress={()=>this.toogleMenu()}>
+								<TouchableOpacity style={styles.menuIconContainer} activeOpacity = { .5 } onPress={()=>this.props.toogleMenu()}>
 						        <Image
 										style={styles.userCardMenuIcon}
 										source={Images.menuIcon}
@@ -59,10 +45,12 @@ class UserCard extends Component {
 									style={styles.userCardNavIcon}
 									source={Images.qr}
 								/>
-								<Image
-									style={styles.userCardNavIcon}
-									source={Images.location}
-								/>
+								<TouchableOpacity style={styles.menuIconContainer} activeOpacity = { .5 } onPress={()=>this.props.navigation.navigate('Visitas')}>
+									<Image
+										style={styles.userCardNavIcon}
+										source={Images.location}
+									/>
+								</TouchableOpacity>
 								<Image
 									style={styles.userCardNavIcon}
 									source={Images.notification}
@@ -85,9 +73,6 @@ class UserCard extends Component {
 							</View>
 						</View>
 					</LinearGradient>
-					<View style={[styles.userCardfloatMenu, this.state.menu ? styles.MenuShow : styles.MenuHide]}>
-						<UserMenu {...props} hideMenu={this.hideMenu}></UserMenu>
-			    </View>
 					{children}
 	      </ScrollView>
 		  </View>

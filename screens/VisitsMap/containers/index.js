@@ -1,13 +1,12 @@
 'use strict';
 import React, { Component } from 'react';
 import ScreenContainer from './../../../components/ScreenContainer';
-import HomeComponent from './../components/HomeComponent';
+import VisitsComponent from './../components/VisitsComponent';
 import {
   Text,
 } from 'react-native';
 
-
-class HomeScreen extends Component {
+class VisitsMapScreen extends Component {
   constructor(props) {
     super(props);
 
@@ -42,18 +41,18 @@ class HomeScreen extends Component {
   render() {
     return (
       <ScreenContainer {...this.props}>
-      { this.state.fontLoaded ? (
-        <HomeComponent 
-        {...this.props} 
-        hideMenu={this.hideMenu}
-        toogleMenu={this.toogleMenu} 
-        localState={this.state} 
-        />
-        ) : <Text >Loading....</Text> 
-    }
-    </ScreenContainer>
-    );
+        { this.state.fontLoaded ? (
+          <VisitsComponent
+            {...this.props} 
+            hideMenu={this.hideMenu}
+            toogleMenu={this.toogleMenu} 
+            localState={this.state} 
+          />
+          ) : <Text >Loading....</Text> 
+        }
+      </ScreenContainer>
+      );
   }
 }
 
-export default HomeScreen;
+export default VisitsMapScreen;

@@ -21,31 +21,7 @@ const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
 
 
-const tasks=[
-  {
-    key: 'Superama Satelite',
-    icon: 'map-marker',
-    address: 'Avenida Siempreviva 742',
-    checkIn: '11:20',
-    checkOut: null,
-  },
-  {
-    key: 'Superama Rosario',
-    icon: 'map-marker',
-    address: 'Avenida Siempreviva 742',
-    checkIn: '17:03',
-    checkOut: '19:00',
-  },
-  {
-    key: 'Superama Tlalnepantla',
-    icon: 'map-marker',
-    address: 'Avenida Siempreviva 742',
-    checkIn: null,
-    checkOut: '0:00',
-  },
- ]
-
-class VisitsComponent extends Component {
+class VisitsMapComponent extends Component {
   constructor(props) {
     super(props);
   }
@@ -94,7 +70,7 @@ class VisitsComponent extends Component {
         <UserCard  {...this.props} userCardData={()=>this.renderUserCardData()}>
           <View style={[styles.userCardfloatMenu, this.props.localState.menu ? styles.MenuShow : styles.MenuHide]}>
             <UserMenu {...this.props}></UserMenu>
-          </View>
+          </View> 
           <View style={{backgroundColor: Colors.gray}}>
             <SearchBar
               containerStyle={{backgroundColor: 'rgba(255,255,255,0)', borderWidth: 0, borderColor: 'rgba(255,255,255,0)'}}
@@ -111,4 +87,4 @@ class VisitsComponent extends Component {
 }
 
 
-export default VisitsComponent;
+export default VisitsMapComponent;

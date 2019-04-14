@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AnimatedBar from "react-native-animated-bar";
 import CardComponent from './../../../components/CardComponent';
 import UserCard from './../../../components/UserCard';
+import UserMenu from './../../../components/UserMenu';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { ApplicationStyles as styles, Images, Colors } from './../../../Themes';
@@ -33,6 +34,9 @@ class ImageCaptureComponent extends Component {
   render() {
     return (
         <UserCard {...this.props} userCardData={()=>this.renderUserCardData()}>
+          <View style={[styles.userCardfloatMenu, this.props.localState.menu ? styles.MenuShow : styles.MenuHide]}>
+            <UserMenu {...this.props}></UserMenu>
+          </View>
           <View>
             <View style={[styles.row, styles.centered, styles.imageCaptureHeader]}>
               <Image style={styles.homeCardIcon} source={Images.filterIcon} />

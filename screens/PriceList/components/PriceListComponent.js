@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'; 
 import AnimatedBar from "react-native-animated-bar";
-import FullCardComponent from './../../../components/FullCardComponent';
+import CardComponent from './../../../components/CardComponent';
 import UserCard from './../../../components/UserCard';
-import PercentCircle from 'react-native-percent-circle';
+import UserMenu from './../../../components/UserMenu';
 import { ApplicationStyles as styles, Images, Colors } from './../../../Themes';
 
 import {
@@ -11,41 +11,27 @@ import {
   ScrollView,
   FlatList,
   Image,
-  Dimensions
+  Dimensions,
+  Picker
 } from 'react-native';
 
 const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
 
 
-const tasks=[
-  {
-    key: 'Porcentaje de cumplimiento',
-    icon: 'clock-o',
-    description: '5 visitas de 10 por día',
-    percentage: 50,
-  },
-  {
-    key: 'Porcentaje de cumplimiento',
-    icon: 'clock-o',
-    description: '7 visitas de 10 por día',
-    percentage: 70,
-  },
-  {
-    key: 'Porcentaje de cumplimiento',
-    icon: 'clock-o',
-    description: '10 visitas de 10 por día',
-    percentage: 100,
-  },
- ]
-const pending=[
-  {
-    key: 'Porcentaje de cumplimiento',
-    icon: 'clock-o',
-    description: '5 visitas de 10 por día',
-    percentage: 50,
-  },
- ]
+const complete=[
+  {key: 'menuIcon'},
+  {key: 'logo'},
+  {key: 'qr'},
+  ]
+
+const medium=[
+  {key: '5 visitas de 10 por día'},
+  {key: '30 visitas al mes'},
+  ]
+
+const uncomplete=[
+  ]
 
 class PriceListComponent extends Component {
   constructor(props) {
@@ -58,7 +44,7 @@ class PriceListComponent extends Component {
  
   componentDidMount() {
     const interval = setInterval(() => {
-      if (this.state.progress > 0.4) return clearInterval(interval);
+      if (this.state.progress > 0.9) return clearInterval(interval);
  
       this.setState(state => {
         return {
@@ -68,63 +54,77 @@ class PriceListComponent extends Component {
     }, 100);
   }
 
-  renderTaskList = (data) => {
-    return  data.map((item, index) => {
-      return (
-          <FullCardComponent
-            key={index} 
-            icon={item.icon}
-            title={item.key}
-            startColor={Colors.userCardStart}
-            stopColor={Colors.userCardStop}
-          >
-            <View style={[styles.fullCardInnerColumn, styles.fullCardInnerColumnLeft]}>
-               <Text style={styles.fullCardBody}>{'  '}{item.description}</Text>
-            </View>
-            <View style={[styles.fullCardInnerColumn, styles.fullCardInnerColumnRight]}>
-              <PercentCircle style={styles.circularGrap} percent={item.percentage} radius={40} fontColor={Colors.white} lineWidth={10} fontSize={20} lineCap={'round'} animationType="Circ.easeInOut"/>
-            </View>           
-          </FullCardComponent>
-        )
-    });
-  }
-
-  renderPendingList = (data) => {
-    return  data.map((item, index) => {
-      return (
-          <FullCardComponent
-            key={index} 
-            icon={item.icon}
-            title={item.key}
-            startColor={Colors.orangeStart}
-            stopColor={Colors.orangeStop}
-          >
-            <View style={[styles.fullCardInnerColumn, styles.fullCardInnerColumnLeft]}>
-               <Text style={styles.fullCardBody}>{'  '}{item.description}</Text>
-            </View>
-            <View style={[styles.fullCardInnerColumn, styles.fullCardInnerColumnRight]}>
-              <AnimatedBar
-                progress={this.state.progress}
-                height={10}
-                borderColor="#DDD"
-                fillColor="tomato"
-                barColor={Colors.white}
-                borderRadius={5}
-              />
-            </View>           
-          </FullCardComponent>
-        )
-    });
-  }
-
   render() {
-    console.log(this.state.progress);
-    const { navigation } = this.props;
     return (
-        <UserCard  {...this.props} userCardData={()=>this.renderUserCardData()}>
+        <UserCard {...this.props} userCardData={()=>this.renderUserCardData()}>
+          <View style={[styles.userCardfloatMenu, this.props.localState.menu ? styles.MenuShow : styles.MenuHide]}>
+            <UserMenu {...this.props}></UserMenu>
+          </View>
           <View>
-            {this.renderTaskList(tasks)}
-            {this.renderPendingList(pending)}
+            <View style={[styles.row, styles.centered, styles.homeFirstSection]}>
+              <Image style={styles.homeCardIcon} source={Images.filterIcon} />
+              <Text>Categoría</Text>
+              <View style={styles.darkPicker}>
+                <Image style={styles.homePickerIcon} source={Images.arrow}/>
+                <Picker
+                  selectedValue={this.state.language}
+                  style={{ height: 30, width: 150, color: 'white' }}
+                  onValueChange={(itemValue, itemIndex) =>
+                    this.setState({language: itemValue})
+                  }> 
+                  <Picker.Item label="Automotríz" value="A" />
+                  <Picker.Item label="Automotríz 1" value="A1" />
+                  <Picker.Item label="Automotríz 2" value="A2" />
+                </Picker>
+              </View>
+            </View>
+            <View style={[styles.row, styles.centered]}>
+              <Image style={styles.homeCardIcon} source={Images.filterIcon} />
+              <Text>Subcategoría</Text>
+              <View style={styles.darkPicker}>
+                <Image style={styles.homePickerIcon} source={Images.arrow}/>
+                <Picker
+                  selectedValue={this.state.language}
+                  style={{ height: 30, width: 150, color: 'white' }}
+                  onValueChange={(itemValue, itemIndex) =>
+                    this.setState({language: itemValue})
+                  }> 
+                  <Picker.Item label="Automotríz" value="A" />
+                  <Picker.Item label="Automotríz 1" value="A1" />
+                  <Picker.Item label="Automotríz 2" value="A2" />
+                </Picker>
+              </View>
+            </View>
+            <CardComponent 
+              {...this.props}
+              title='Tareas por cumplir'
+              startColor={Colors.userCardStart}
+              endColor={Colors.userCardStop}
+            >
+                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
+                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
+                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
+            </CardComponent>
+            <CardComponent 
+              {...this.props}
+              title='Tareas por cumplir'
+              startColor={Colors.orangeStart}
+              endColor={Colors.orangeStop}
+            >
+                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
+                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
+                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
+            </CardComponent>
+            <CardComponent 
+              {...this.props}
+              title='Tareas por cumplir'
+              startColor={Colors.greenStart}
+              endColor={Colors.greenStop}
+            >
+                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
+                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
+                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
+            </CardComponent>
           </View>
         </UserCard>
       );
