@@ -6,7 +6,7 @@ import {
   Text,
 } from 'react-native';
 
-class VisitsScreen extends Component {
+class VisitsMapScreen extends Component {
   constructor(props) {
     super(props);
 
@@ -14,6 +14,14 @@ class VisitsScreen extends Component {
       fontLoaded: false,
       menu:false
     };
+  }
+
+  checkIn = () => {
+    this.props.navigation.navigate('VisitasMapa');
+  }
+
+  checkOut = () => {
+    this.props.navigation.navigate('VisitasMapa');
   }
 
   toogleMenu = () => {
@@ -47,6 +55,8 @@ class VisitsScreen extends Component {
             hideMenu={this.hideMenu}
             toogleMenu={this.toogleMenu} 
             localState={this.state} 
+            checkIn={this.checkIn}
+            checkOut={this.checkOut}
           />
           ) : <Text >Loading....</Text> 
         }
@@ -55,4 +65,4 @@ class VisitsScreen extends Component {
   }
 }
 
-export default VisitsScreen;
+export default VisitsMapScreen;

@@ -40,7 +40,7 @@ const menuItems=[
     {
       name: 'Tareas',
       icon: 'list-alt',
-      navigate: 'Home'
+      navigate: 'Tareas'
     },
     {
       name: 'Planogramas',
@@ -111,23 +111,24 @@ class UserMenu extends Component {
     const {props} = this;
     return (
       <View style={[styles.column, styles.cardfloatMenuData]}>
-        <View style={[styles.row, styles.menuUserData]}>
-          <View style={[styles.column, styles.menuUserPhotoContainer]}>
-            <Image 
-              style={styles.menuUserPhoto}
-              resizeMode='cover'
-              borderRadius={100}
-              source={Images.userDemo}
-              />
+        <ScrollView>
+          <View style={[styles.row, styles.menuUserData]}>
+            <View style={[styles.column, styles.menuUserPhotoContainer]}>
+              <Image 
+                style={styles.menuUserPhoto}
+                resizeMode='cover'
+                borderRadius={100}
+                source={Images.userDemo}
+                />
+            </View>
+            <View style={[styles.column, styles.menuUserDataContainer]}>
+              <Text h3 style={styles.menuUserUserName}>Carlos Morales</Text>
+              <Text h3 style={styles.menuUserUserSubtitle}>Ver tus datos</Text>
+            </View>
           </View>
-          <View style={[styles.column, styles.menuUserDataContainer]}>
-            <Text h3 style={styles.menuUserUserName}>Carlos Morales</Text>
-            <Text h3 style={styles.menuUserUserSubtitle}>Ver tus datos</Text>
-          </View>
-        </View>
           <View>{this.renderMenuList(menuItems, 1)}</View>
           <View style={styles.menuListBottom}>{this.renderMenuList(menuBottom, 2)}</View>
-          
+        </ScrollView>
       </View>
     );
   }

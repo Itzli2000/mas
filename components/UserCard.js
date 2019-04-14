@@ -35,7 +35,7 @@ class UserCard extends Component {
 										source={Images.menuIcon}
 						        	/>
 					      </TouchableOpacity>
-								<TouchableOpacity activeOpacity = { .5 } onPress={()=>this.props.navigation.navigate('PriceList')}>
+								<TouchableOpacity activeOpacity = { .5 } onPress={()=>this.props.navigation.navigate('Home')}>
 									<Image
 										style={styles.userCardImageLogo}
 										source={Images.logo}
@@ -45,7 +45,7 @@ class UserCard extends Component {
 									style={styles.userCardNavIcon}
 									source={Images.qr}
 								/>
-								<TouchableOpacity style={styles.menuIconContainer} activeOpacity = { .5 } onPress={()=>this.props.navigation.navigate('Visitas')}>
+								<TouchableOpacity activeOpacity = { .5 } onPress={()=>this.props.navigation.navigate('Visitas')}>
 									<Image
 										style={styles.userCardNavIcon}
 										source={Images.location}

@@ -4,8 +4,10 @@ import LoginScreen from './../screens/LoginScreen/containers';
 import HomeScreen from './../screens/Home/containers';
 import PriceListScreen from './../screens/PriceList/containers';
 import VisitsScreen from './../screens/Visits/containers';
+import VisitsMapScreen from './../screens/VisitsMap/containers';
 import SurveyScreen from './../screens/Survey/containers';
 import ImageCaptureScreen from './../screens/ImageCapture/containers';
+import TasksScreen from './../screens/Tasks/containers';
 
 const NoAuthRoutes = createStackNavigator({
   Login: { 
@@ -38,8 +40,20 @@ const NoAuthRoutes = createStackNavigator({
       header: null
     }
   },
+  VisitasMapa: { 
+    screen: VisitsMapScreen,
+    navigationOptions: {
+      header: null
+    }
+  },
   Captura: { 
     screen: ImageCaptureScreen,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Tareas: { 
+    screen: TasksScreen,
     navigationOptions: {
       header: null
     }
