@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import {  View, Text, Image, TouchableOpacity } from 'react-native';
 import { ApplicationStyles as styles, Colors, Images } from './../Themes';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import { LinearGradient } from 'expo';
 
 class CardComponent extends Component {
@@ -11,7 +12,7 @@ class CardComponent extends Component {
 
   render() {
     const { props } = this;
-    const { children, title, navigate } = props;
+    const { children, title, navigate, icon, iconColor } = props;
     const { startColor, endColor } = props;
     return (
       <View style={styles.cardContainer}>
@@ -25,7 +26,8 @@ class CardComponent extends Component {
             >
               <View style={[styles.cardBodyStyle, styles.cardTitleContainer]}>
                 <Text h4 style={styles.cardTitleStyles}>{title.toUpperCase()}</Text>
-                <Image style={styles.cardTitleIcon} source={Images.menuIcon} />
+                {!icon && <Image style={styles.cardTitleIcon} source={Images.menuIcon} />}
+                {icon && <View style={ styles.cardTitleIconElem}><Icon name={icon} style={{color: iconColor}}/></View> }
               </View>
               <View style={[styles.cardBodyStyle]}>
                 {children}

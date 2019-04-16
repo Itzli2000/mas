@@ -14,9 +14,10 @@ const colors = {
     menuBackground: '#38393b',
     greenStart: '#8db5a5',
     greenStop: '#6f9083',
-    orangeStart: '#fb7925',
-    orangeStop: '#fb7925',
-
+    orangeStart: '#fba500',
+    orangeStop: '#e25b00',
+    startRed: '#ff3f12',
+    endRed: '#f3643e',
 }
 
 export default colors

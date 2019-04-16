@@ -40,7 +40,7 @@ class TasksActiveComponent extends Component {
           <View style={[styles.userCardfloatMenu, this.props.localState.menu ? styles.MenuShow : styles.MenuHide]}>
             <UserMenu {...this.props}></UserMenu>
           </View>
-          <View style={styles.taskActiveContainer}>
+          <View style={[styles.taskActiveContainer, styles.spaceElement]}>
             <Button title='¿Estás seguro que quieres iniciar la tarea?' onPress={()=>{}} buttonStyle={styles.taskActiveButton} titleStyle={{color:'black'}} />
             <View style={[styles.centered]}>
               <View style={styles.surveyBox}>

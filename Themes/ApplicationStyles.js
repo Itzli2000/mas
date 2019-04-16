@@ -14,6 +14,9 @@ const ApplicationStyles = {
     minHeight: '100%',
     flexGrow: 1,
   },
+  spaceElement: {
+    justifyContent: 'space-around',
+  },
   floatRight: {
     marginLeft: 'auto',
     width: '80%',
@@ -98,6 +101,16 @@ const ApplicationStyles = {
     width: 27,
     height: 27,
   },
+  cardTitleIconElem: {
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    fontSize: 18,
+    overflow:'hidden',
+    backgroundColor: Colors.white,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   fullCardTitleContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -151,6 +164,7 @@ const ApplicationStyles = {
     left:0,
   },
   cardfloatMenuData: {
+    flex: 1,
     width: '80%',
     maxWidth: 300,
   },
@@ -734,7 +748,6 @@ const ApplicationStyles = {
     textAlign: 'center',
     backgroundColor: Colors.orange,
     borderRadius:15,
-    color: Colors.white,
     marginRight:10,
   },
   // Tasks Active screen
@@ -758,6 +771,50 @@ const ApplicationStyles = {
     paddingRight: 10,
     marginTop: 20,
     marginBottom: 30,
+  },
+  taskColumn: {
+    width: '45%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: Colors.white,
+  }, 
+  // Notifications styles
+  notificacionContainer: {
+    maxWidth: 270,
+    width: '100%',
+    marginRight: 10,
+    marginLeft: 'auto',
+  },
+  notificationData: {
+    borderBottomColor: Colors.black,
+    borderBottomWidth: 1,
+    marginBottom: 15,
+  },
+  notificationTitle: {
+    marginTop: 5,
+    fontSize: 15,
+    color: Colors.black,
+    fontWeight: 'bold',
+    lineHeight: 20,
+  },
+  notificationSubtilte: {
+    fontSize: 13,
+    color: Colors.black,
+    marginTop: 3,
+    lineHeight: 20,
+    paddingBottom: 10,
+  },
+  notificacionIcon: {
+    fontSize:20,
+    lineHeight:30,
+    position: 'absolute',
+    left: -30,
+    top: 0, 
+  },
+  notificationObservationsText: {
+    backgroundColor: Colors.white,
+    margin: 20,
+    borderRadius: 20,
   },
 };
 

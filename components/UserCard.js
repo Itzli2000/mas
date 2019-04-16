@@ -5,7 +5,9 @@ import { ApplicationStyles as styles, Images, Colors } from './../Themes';
 import { LinearGradient } from 'expo';
 import moment from "moment";
 import 'moment/locale/es';
-import { View, Image, TouchableOpacity, ScrollView, Text } from 'react-native';
+import { View, Image, TouchableOpacity, ScrollView, Text, Dimensions } from 'react-native';
+
+const screenHeight = Dimensions.get('window').height;
 
 moment.locale('es');
 
@@ -20,11 +22,12 @@ class UserCard extends Component {
 
 	render() {
 		const{ props } = this;
-    	const { children } = props;
+    	const { children, backColor } = props;
 		return (
 		  <View>
         <ScrollView style={styles.mainScrollContainer}>
-			    <LinearGradient
+			   <View style={{minHeight: screenHeight, backgroundColor: (backColor ?  backColor : '')}}>
+			   	 <LinearGradient
 			          colors={[Colors.userCardStart, Colors.userCardStop]}
 			        >
 						<View style={styles.userCardTopBar}>
@@ -76,6 +79,7 @@ class UserCard extends Component {
 						</View>
 					</LinearGradient>
 					{children}
+			   </View>
 	      </ScrollView>
 		  </View>
 		);

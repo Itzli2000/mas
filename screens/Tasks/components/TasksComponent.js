@@ -4,6 +4,7 @@ import CardComponent from './../../../components/CardComponent';
 import UserCard from './../../../components/UserCard';
 import UserMenu from './../../../components/UserMenu';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import moment from "moment";
 import { ApplicationStyles as styles, Images, Colors } from './../../../Themes';
 
 import {
@@ -16,23 +17,39 @@ import {
   Picker
 } from 'react-native';
 
-const screenHeight = Dimensions.get('window').height;
-const screenWidth = Dimensions.get('window').width;
 
-
-const complete=[
-  {key: 'menuIcon'},
-  {key: 'logo'},
-  {key: 'qr'},
-  ]
-
-const medium=[
-  {key: '5 visitas de 10 por día'},
-  {key: '30 visitas al mes'},
-  ]
-
-const uncomplete=[
-  ]
+const tasks=[
+  {
+    task: 'Montat publicidad',
+    status: 'Crítica',
+    icon: 'exclamation',
+    iconColor: Colors.orangeStart,
+    startDate: '2019-02-27T10:00:00',
+    endDate: '2019-02-27T10:00:00',
+    startColor: Colors.orangeStart,
+    endColor: Colors.orangeStop,
+  },
+  {
+    task: 'Montat publicidad',
+    status: 'Crítica',
+    icon: 'exclamation',
+    iconColor: Colors.redStart,
+    startDate: '2019-02-27T10:00:00',
+    endDate: '2019-02-27T10:00:00',
+    startColor: Colors.redStart,
+    endColor: Colors.redStop,
+  },
+  {
+    task: 'Montat publicidad',
+    status: 'Crítica',
+    icon: 'exclamation',
+    iconColor: Colors.startRed,
+    startDate: '2019-02-27T10:00:00',
+    endDate: '2019-02-27T10:00:00',
+    startColor: Colors.startRed,
+    endColor: Colors.endRed,
+  },
+]
 
 class TasksComponent extends Component {
   constructor(props) {
@@ -41,6 +58,33 @@ class TasksComponent extends Component {
     this.state = {
       pendings: '',
     };
+  }
+
+  renderTasks = (data) => {
+    const instance = this;
+    console.log('rendering');
+    var card = data.map((item, index)=>
+        <View key={index}>
+          <CardComponent 
+            {...instance.props}
+            navigate='TareasActivas'
+            title={item.task}
+            startColor={item.startColor}
+            endColor={item.endColor}
+          >
+            <View style={styles.column}>
+              <Text>Fecha Inicial</Text>
+              <Text>{moment(item.startDate).format('MM-DD-YYYY')}</Text>
+            </View>
+            <View style={styles.column}>
+              <Text>Fecha Final</Text>
+              <Text>{moment(item.endDate).format('MM-DD-YYYY')}</Text>
+            </View>
+          </CardComponent>
+        </View>
+      );
+    console.log(card);
+    return card;
   }
 
   render() {
@@ -69,39 +113,29 @@ class TasksComponent extends Component {
                 </Picker>
               </View>
             </View>
-            <CardComponent 
-              {...this.props}
-              navigate='TareasActivas'
-              title='Tareas por cumplir'
-              startColor={Colors.userCardStart}
-              endColor={Colors.userCardStop}
-            >
-                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
-                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
-                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
-            </CardComponent>
-            <CardComponent 
-              {...this.props}
-              navigate='TareasActivas'
-              title='Tareas por cumplir'
-              startColor={Colors.orangeStart}
-              endColor={Colors.orangeStop}
-            >
-                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
-                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
-                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
-            </CardComponent>
-            <CardComponent 
-              {...this.props}
-              navigate='TareasActivas'
-              title='Tareas por cumplir'
-              startColor={Colors.greenStart}
-              endColor={Colors.greenStop}
-            >
-                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
-                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
-                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
-            </CardComponent>
+            {tasks.map((item, index)=>
+              <View key={index}>
+                <CardComponent 
+                  {...this.props}
+                  icon={item.icon}
+                  navigate='TareasActivas'
+                  title={item.task}
+                  startColor={item.startColor}
+                  endColor={item.endColor}
+                >
+                  <View style={styles.row}>
+                    <View style={[styles.column, styles.taskColumn]}>
+                      <Text style={{fontWeight: 'bold', color: 'white'}}>Fecha Inicial</Text>
+                      <Text style={{color: 'white'}}>{moment(item.startDate).format('YYYY-DD-MM')}</Text>
+                    </View>
+                    <View style={[styles.column, styles.taskColumn]}>
+                      <Text style={{fontWeight: 'bold', color: 'white'}}>Fecha Final</Text>
+                      <Text style={{color: 'white'}}>{moment(item.endDate).format('YYYY-DD-MM')}</Text>
+                    </View>
+                  </View>
+                </CardComponent>
+              </View>
+            )}
           </View>
         </UserCard>
       );
