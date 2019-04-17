@@ -328,11 +328,32 @@ const ApplicationStyles = {
   },
 
   // Home screen component styles
-  homeCardIcon: {
+  homeCardIconPicker: {
     resizeMode: 'contain',
     width: 30,
     height: 30,
-    marginRight: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  homeCardIconContainer: {
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    fontSize: 25,
+    overflow:'hidden',
+    backgroundColor: Colors.white,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  homeCardIcon: {
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    fontSize: 25,
+    overflow:'hidden',
+    backgroundColor: Colors.white,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   homeFirstSection: {
     paddingTop: 20,

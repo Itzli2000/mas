@@ -43,10 +43,10 @@ class PriceListScreen extends Component {
       <ScreenContainer {...this.props}>
         { this.state.fontLoaded ? (
           <PriceListComponent
-        {...this.props} 
-          hideMenu={this.hideMenu}
-          toogleMenu={this.toogleMenu} 
-          localState={this.state} 
+            {...this.props} 
+            hideMenu={this.hideMenu}
+            toogleMenu={this.toogleMenu} 
+            localState={this.state} 
           />
           ) : <Text >Loading....</Text> 
         }

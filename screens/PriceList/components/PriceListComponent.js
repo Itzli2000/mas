@@ -3,6 +3,7 @@ import AnimatedBar from "react-native-animated-bar";
 import CardComponent from './../../../components/CardComponent';
 import UserCard from './../../../components/UserCard';
 import UserMenu from './../../../components/UserMenu';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import { ApplicationStyles as styles, Images, Colors } from './../../../Themes';
 
 import {
@@ -19,19 +20,20 @@ const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
 
 
-const complete=[
-  {key: 'menuIcon'},
-  {key: 'logo'},
-  {key: 'qr'},
-  ]
-
-const medium=[
-  {key: '5 visitas de 10 por día'},
-  {key: '30 visitas al mes'},
-  ]
-
-const uncomplete=[
-  ]
+const tasks=[
+  {
+    title: 'Montar Publicidad',
+    icon: 'check',
+      icon1: 'exclamation',
+      icon1Color: Colors.orangeStart,
+      icon2: 'exclamation',
+      icon2Color: Colors.redStart,
+      icon3: 'exclamation',
+      icon3Color: Colors.orangeEnd,
+    startColor: Colors.userCardStart,
+    endColor: Colors.userCardEnd,
+  },
+]
 
 class PriceListComponent extends Component {
   constructor(props) {
@@ -62,7 +64,7 @@ class PriceListComponent extends Component {
           </View>
           <View>
             <View style={[styles.row, styles.centered, styles.homeFirstSection]}>
-              <Image style={styles.homeCardIcon} source={Images.filterIcon} />
+              <Image style={styles.homeCardIconPicker} source={Images.filterIcon} />
               <Text>Categoría</Text>
               <View style={styles.darkPicker}>
                 <Image style={styles.homePickerIcon} source={Images.arrow}/>
@@ -79,7 +81,7 @@ class PriceListComponent extends Component {
               </View>
             </View>
             <View style={[styles.row, styles.centered]}>
-              <Image style={styles.homeCardIcon} source={Images.filterIcon} />
+              <Image style={styles.homeCardIconPicker} source={Images.filterIcon} />
               <Text>Subcategoría</Text>
               <View style={styles.darkPicker}>
                 <Image style={styles.homePickerIcon} source={Images.arrow}/>
@@ -95,36 +97,23 @@ class PriceListComponent extends Component {
                 </Picker>
               </View>
             </View>
-            <CardComponent 
-              {...this.props}
-              title='Tareas por cumplir'
-              startColor={Colors.userCardStart}
-              endColor={Colors.userCardStop}
-            >
-                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
-                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
-                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
-            </CardComponent>
-            <CardComponent 
-              {...this.props}
-              title='Tareas por cumplir'
-              startColor={Colors.orangeStart}
-              endColor={Colors.orangeStop}
-            >
-                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
-                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
-                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
-            </CardComponent>
-            <CardComponent 
-              {...this.props}
-              title='Tareas por cumplir'
-              startColor={Colors.greenStart}
-              endColor={Colors.greenStop}
-            >
-                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
-                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
-                <Image style={styles.homeCardIcon} source={Images.menuIcon} />
-            </CardComponent>
+            {tasks.map((item, index)=>
+                <CardComponent 
+                  {...this.props}
+                  key={index}
+                  icon={item.icon}
+                  navigate='TareasActivas'
+                  title={item.title}
+                  startColor={item.startColor}
+                  endColor={item.endColor}
+                > 
+                  <View style={ styles.row}>
+                  {item.icon1 && <Icon name={item.icon1} style={[styles.homeCardIcon, {color: item.icon1Color}]}/>}
+                  {item.icon2 && <Icon name={item.icon2} style={[styles.homeCardIcon, {color: item.icon2Color}]}/>}
+                  {item.icon3 && <Icon name={item.icon3} style={[styles.homeCardIcon, {color: item.icon3Color}]}/>}
+                  </View>
+                </CardComponent>
+            )} 
           </View>
         </UserCard>
       );

@@ -15,17 +15,17 @@ const menuItems=[
     {
       name: 'Ventas',
       icon: 'line-chart',
-      navigate: 'Home'
+      navigate: 'PriceList'
     },
     {
       name: 'Exhibiciones',
       icon: 'shopping-basket',
-      navigate: 'Visitas'
+      navigate: 'PriceList'
     },
     {
       name: 'Inventarios',
       icon: 'archive',
-      navigate: 'Home'
+      navigate: 'PriceList'
     },
     {
       name: 'Encuestas',
@@ -35,7 +35,7 @@ const menuItems=[
     {
       name: 'Generales',
       icon: 'cog',
-      navigate: 'PriceList'
+      navigate: 'Home'
     },
     {
       name: 'Tareas',
@@ -45,22 +45,22 @@ const menuItems=[
     {
       name: 'Planogramas',
       icon: 'tasks',
-      navigate: 'PriceList'
+      navigate: 'Home'
     },
     {
       name: 'Ayuda y soporte técnico',
       icon: 'question-circle',
-      navigate: 'PriceList'
+      navigate: 'Home'
     },
     {
       name: 'Firmas',
       icon: 'pencil',
-      navigate: 'PriceList'
+      navigate: 'Home'
     },
     {
       name: 'Chat',
       icon: 'comment',
-      navigate: 'PriceList'
+      navigate: 'Home'
     },
  ]
 

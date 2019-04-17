@@ -26,7 +26,7 @@ class UserCard extends Component {
 		return (
 		  <View>
         <ScrollView style={styles.mainScrollContainer}>
-			   <View style={{minHeight: screenHeight, backgroundColor: (backColor ?  backColor : '')}}>
+			   <View style={{minHeight: screenHeight, backgroundColor: (backColor ?  backColor : ' transparent ')}}>
 			   	 <LinearGradient
 			          colors={[Colors.userCardStart, Colors.userCardStop]}
 			        >
