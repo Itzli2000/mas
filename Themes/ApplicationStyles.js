@@ -839,6 +839,7 @@ const ApplicationStyles = {
     backgroundColor: Colors.white,
     margin: 20,
     borderRadius: 20,
+    paddingLeft:15,
   },
 };
 

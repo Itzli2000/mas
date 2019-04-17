@@ -43,7 +43,7 @@ class NotificationsComponent extends Component {
     super(props);
   
     this.state = {
-      observations: 'dcsdv',
+      observations: '',
     };
   }
 
