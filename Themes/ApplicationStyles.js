@@ -356,6 +356,7 @@ const ApplicationStyles = {
     alignItems: 'center',
     textAlign: 'center',
     lineHeight: 30,
+    marginRight:10,
   },
   homeFirstSection: {
     paddingTop: 20,

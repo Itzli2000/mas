@@ -12,8 +12,7 @@ class CardComponent extends Component {
 
   render() {
     const { props } = this;
-    const { children, title, navigate, icon, iconColor } = props;
-    const { startColor, endColor } = props;
+    const { children, title, navigate, icon, iconColor, startColor, endColor } = props;
     return (
       <View style={styles.cardContainer}>
         <View
@@ -27,7 +26,7 @@ class CardComponent extends Component {
               <View style={[styles.cardBodyStyle, styles.cardTitleContainer]}>
                 <Text h4 style={styles.cardTitleStyles}>{title.toUpperCase()}</Text>
                 {!icon && <Image style={styles.cardTitleIcon} source={Images.menuIcon} />}
-                {icon && <View style={ styles.cardTitleIconElem}><Icon name={icon} style={{color: iconColor}}/></View> }
+                {icon && <View style={ styles.cardTitleIconElem}><Icon name={icon} style={{color: (iconColor ? iconClor : 'black')}}/></View> }
               </View>
               <View style={[styles.cardBodyStyle]}>
                 {children}

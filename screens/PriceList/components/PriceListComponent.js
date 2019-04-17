@@ -24,48 +24,52 @@ const tasks=[
   {
     title: 'Montar Publicidad',
     icon: 'check',
-      icon1: 'exclamation',
+    iconClor: Colors.orange,
+      icon1: 'camera',
       icon1Color: Colors.orangeStart,
       icon2: 'exclamation',
-      icon2Color: Colors.redStart,
-      icon3: 'exclamation',
-      icon3Color: Colors.orangeEnd,
+      icon2Color: Colors.userCardStart,
+      icon3: 'file',
+      icon3Color: Colors.green,
     startColor: Colors.userCardStart,
     endColor: Colors.userCardEnd,
   },
   {
     title: 'Montar Publicidad',
     icon: 'times',
-      icon1: 'exclamation',
+    iconClor: Colors.orange,
+      icon1: 'camera',
       icon1Color: Colors.orangeStart,
       icon2: 'exclamation',
-      icon2Color: Colors.redStart,
-      icon3: 'exclamation',
-      icon3Color: Colors.orangeEnd,
+      icon2Color: Colors.userCardStart,
+      icon3: 'file',
+      icon3Color: Colors.green,
     startColor: Colors.startRed,
     endColor: Colors.endRed,
   },
   {
     title: 'Montar Publicidad',
     icon: 'minus',
-      icon1: 'exclamation',
+    iconClor: Colors.orange,
+      icon1: 'camera',
       icon1Color: Colors.orangeStart,
       icon2: 'exclamation',
-      icon2Color: Colors.redStart,
-      icon3: 'exclamation',
-      icon3Color: Colors.orangeEnd,
+      icon2Color: Colors.userCardStart,
+      icon3: 'file',
+      icon3Color: Colors.green,
     startColor: Colors.orangeStart,
     endColor: Colors.orangeStop,
   },
   {
     title: 'Montar Publicidad',
     icon: 'check',
-      icon1: 'exclamation',
+    iconClor: Colors.orange,
+      icon1: 'camera',
       icon1Color: Colors.orangeStart,
       icon2: 'exclamation',
-      icon2Color: Colors.redStart,
-      icon3: 'exclamation',
-      icon3Color: Colors.orangeEnd,
+      icon2Color: Colors.userCardStart,
+      icon3: 'file',
+      icon3Color: Colors.green,
     startColor: Colors.userCardStart,
     endColor: Colors.userCardEnd,
   },
@@ -138,13 +142,14 @@ class PriceListComponent extends Component {
                   {...this.props}
                   key={index}
                   icon={item.icon}
+                  iconClor={item.iconClor}
                   navigate='TareasActivas'
                   title={item.title}
                   startColor={item.startColor}
                   endColor={item.endColor}
                 > 
-                  <View style={[styles.row, {justifyContent: ' flex-end', alignItems: 'flex-end'}]}>
-                  {item.icon1 && <Icon name={item.icon1} style={[styles.homeCardIcon, {color: item.icon1Color}]}/>}
+                  <View style={[styles.row]}>
+                  {item.icon1 && <Icon name={item.icon1} style={[styles.homeCardIcon, {color: item.icon1Color, marginLeft: 'auto'}]}/>}
                   {item.icon2 && <Icon name={item.icon2} style={[styles.homeCardIcon, {color: item.icon2Color}]}/>}
                   {item.icon3 && <Icon name={item.icon3} style={[styles.homeCardIcon, {color: item.icon3Color}]}/>}
                   </View>
