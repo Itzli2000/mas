@@ -111,11 +111,7 @@ class UserMenu extends Component {
     const {props} = this;
     return (
       <View style={[styles.column, styles.cardfloatMenuData]}>
-        <ScrollView
-          contentContainerStyle={{
-              flexGrow: 1,
-          }}
-        >
+        <ScrollView> 
           <View style={[styles.row, styles.menuUserData]}>
             <View style={[styles.column, styles.menuUserPhotoContainer]}>
               <Image 

@@ -11,8 +11,8 @@ const ApplicationStyles = {
   // General styles
   mainScrollContainer:{
     backgroundColor:Colors.white,
-    minHeight: '100%',
     flexGrow: 1,
+    marginTop: 80,
   },
   spaceElement: {
     justifyContent: 'space-around',
@@ -262,7 +262,7 @@ const ApplicationStyles = {
     alignItems: 'center',
   },
   topIcons: {
-    position: 'relative',
+    position: 'absolute',
     height: 80,
     paddingTop: 10,
     top: 0,

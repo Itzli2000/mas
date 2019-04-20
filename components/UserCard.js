@@ -25,38 +25,38 @@ class UserCard extends Component {
     	const { children, backColor } = props;
 		return (
 		  <View>
-							<View style={[styles.row, styles.topIcons]}>
-								<TouchableOpacity style={styles.menuIconContainer} activeOpacity = { .5 } onPress={()=>this.props.toogleMenu()}>
-						        <Image
-										style={styles.userCardMenuIcon}
-										source={Images.menuIcon}
-						        	/>
-					      </TouchableOpacity>
-								<TouchableOpacity activeOpacity = { .5 } onPress={()=>this.props.navigation.navigate('Home')}>
-									<Image
-										style={styles.userCardImageLogo}
-										source={Images.logo}
-									/>
-					      </TouchableOpacity>
-								<Image
-									style={styles.userCardNavIcon}
-									source={Images.qr}
-								/>
-								<TouchableOpacity activeOpacity = { .5 } onPress={()=>this.props.navigation.navigate('Visitas')}>
-									<Image
-										style={styles.userCardNavIcon}
-										source={Images.location}
-									/>
-								</TouchableOpacity>
-								<TouchableOpacity activeOpacity = { .5 } onPress={()=>this.props.navigation.navigate('Notificaciones')}>
-								<Image
-									style={styles.userCardNavIcon}
-									source={Images.notification}
-								/>
-								</TouchableOpacity>
-							</View>
+				<View style={[styles.row, styles.topIcons]}>
+					<TouchableOpacity style={styles.menuIconContainer} activeOpacity = { .5 } onPress={()=>this.props.toogleMenu()}>
+			        <Image
+							style={styles.userCardMenuIcon}
+							source={Images.menuIcon}
+			        	/>
+		      </TouchableOpacity>
+					<TouchableOpacity activeOpacity = { .5 } onPress={()=>this.props.navigation.navigate('Home')}>
+						<Image
+							style={styles.userCardImageLogo}
+							source={Images.logo}
+						/>
+		      </TouchableOpacity>
+					<Image
+						style={styles.userCardNavIcon}
+						source={Images.qr}
+					/>
+					<TouchableOpacity activeOpacity = { .5 } onPress={()=>this.props.navigation.navigate('Visitas')}>
+						<Image
+							style={styles.userCardNavIcon}
+							source={Images.location}
+						/>
+					</TouchableOpacity>
+					<TouchableOpacity activeOpacity = { .5 } onPress={()=>this.props.navigation.navigate('Notificaciones')}>
+					<Image
+						style={styles.userCardNavIcon}
+						source={Images.notification}
+					/>
+					</TouchableOpacity>
+				</View>
         <ScrollView style={styles.mainScrollContainer}>
-			   <View style={{minHeight: screenHeight, backgroundColor: (backColor ?  backColor : ' transparent ')}}>
+			   <View style={{backgroundColor: (backColor ?  backColor : ' transparent ')}}>
 			   	 <LinearGradient
 			          colors={[Colors.userCardStart, Colors.userCardStop]}
 			        >
