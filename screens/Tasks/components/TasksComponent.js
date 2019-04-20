@@ -20,7 +20,7 @@ import {
 
 const tasks=[
   {
-    task: 'Montat publicidad',
+    task: 'Montar publicidad 1',
     status: 'Crítica',
     icon: 'exclamation',
     iconColor: Colors.orangeStart,
@@ -30,17 +30,17 @@ const tasks=[
     endColor: Colors.orangeStop,
   },
   {
-    task: 'Montat publicidad',
+    task: 'Montar publicidad 2',
     status: 'Crítica',
     icon: 'exclamation',
-    iconColor: Colors.redStart,
+    iconColor: Colors.greenStart,
     startDate: '2019-02-27T10:00:00',
     endDate: '2019-02-27T10:00:00',
-    startColor: Colors.redStart,
-    endColor: Colors.redStop,
+    startColor: Colors.greenStart,
+    endColor: Colors.greenStop,
   },
   {
-    task: 'Montat publicidad',
+    task: 'Montar publicidad 3',
     status: 'Crítica',
     icon: 'exclamation',
     iconColor: Colors.startRed,
@@ -118,6 +118,7 @@ class TasksComponent extends Component {
                 <CardComponent 
                   {...this.props}
                   icon={item.icon}
+                  iconColor={item.iconColor}
                   navigate='TareasActivas'
                   title={item.task}
                   startColor={item.startColor}

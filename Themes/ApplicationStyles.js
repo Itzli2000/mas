@@ -258,16 +258,23 @@ const ApplicationStyles = {
   // User card styles
   userCardTopBar: {
     minHeight: 80,
-    paddingTop: 25,
     justifyContent:'flex-end',
     alignItems: 'center',
+  },
+  topIcons: {
+    position: 'relative',
+    height: 80,
+    paddingTop: 10,
+    top: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: Colors.userCardStart,
   },
   userCardfloatMenu:{
     width:'100%',
     height:'100%',
     position:'absolute',
     zIndex: 100,
-    top:80,
     backgroundColor: Colors.menuBackground,
     opacity: 0.9,
     alignItems: 'center',
@@ -771,6 +778,7 @@ const ApplicationStyles = {
     lineHeight:30,
     textAlign: 'center',
     backgroundColor: Colors.orange,
+    color: Colors.white,
     borderRadius:15,
     marginRight:10,
   },

@@ -26,7 +26,7 @@ class CardComponent extends Component {
               <View style={[styles.cardBodyStyle, styles.cardTitleContainer]}>
                 <Text h4 style={styles.cardTitleStyles}>{title.toUpperCase()}</Text>
                 {!icon && <Image style={styles.cardTitleIcon} source={Images.menuIcon} />}
-                {icon && <View style={ styles.cardTitleIconElem}><Icon name={icon} style={{color: (iconColor ? iconClor : 'black')}}/></View> }
+                {icon && <View style={ styles.cardTitleIconElem}><Icon name={icon} style={{color: (iconColor ? iconColor : 'white')}}/></View> }
               </View>
               <View style={[styles.cardBodyStyle]}>
                 {children}
