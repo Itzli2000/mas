@@ -55,7 +55,7 @@ const menuItems=[
     {
       name: 'Firmas',
       icon: 'pencil',
-      navigate: 'Home'
+      navigate: 'Firmas'
     },
     {
       name: 'Chat',

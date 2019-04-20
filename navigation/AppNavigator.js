@@ -10,6 +10,8 @@ import ImageCaptureScreen from './../screens/ImageCapture/containers';
 import TasksScreen from './../screens/Tasks/containers';
 import TasksActiveScreen from './../screens/TasksActive/containers';
 import NotificationsScreen from './../screens/Notifications/containers';
+import SignatureScreen from './../screens/Signature/containers';
+import NewSignatureScreen from './../screens/NewSignature/containers';
 
 const NoAuthRoutes = createStackNavigator({
   Login: { 
@@ -66,8 +68,14 @@ const NoAuthRoutes = createStackNavigator({
       header: null
     }
   },
-  Notificaciones: { 
-    screen: NotificationsScreen,
+  Firmas: { 
+    screen: SignatureScreen,
+    navigationOptions: {
+      header: null
+    }
+  },
+  NuevaFirma: { 
+    screen: NewSignatureScreen,
     navigationOptions: {
       header: null
     }
