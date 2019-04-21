@@ -95,10 +95,10 @@ class VisitsComponent extends Component {
           <View style={[styles.userCardfloatMenu, this.props.localState.menu ? styles.MenuShow : styles.MenuHide]}>
             <UserMenu {...this.props}></UserMenu>
           </View>
-          <View style={{backgroundColor: Colors.gray}}>
+          <View style={{backgroundColor: Colors.gray, flex:1}}>
             <SearchBar
-              containerStyle={{backgroundColor: 'rgba(255,255,255,0)', borderWidth: 0, borderColor: 'rgba(255,255,255,0)'}}
-              inputContainerStyle={{backgroundColor: 'rgba(255,255,255,1)', borderWidth: 0, borderColor: 'rgba(255,255,255,0)', width: '90%', borderRadius: 10, marginLeft: 'auto', marginRight: 'auto'}}
+              containerStyle={{backgroundColor: 'transparent', borderWidth: 0, borderBottomColor: 'transparent', borderTopColor: 'transparent'}}
+              inputContainerStyle={{backgroundColor: 'rgba(255,255,255,1)', borderWidth: 0, borderColor: 'transparent', width: '90%', borderRadius: 10, marginLeft: 'auto', marginRight: 'auto'}}
               placeholder="Visita"
               onChangeText={this.updateSearch}
               value={search}

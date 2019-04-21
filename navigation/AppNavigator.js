@@ -12,6 +12,7 @@ import TasksActiveScreen from './../screens/TasksActive/containers';
 import NotificationsScreen from './../screens/Notifications/containers';
 import SignatureScreen from './../screens/Signature/containers';
 import NewSignatureScreen from './../screens/NewSignature/containers';
+import ChatScreen from './../screens/Chat/containers';
 
 const NoAuthRoutes = createStackNavigator({
   Login: { 
@@ -82,6 +83,12 @@ const NoAuthRoutes = createStackNavigator({
   },
   NuevaFirma: { 
     screen: NewSignatureScreen,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Chat: { 
+    screen: ChatScreen,
     navigationOptions: {
       header: null
     }

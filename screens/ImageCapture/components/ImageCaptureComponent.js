@@ -47,7 +47,7 @@ class ImageCaptureComponent extends Component {
           </View>
           <View>
             <View style={[styles.row, styles.centered, styles.imageCaptureHeader]}>
-              <Image style={styles.homeCardIcon} source={Images.filterIcon} />
+              <Image style={styles.captureIcon} source={Images.filterIcon} />
               <Text style={styles.imageCaptureHeaderText}>Automotríz / Motores</Text>
             </View>
             <View style={styles.imageCaptureBreadcrumb}>

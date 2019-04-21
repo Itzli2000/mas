@@ -147,6 +147,7 @@ const ApplicationStyles = {
   cardBodyStyle: {
     padding: 10,
     width: '100%',
+    flex: 1,
     flexDirection: 'row',
     flexWrap: 'nowrap',
     justifyContent: 'flex-end',
@@ -371,13 +372,13 @@ const ApplicationStyles = {
     width: 30,
     height: 30,
     borderRadius: 15,
-    // fontSize: 20,
+    fontSize: 20,
     overflow:'hidden',
     backgroundColor: Colors.white,
     justifyContent: 'center',
     alignItems: 'center',
-    // textAlign: 'center',
-    // lineHeight: 30,
+    textAlign: 'center',
+    lineHeight: 30,
     marginRight:10,
   },
   homeFirstSection: {
@@ -671,6 +672,16 @@ const ApplicationStyles = {
     backgroundColor: Colors.black,
     paddingTop: 10,
     paddingBottom: 10,
+  },
+  captureIcon: {
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    overflow:'hidden',
+    backgroundColor: Colors.white,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight:10,
   },
   imageCaptureHeaderText: {
     color: Colors.white,
@@ -966,6 +977,38 @@ const ApplicationStyles = {
   newSignatureFooter: {
     marginTop: 40,
     marginBottom: 30,
+  },
+  // Chat Styles
+  chatView: {
+    height: screenHeight / 2,
+    width: '90%',
+    margin: '5%',
+  },
+  auxChat: {
+    width: 150,
+    minHeight: 50,
+    borderRadius: 10,
+    backgroundColor: Colors.white,
+    marginRight: 'auto',
+    padding: 7,
+    marginTop: 5,
+    marginBottom: 5,
+  },
+  userChat: {
+    width: 150,
+    minHeight: 50,
+    borderRadius: 10,
+    backgroundColor: Colors.userCardStart,
+    marginLeft: 'auto',
+    padding: 7,
+    marginTop: 5,
+    marginBottom: 5,
+  },
+  auxChatText: {
+    color: Colors.black,
+  },
+  userChatText: {
+    color: Colors.white,
   },
 };
 

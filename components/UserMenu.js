@@ -60,7 +60,7 @@ const menuItems=[
     {
       name: 'Chat',
       icon: 'comment',
-      navigate: 'Home'
+      navigate: 'Chat'
     },
  ]
 
