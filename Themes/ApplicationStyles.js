@@ -17,6 +17,20 @@ const ApplicationStyles = {
   spaceElement: {
     justifyContent: 'space-around',
   },
+  photoON: {
+    width: '100%',
+    height: screenHeight,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+  },
+  photoOff: {
+    width: '100%',
+    height: screenHeight,
+    position: 'absolute',
+    top: 0,
+    left: -screenWidth,
+  },
   floatRight: {
     marginLeft: 'auto',
     width: '80%',
@@ -357,13 +371,13 @@ const ApplicationStyles = {
     width: 30,
     height: 30,
     borderRadius: 15,
-    fontSize: 20,
+    // fontSize: 20,
     overflow:'hidden',
     backgroundColor: Colors.white,
     justifyContent: 'center',
     alignItems: 'center',
-    textAlign: 'center',
-    lineHeight: 30,
+    // textAlign: 'center',
+    // lineHeight: 30,
     marginRight:10,
   },
   homeFirstSection: {
@@ -498,7 +512,7 @@ const ApplicationStyles = {
     flex: 1,
     borderRadius: 15,
     borderColor: 'transparent',
-    },
+  },
   loginFormInputs: {
     fontSize:20,
     lineHeight:20,
@@ -912,6 +926,46 @@ const ApplicationStyles = {
   },
   newSignatureIcon: {
     fontSize:30,
+  },
+  // New signature styles
+  newSignatureContainer: {
+    height: '100%',
+    minHeight: 400,
+    borderTopLeftRadius: 40,
+    borderTopRightRadius: 40,
+    backgroundColor: Colors.greenStart,
+    textAlign: 'center',
+    margin: '5%',
+    marginBottom: 0,
+  },
+  newSignatureTitle : {
+    fontSize: 22,
+    textAlign: 'center',
+    color: Colors.white,
+    fontFamily: 'gotham-bold',
+    marginTop: 15,
+  },
+  newSignatureCanvas: {
+    width: '80%',
+    backgroundColor: Colors.white,
+    height: 130,
+    borderRadius: 10,
+    margin: 'auto',
+    marginTop: 10,
+    paddingLeft: 10,
+  },
+  newSignatureInput: {
+    width: '80%',
+    backgroundColor: Colors.white,
+    height: 30,
+    borderRadius: 10,
+    margin: 'auto',
+    marginTop: 10,
+    paddingLeft: 10,
+  },
+  newSignatureFooter: {
+    marginTop: 40,
+    marginBottom: 30,
   },
 };
 

@@ -24,7 +24,7 @@ class UserCard extends Component {
 		const{ props } = this;
     	const { children, backColor } = props;
 		return (
-		  <View>
+		  <View style={{flex: 1}}>
 				<View style={[styles.row, styles.topIcons]}>
 					<TouchableOpacity style={styles.menuIconContainer} activeOpacity = { .5 } onPress={()=>this.props.toogleMenu()}>
 			        <Image
@@ -56,7 +56,7 @@ class UserCard extends Component {
 					</TouchableOpacity>
 				</View>
         <ScrollView style={styles.mainScrollContainer}>
-			   <View style={{backgroundColor: (backColor ?  backColor : ' transparent ')}}>
+			   <View style={{backgroundColor: (backColor ?  backColor : ' transparent '), flex: 1}}>
 			   	 <LinearGradient
 			          colors={[Colors.userCardStart, Colors.userCardStop]}
 			        >

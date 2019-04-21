@@ -68,6 +68,12 @@ const NoAuthRoutes = createStackNavigator({
       header: null
     }
   },
+  Notificaciones: { 
+    screen: NotificationsScreen,
+    navigationOptions: {
+      header: null
+    }
+  },
   Firmas: { 
     screen: SignatureScreen,
     navigationOptions: {
