@@ -838,15 +838,15 @@ const ApplicationStyles = {
   }, 
   // Notifications styles
   notificacionContainer: {
-    maxWidth: 270,
     width: '100%',
     marginRight: 10,
-    marginLeft: 'auto',
-  },
-  notificationData: {
     borderBottomColor: Colors.black,
     borderBottomWidth: 1,
     marginBottom: 15,
+  },
+  notificationData: {
+    maxWidth: '85%',
+    marginLeft: 'auto',
   },
   notificationTitle: {
     marginTop: 5,

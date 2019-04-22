@@ -36,6 +36,42 @@ const notifications=[
     title: 'Lorem ipsum dolor.',
     subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
   },
+  {
+    icon: 'check',
+    iconColor: Colors.greenStart,
+    title: 'Lorem ipsum dolor.',
+    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
+  },
+  {
+    icon: 'user',
+    iconColor: Colors.orangeStart,
+    title: 'Lorem ipsum dolor.',
+    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
+  },
+  {
+    icon: 'shopping-cart',
+    iconColor: Colors.startRed,
+    title: 'Lorem ipsum dolor.',
+    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
+  },
+  {
+    icon: 'check',
+    iconColor: Colors.greenStart,
+    title: 'Lorem ipsum dolor.',
+    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
+  },
+  {
+    icon: 'user',
+    iconColor: Colors.orangeStart,
+    title: 'Lorem ipsum dolor.',
+    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
+  },
+  {
+    icon: 'shopping-cart',
+    iconColor: Colors.startRed,
+    title: 'Lorem ipsum dolor.',
+    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
+  },
 ]
 
 class NotificationsComponent extends Component {
@@ -50,28 +86,24 @@ class NotificationsComponent extends Component {
   render() {
     return (
         <UserCard {...this.props} userCardData={()=>this.renderUserCardData()} backColor={Colors.gray}>
-          <View style={[styles.userCardfloatMenu, this.props.localState.menu ? styles.MenuShow : styles.MenuHide]}>
-            <UserMenu {...this.props}></UserMenu>
-          </View>
-          <View style={[styles.row, styles.centered, styles.imageCaptureHeader, {marginBottom: 30}]}>
-            <Text style={styles.imageCaptureHeaderText}>Notificaciones y Actualizaciones</Text>
-          </View>
-          <View>
-          {notifications.map((item, index)=>
-              <View key={index} style={styles.notificacionContainer}>
-                <Icon name={item.icon} style={[styles.notificacionIcon,{color:item.iconColor}]}/> 
-                <View style={styles.notificationData}>
-                  <Text style={styles.notificationTitle}>{item.title}</Text>
-                  <Text style={styles.notificationSubtilte}>{item.subtitle}</Text>
+          <View style={{flex:1}}>
+            <View style={[styles.userCardfloatMenu, this.props.localState.menu ? styles.MenuShow : styles.MenuHide]}>
+              <UserMenu {...this.props}></UserMenu>
+            </View>
+            <View style={[styles.row, styles.centered, styles.imageCaptureHeader, {marginBottom: 30}]}>
+              <Text style={styles.imageCaptureHeaderText}>Notificaciones y Actualizaciones</Text>
+            </View>
+            <View>
+            {notifications.map((item, index)=>
+                <View key={index} style={styles.notificacionContainer}>
+                  <View style={styles.notificationData}>
+                  <Icon name={item.icon} style={[styles.notificacionIcon,{color:item.iconColor}]}/> 
+                    <Text style={styles.notificationTitle}>{item.title}</Text>
+                    <Text style={styles.notificationSubtilte}>{item.subtitle}</Text>
+                  </View>
                 </View>
-              </View>
-            )}
-            <TextInput 
-              style={[styles.notificationObservationsText]}
-              multiline={true}
-              numberOfLines={4}
-              onChangeText={(text) => this.setState({observations:text})}
-              value={this.state.observations}/>
+              )}
+            </View>
           </View>
         </UserCard>
       );
