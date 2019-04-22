@@ -3,6 +3,8 @@ import CardComponent from './../../../components/CardComponent';
 import UserCard from './../../../components/UserCard';
 import UserMenu from './../../../components/UserMenu';
 import { ApplicationStyles as styles, Images, Colors } from './../../../Themes';
+import Triangle from 'react-native-triangle';
+import { Button } from 'react-native-elements';
 import {
   View,
   TextInput,
@@ -59,23 +61,32 @@ class ChatComponent extends Component {
           <View style={[styles.userCardfloatMenu, this.props.localState.menu ? styles.MenuShow : styles.MenuHide]}>
             <UserMenu {...this.props}></UserMenu>
           </View>
-          <View style={[styles.newSignatureContainer]}>
+          <View style={[styles.chatContainer]}>
             <View style={styles.chatView}>
               <ScrollView>
                 {chatData.map((item, index)=>
                   <View key={item.entry} style={item.userChat === 'user' ? styles.userChat : styles.auxChat}>
                     <Text style={item.userChat === 'user' ? styles.userChatText : styles.auxChatText}>{item.text}</Text>
+                    <Triangle
+                      style={item.userChat === 'user' ? styles.arrowUser : styles.arrowAux}
+                      width={30}
+                      height={15}
+                      color={item.userChat === 'user' ? Colors.userCardStart : Colors.greenStart}
+                      direction={item.userChat === 'user' ? 'down' : 'down'}
+                    />
                   </View>
                 )}
               </ScrollView>
             </View>
-            <View style={[styles.centered]}>
+            <View style={[styles.centered, styles.chatInputContainer]}>
               <TextInput
                 placeholder={"Chat"}
-                style={styles.newSignatureInput}
-                multiline={false}
+                style={styles.newChatInput}
+                multiline={true}
+                numberOfLines= {3}
                 onChangeText={(text) => this.setState({newEntry:text})}
                 value={this.state.newEntry}/>
+              <Button title='Entrar' onPress={()=>this.props.validateUserLogIn()} buttonStyle={styles.chatButton} />
             </View>
           </View>
         </UserCard>
