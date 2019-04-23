@@ -1060,6 +1060,22 @@ const ApplicationStyles = {
     marginTop: 20,
     marginBottom: 30,
   },
+  // Float categorie selector stiles
+  categorieFloatSection:{
+    width:'100%',
+    height:'100%',
+    position:'absolute',
+    zIndex: 100,
+    backgroundColor: Colors.menuBackground,
+    opacity: 0.9,
+    alignItems: 'center',
+  },
+  CategorieHide: {
+    right:'-120%',
+  },
+  CategorieShow: {
+    right:0,
+  },
 };
 
 export default ApplicationStyles;

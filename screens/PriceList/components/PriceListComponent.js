@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AnimatedBar from "react-native-animated-bar";
 import CardComponent from './../../../components/CardComponent';
 import UserCard from './../../../components/UserCard';
+import CategoriesSelector from './../../../components/CategoriesSelector';
 import UserMenu from './../../../components/UserMenu';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { ApplicationStyles as styles, Images, Colors } from './../../../Themes';
@@ -13,12 +14,39 @@ import {
   FlatList,
   Image,
   Dimensions,
-  Picker
+  Picker,
+  TouchableOpacity,
 } from 'react-native';
 
 const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
 
+const categories=[
+    {
+      name: 'Automotríz',
+      value: 'Automotriz'
+    },
+    {
+      name: 'Farmacia',
+      value: 'Farmacia'
+    },
+    {
+      name: 'Ferreteria',
+      value: 'Ferreteria'
+    },
+    {
+      name: 'Papeleria',
+      value: 'Papeleria'
+    },
+    {
+      name: 'Construccion',
+      value: 'Construccion'
+    },
+    {
+      name: 'Jardineria',
+      value: 'Jardineria'
+    },
+ ]
 
 const tasks=[
   {
@@ -80,20 +108,9 @@ class PriceListComponent extends Component {
     super(props);
   
     this.state = {
-    progress: 0,
+      selectCategorie: false,
+      categorieSelected: 'Automotríz',
     };
-  }
- 
-  componentDidMount() {
-    const interval = setInterval(() => {
-      if (this.state.progress > 0.9) return clearInterval(interval);
- 
-      this.setState(state => {
-        return {
-          progress: state.progress + 0.1,
-        };
-      });
-    }, 100);
   }
 
   render() {
@@ -102,24 +119,30 @@ class PriceListComponent extends Component {
           <View style={[styles.userCardfloatMenu, this.props.localState.menu ? styles.MenuShow : styles.MenuHide]}>
             <UserMenu {...this.props}></UserMenu>
           </View>
+          <View style={[styles.categorieFloatSection, this.state.selectCategorie ? styles.CategorieShow : styles.CategorieHide]}>
+            <CategoriesSelector listData={categories}/>
+          </View>
           <View>
-            <View style={[styles.row, styles.centered, styles.homeFirstSection]}>
-              <Image style={styles.homeCardIconPicker} source={Images.filterIcon} />
-              <Text>Categoría</Text>
-              <View style={styles.darkPicker}>
-                <Image style={styles.homePickerIcon} source={Images.arrow}/>
-                <Picker
-                  selectedValue={this.state.language}
-                  style={{ height: 30, width: 150, color: 'white' }}
-                  onValueChange={(itemValue, itemIndex) =>
-                    this.setState({language: itemValue})
-                  }> 
-                  <Picker.Item label="Automotríz" value="A" />
-                  <Picker.Item label="Automotríz 1" value="A1" />
-                  <Picker.Item label="Automotríz 2" value="A2" />
-                </Picker>
+            <TouchableOpacity activeOpacity = { .5 } onPress={()=>this.setState({selectCategorie: true})}>
+              <View style={[styles.row, styles.centered, styles.homeFirstSection]}>
+                <Image style={styles.homeCardIconPicker} source={Images.filterIcon} />
+                <Text>Categoría</Text>
+                <View style={styles.darkPicker}>
+                  <Image style={styles.homePickerIcon} source={Images.arrow}/>
+                  <Text style={{ height: 30, width: 150, color: 'white' }}>{this.state.categorieSelected}</Text>
+                  {/*<Picker
+                    selectedValue={this.state.language}
+                    style={{ height: 30, width: 150, color: 'white' }}
+                    onValueChange={(itemValue, itemIndex) =>
+                      this.setState({language: itemValue})
+                    }> 
+                    <Picker.Item label="Automotríz" value="A" />
+                    <Picker.Item label="Automotríz 1" value="A1" />
+                    <Picker.Item label="Automotríz 2" value="A2" />
+                  </Picker>*/}
+                </View>
               </View>
-            </View>
+            </TouchableOpacity>
             <View style={[styles.row, styles.centered]}>
               <Image style={styles.homeCardIconPicker} source={Images.filterIcon} />
               <Text>Subcategoría</Text>
