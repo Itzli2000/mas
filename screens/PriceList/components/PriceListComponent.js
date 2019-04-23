@@ -113,6 +113,10 @@ class PriceListComponent extends Component {
     };
   }
 
+  categorieSelectedFunction = (data) => {
+    this.setState({categorieSelected: data, selectCategorie: false});
+  }
+
   render() {
     return (
         <UserCard {...this.props} userCardData={()=>this.renderUserCardData()}>
@@ -120,7 +124,7 @@ class PriceListComponent extends Component {
             <UserMenu {...this.props}></UserMenu>
           </View>
           <View style={[styles.categorieFloatSection, this.state.selectCategorie ? styles.CategorieShow : styles.CategorieHide]}>
-            <CategoriesSelector listData={categories}/>
+            <CategoriesSelector listData={categories} categorieSelectedFunction={this.categorieSelectedFunction}/>
           </View>
           <View>
             <TouchableOpacity activeOpacity = { .5 } onPress={()=>this.setState({selectCategorie: true})}>

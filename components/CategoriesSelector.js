@@ -10,17 +10,13 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 class CategoriesSelector extends Component { 
   constructor(props) {
     super(props);
-  
-    this.state = {
-      search: '',
-    };
   }
 
 
   renderCategoriesList = (data) => {
     return  data.map((item, index) => {
       return (
-        <TouchableOpacity key={index} activeOpacity = { .5 } onPress={()=>{this.props.hideMenu();this.props.navigation.navigate(item.navigate)}}>
+        <TouchableOpacity key={index} activeOpacity = { .5 } onPress={()=>{this.props.categorieSelectedFunction(item.value)}}>
           <View 
            style={styles.menuLinks} 
           >
