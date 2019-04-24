@@ -12,7 +12,7 @@ const ApplicationStyles = {
   mainScrollContainer:{
     backgroundColor:Colors.white,
     flexGrow: 1,
-    marginTop: 80,
+    marginTop: (screenWidth <= 600 ? 80 : 100),
   },
   spaceElement: {
     justifyContent: 'space-around',
@@ -183,8 +183,8 @@ const ApplicationStyles = {
     width: '100%',
   },
   menuIconContainer:{
-    width: 40, 
-    height: 40,
+    width: (screenWidth <= 600 ? 40 : 50), 
+    height: (screenWidth <= 600 ? 40 : 50),
     marginRight: 10,
     marginRight: 'auto',
     marginLeft: 10,
@@ -200,8 +200,8 @@ const ApplicationStyles = {
     margin: 'auto',
   },
   menuUserPhotoContainer: {
-    width: 75,
-    height: 75,
+    width: (screenWidth <= 600 ? 80 : 100),
+    height: (screenWidth <= 600 ? 80 : 100),
     justifyContent:'center',
     alignItems: 'center',
     borderRadius: 50,
@@ -239,11 +239,11 @@ const ApplicationStyles = {
     alignItems: 'flex-start'
   },
   menuLinksText: {
-    fontSize: (screenWidth <= 600 ? 20 : 30),
+    fontSize: (screenWidth <= 600 ? 20 : 25),
     color: Colors.white,
   },
   menuIcons:{
-    fontSize: (screenWidth <= 600 ? 17 : 30),
+    fontSize: (screenWidth <= 600 ? 17 : 25),
     color: Colors.white,
   },
   menuIconsContainer: {
@@ -271,14 +271,15 @@ const ApplicationStyles = {
   },
   // User card styles
   userCardTopBar: {
-    minHeight: 80,
+    minHeight: (screenWidth <= 600 ? 80 : 100),
+    width: '100%',
     justifyContent:'flex-end',
     alignItems: 'center',
   },
   topIcons: {
     position: 'absolute',
-    height: 80,
-    paddingTop: 10,
+    height: (screenWidth <= 600 ? 80 : 100),
+    paddingTop: (screenWidth <= 600 ? 10 : 20),
     top: 0,
     left: 0,
     right: 0,
@@ -294,12 +295,12 @@ const ApplicationStyles = {
     alignItems: 'center',
   },
   userCardPhotoContainer:{
-    width: 100,
-    height: 100,
+    width: (screenWidth <= 600 ? '35%' : '20%'),
+    height: (screenWidth <= 600 ? 100 : 120),
     justifyContent:'center',
     alignItems: 'center',
-    borderRadius: 50,
-    overflow: 'hidden',
+    borderRadius: (screenWidth <= 600 ? 50 : 70),
+    // overflow: 'hidden',
     marginLeft: 20,
   },
   userCardDataContainer:{
@@ -308,8 +309,8 @@ const ApplicationStyles = {
     alignItems: 'center',
   },
   userCardPhoto:{
-    width:100,
-    height:100,
+    width: (screenWidth <= 600 ? 100 : 120),
+    height: (screenWidth <= 600 ? 100 : 120),
   },
   userCardDate: {
     fontFamily: 'gotham-bold',
@@ -338,14 +339,14 @@ const ApplicationStyles = {
   },
   userCardImageLogo: {
     resizeMode: 'contain',
-    width: 60, 
-    height: 60,
+    width: (screenWidth <= 600 ? 60 : 70),
+    height: (screenWidth <= 600 ? 60 : 70),
     marginRight: 10,
   },
   userCardNavIcon: {
     resizeMode: 'contain',
-    width: 45,
-    height: 45,
+    width: (screenWidth <= 600 ? 45 : 60),
+    height: (screenWidth <= 600 ? 45 : 60),
     marginRight: 10,
   },
 
