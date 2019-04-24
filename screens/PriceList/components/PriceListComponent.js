@@ -3,6 +3,7 @@ import AnimatedBar from "react-native-animated-bar";
 import CardComponent from './../../../components/CardComponent';
 import UserCard from './../../../components/UserCard';
 import CategoriesSelector from './../../../components/CategoriesSelector';
+import SubcategoriesSelector from './../../../components/SubcategoriesSelector';
 import UserMenu from './../../../components/UserMenu';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { ApplicationStyles as styles, Images, Colors } from './../../../Themes';
@@ -109,12 +110,20 @@ class PriceListComponent extends Component {
   
     this.state = {
       selectCategorie: false,
-      categorieSelected: 'Automotríz',
+      selectSubcategorie: false,
+      categorieSelected: 'Seleccionar',
+      subCategorieSelected: 'Seleccionar',
     };
   }
 
   categorieSelectedFunction = (data) => {
+    console.log(data);
     this.setState({categorieSelected: data, selectCategorie: false});
+  }
+
+  subCategorieSelectedFunction = (data) => {
+    console.log(data);
+    this.setState({subCategorieSelected: data, selectSubcategorie: false});
   }
 
   render() {
@@ -126,6 +135,9 @@ class PriceListComponent extends Component {
           <View style={[styles.categorieFloatSection, this.state.selectCategorie ? styles.CategorieShow : styles.CategorieHide]}>
             <CategoriesSelector listData={categories} categorieSelectedFunction={this.categorieSelectedFunction}/>
           </View>
+          <View style={[styles.categorieFloatSection, this.state.selectSubcategorie ? styles.CategorieShow : styles.CategorieHide]}>
+            <SubcategoriesSelector listData={categories} subCategorieSelectedFunction={this.subCategorieSelectedFunction}/>
+          </View>
           <View>
             <TouchableOpacity activeOpacity = { .5 } onPress={()=>this.setState({selectCategorie: true})}>
               <View style={[styles.row, styles.centered, styles.homeFirstSection]}>
@@ -133,7 +145,7 @@ class PriceListComponent extends Component {
                 <Text>Categoría</Text>
                 <View style={styles.darkPicker}>
                   <Image style={styles.homePickerIcon} source={Images.arrow}/>
-                  <Text style={{ height: 30, width: 150, color: 'white' }}>{this.state.categorieSelected}</Text>
+                  <Text style={styles.categoriePickerButton}>{this.state.categorieSelected}</Text>
                   {/*<Picker
                     selectedValue={this.state.language}
                     style={{ height: 30, width: 150, color: 'white' }}
@@ -147,23 +159,26 @@ class PriceListComponent extends Component {
                 </View>
               </View>
             </TouchableOpacity>
-            <View style={[styles.row, styles.centered]}>
-              <Image style={styles.homeCardIconPicker} source={Images.filterIcon} />
-              <Text>Subcategoría</Text>
-              <View style={styles.darkPicker}>
-                <Image style={styles.homePickerIcon} source={Images.arrow}/>
-                <Picker
-                  selectedValue={this.state.language}
-                  style={{ height: 30, width: 150, color: 'white' }}
-                  onValueChange={(itemValue, itemIndex) =>
-                    this.setState({language: itemValue})
-                  }> 
-                  <Picker.Item label="Automotríz" value="A" />
-                  <Picker.Item label="Automotríz 1" value="A1" />
-                  <Picker.Item label="Automotríz 2" value="A2" />
-                </Picker>
+            <TouchableOpacity activeOpacity = { .5 } onPress={()=>this.setState({selectSubcategorie: true})}>
+              <View style={[styles.row, styles.centered]}>
+                <Image style={styles.homeCardIconPicker} source={Images.filterIcon} />
+                <Text>Subcategoría</Text>
+                <View style={styles.darkPicker}>
+                  <Image style={styles.homePickerIcon} source={Images.arrow}/>
+                  <Text style={styles.categoriePickerButton}>{this.state.subCategorieSelected}</Text>
+                  {/*<Picker
+                    selectedValue={this.state.language}
+                    style={{ height: 30, width: 150, color: 'white' }}
+                    onValueChange={(itemValue, itemIndex) =>
+                      this.setState({language: itemValue})
+                    }>
+                    <Picker.Item label="Automotríz" value="A" />
+                    <Picker.Item label="Automotríz 1" value="A1" />
+                    <Picker.Item label="Automotríz 2" value="A2" />
+                  </Picker> */}
+                </View>
               </View>
-            </View>
+            </TouchableOpacity>
             {tasks.map((item, index)=>
                 <CardComponent 
                   {...this.props}

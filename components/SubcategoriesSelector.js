@@ -7,7 +7,7 @@ import { View, Image, TouchableOpacity, ScrollView, Text } from 'react-native';
 import { SearchBar  } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-class CategoriesSelector extends Component { 
+class SubcategoriesSelector extends Component { 
   constructor(props) {
     super(props);
   
@@ -20,7 +20,7 @@ class CategoriesSelector extends Component {
   renderCategoriesList = (data) => {
     return  data.map((item, index) => {
       return (
-        <TouchableOpacity key={index} activeOpacity = { .5 } onPress={()=>{this.props.categorieSelectedFunction(item.value)}}>
+        <TouchableOpacity key={index} activeOpacity = { .5 } onPress={()=>{this.props.subCategorieSelectedFunction(item.value)}}>
           <View 
            style={styles.categoriesLinks} 
           >
@@ -58,4 +58,4 @@ class CategoriesSelector extends Component {
 }
 
 
-export default CategoriesSelector;
+export default SubcategoriesSelector;

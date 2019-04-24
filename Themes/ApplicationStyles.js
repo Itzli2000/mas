@@ -180,8 +180,7 @@ const ApplicationStyles = {
   },
   cardfloatMenuData: {
     flex: 1,
-    width: '80%',
-    maxWidth: 300,
+    width: '100%',
   },
   menuIconContainer:{
     width: 40, 
@@ -1061,6 +1060,14 @@ const ApplicationStyles = {
     marginBottom: 30,
   },
   // Float categorie selector stiles
+  categoriePickerButton:{ 
+    width: 150, 
+    color: 'white',
+    fontSize: (screenWidth <= 600 ? 15 : 30),
+    padding: 5,
+    paddingLeft: 15,
+    alignItems: 'center',
+  },
   categorieFloatSection:{
     width:'100%',
     height:'100%',
@@ -1070,11 +1077,35 @@ const ApplicationStyles = {
     opacity: 0.9,
     alignItems: 'center',
   },
+  categorieHeaderText: {
+    color: Colors.white,
+    fontSize: 20,
+    marginLeft: 7,
+    width: '40%',
+  },
   CategorieHide: {
     right:'-120%',
   },
   CategorieShow: {
     right:0,
+  },
+  categoriesLinks:{
+    color: Colors.white,
+    paddingTop:7,
+    paddingBottom:7,
+    marginLeft: 'auto',
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    width: 190,
+    marginRight: 10,
+  },
+  categoriesLinksText: {
+    fontSize: (screenWidth <= 600 ? 20 : 30),
+    color: Colors.white,
+    width: '100%',
+    flexWrap: 'wrap',
+    borderBottomColor: Colors.white,
+    borderWidth: 1,
   },
 };
 
