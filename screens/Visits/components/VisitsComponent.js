@@ -71,11 +71,11 @@ class VisitsComponent extends Component {
           >
             <View style={[styles.fullCardInnerColumn, styles.fullCardInnerColumnLeft, styles.floatRight]}>
                <View style={[styles.transparentCardBody, styles.row]}>
-                 <View style={[styles.column, styles.centered]}>
+                 <View style={[styles.transparentCardColumn]}>
                    {item.checkIn != null && <Text style={styles.visitTextIn}><Icon name={'clock-o'} />  {moment(item.checkIn, "HH mm").format('hh:mm A')}</Text>}
                    {(item.checkOut != null && item.checkIn != null) && <Text style={styles.visitTextOut}><Icon name={'clock-o'} />  {moment(item.checkOut, "HH mm").format('hh:mm A')}</Text>}
                  </View>
-                 <View style={[styles.column, styles.centered]}>
+                 <View style={[styles.transparentCardColumn]}>
                    {item.checkIn === null && <Button title='Entrada' onPress={()=>{this.props.checkIn()}} buttonStyle={[styles.visitButton,styles.buttonGreen]} />}
                    {item.checkOut === null && <Button title='Salida' onPress={()=>{this.props.checkOut()}} buttonStyle={[styles.visitButton,styles.buttonRed]} />}
                    {(item.checkOut != null && item.checkIn != null) && <TouchableOpacity activeOpacity = { .5 } ><Text style={styles.visitTextComplete}><Icon style={styles.visitCompleteIcon} name={'cloud-upload'} /></Text></TouchableOpacity>}

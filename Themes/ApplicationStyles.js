@@ -11,8 +11,12 @@ const ApplicationStyles = {
   // General styles
   mainScrollContainer:{
     backgroundColor:Colors.white,
-    flexGrow: 1,
     marginTop: (screenWidth <= 600 ? 80 : 100),
+    position: 'relative',
+  },
+  mainScrollContent:{
+    flexGrow: 1, 
+    justifyContent: 'flex-start'
   },
   spaceElement: {
     justifyContent: 'space-around',
@@ -21,14 +25,14 @@ const ApplicationStyles = {
     width: '100%',
     height: screenHeight,
     position: 'absolute',
-    top: 0,
+    bottom: 0,
     left: 0,
   },
   photoOff: {
     width: '100%',
     height: screenHeight,
     position: 'absolute',
-    top: 0,
+    bottom: 0,
     left: -screenWidth,
   },
   floatRight: {
@@ -111,13 +115,13 @@ const ApplicationStyles = {
   },
   cardTitleIcon: {
     resizeMode: 'contain',
-    width: 27,
-    height: 27,
+    width: (screenWidth <= 600 ? 27 : 32),
+    height: (screenWidth <= 600 ? 27 : 32),
   },
   cardTitleIconElem: {
-    width: 30,
-    height: 30,
-    borderRadius: 15,
+    width: (screenWidth <= 600 ? 30 : 36),
+    height: (screenWidth <= 600 ? 30 : 36),
+    borderRadius: (screenWidth <= 600 ? 15 : 18),
     fontSize: 18,
     overflow:'hidden',
     backgroundColor: Colors.white,
@@ -196,8 +200,8 @@ const ApplicationStyles = {
     borderBottomWidth: 1,
     paddingBottom:15,
     marginBottom:20,
-    width:'95%',
-    margin: 'auto',
+    width:'94%',
+    marginLeft: '3%',
   },
   menuUserPhotoContainer: {
     width: (screenWidth <= 600 ? 80 : 100),
@@ -235,6 +239,7 @@ const ApplicationStyles = {
     color: Colors.white,
     paddingTop:7,
     paddingBottom:7,
+    marginLeft: (screenWidth <= 600 ? 5 : 15),
     flexDirection: 'row',
     alignItems: 'flex-start'
   },
@@ -249,15 +254,15 @@ const ApplicationStyles = {
   menuIconsContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    width: (screenWidth <= 600 ? 30 : 50),
-    height: (screenWidth <= 600 ? 30 : 50),
+    width: (screenWidth <= 600 ? 30 : 40),
+    height: (screenWidth <= 600 ? 30 : 40),
   },
   menuIconsContainerBottom: {
     justifyContent: 'center',
     alignItems: 'center',
-    width: (screenWidth <= 600 ? 30 : 50),
-    height: (screenWidth <= 600 ? 30 : 50),
-    borderRadius: (screenWidth <= 600 ? 15 : 25),
+    width: (screenWidth <= 600 ? 30 : 40),
+    height: (screenWidth <= 600 ? 30 : 40),
+    borderRadius: (screenWidth <= 600 ? 15 : 20),
     backgroundColor: Colors.white,
   },
   menuIconsBottom:{
@@ -268,6 +273,8 @@ const ApplicationStyles = {
   menuListBottom:{
     borderTopColor: Colors.orange,
     borderTopWidth: 1,
+    padding: (screenWidth <= 600 ? 5 : 15),
+    marginTop: (screenWidth <= 600 ? 5 : 15),
   },
   // User card styles
   userCardTopBar: {
@@ -355,6 +362,7 @@ const ApplicationStyles = {
     resizeMode: 'contain',
     width: 30,
     height: 30,
+    marginRight: (screenWidth <= 600 ? 10 : 15),
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -579,29 +587,26 @@ const ApplicationStyles = {
   // Full card transparent styles
   
   transparentCardContainer: {
-    flex: 1,
     width: '100%',
-    maxWidth: 1000,
-    backgroundColor: 'transparent',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin: 'auto',
     marginTop: 20,
   },
   transparentCardContainerStyle: {
-    borderRadius: 0,
-    overflow: 'hidden',
+    flex: 1,
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     borderBottomColor: Colors.blackTransparent,
-    borderBottomWidth: 2
+    borderBottomWidth: 2,
+    borderRadius: 0,
   },
   transparentCardTitleContainer: {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'flex-start',
-    height: 40,
+    alignSelf: 'center',
+    width: '100%',
+    maxWidth: 400,
+    minHeight: 40,
   },
   transparentcardTitleStyles: {
     paddingLeft:50,
@@ -617,7 +622,7 @@ const ApplicationStyles = {
   },
   transparentCardIconStyles: {
     position: 'absolute',
-    top: 7,
+    top: 0,
     left: 15,
     color: Colors.black,
     fontSize: (screenWidth <= 600 ? 30 : 45),
@@ -629,6 +634,11 @@ const ApplicationStyles = {
     justifyContent: 'center',
     color: Colors.black,
     margin: 0,
+  },
+  transparentCardColumn: {
+    width: '45%',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
   },
   // Visit screen styles
   visitButton: {
@@ -714,6 +724,7 @@ const ApplicationStyles = {
     marginLeft: 10,
   },
   imageCaptureBodyContainer:{
+    flex: 1,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     marginLeft: 5,
@@ -744,11 +755,14 @@ const ApplicationStyles = {
     marginBottom: 50,
   },
   imageCaptureSection:{
+    position: 'absolute',
+    bottom: 0,
+    width: '90%',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     paddingTop: 30,
-    marginLeft: 5,
-    marginRight: 5,
+    marginLeft: '5%',
+    marginRight: '5%',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Colors.userCardStart,
@@ -770,6 +784,7 @@ const ApplicationStyles = {
   },
   // Map screen
   mapContainerSection: {
+    flex: 1,
     marginTop: 0,
     backgroundColor: Colors.userCardStart,
     justifyContent:'center',
@@ -811,6 +826,7 @@ const ApplicationStyles = {
   // Tasks Active screen
   taskActiveContainer: {
     width: '100%',
+    minHeight: screenHeight / 2,
     flex: 1,
     flexGrow: 1,
     backgroundColor: Colors.greenStart,
@@ -839,34 +855,37 @@ const ApplicationStyles = {
   // Notifications styles
   notificacionContainer: {
     width: '100%',
+    flexDirection: 'row',
     marginRight: 10,
-    borderBottomColor: Colors.black,
-    borderBottomWidth: 1,
-    marginBottom: 15,
+    marginBottom: 5,
+    justifyContent: (screenWidth <= 600 ? 'flex-end' : 'center'),
   },
   notificationData: {
-    maxWidth: '85%',
-    marginLeft: 'auto',
+    width: (screenWidth <= 600 ? '85%' : '90%'),
+    maxWidth: 300,
+    borderBottomColor: Colors.black,
+    borderBottomWidth: 1,
+    paddingLeft: (screenWidth <= 600 ? 30 : 35),
   },
   notificationTitle: {
     marginTop: 5,
-    fontSize: 15,
+    fontSize: (screenWidth <= 600 ? 15 : 20),
     color: Colors.black,
     fontWeight: 'bold',
-    lineHeight: 20,
+    lineHeight: (screenWidth <= 600 ? 20 : 25),
   },
   notificationSubtilte: {
-    fontSize: 13,
+    fontSize: (screenWidth <= 600 ? 13 : 18),
     color: Colors.black,
     marginTop: 3,
-    lineHeight: 20,
+    lineHeight: (screenWidth <= 600 ? 20 : 25),
     paddingBottom: 10,
   },
   notificacionIcon: {
-    fontSize:20,
+    fontSize:(screenWidth <= 600 ? 20 : 25),
     lineHeight:30,
     position: 'absolute',
-    left: -30,
+    left: 0,
     top: 0, 
   },
   notificationObservationsText: {
@@ -980,10 +999,10 @@ const ApplicationStyles = {
   },
   // Chat Styles
   chatContainer: {
-    height: '100%',
-    minHeight: 400,
+    flex: 1,
     backgroundColor: Colors.white,
     textAlign: 'center',
+    justifyContent: 'space-between',
   },
   chatView: {
     height: screenHeight / 2,
@@ -1034,7 +1053,7 @@ const ApplicationStyles = {
   chatInputContainer: {
     flexDirection: 'row',
     width:'100%',
-    justifyContent: 'space-around',
+    justifyContent: (screenWidth <= 600 ? 'space-around' : 'center'),
     alignItems: 'center',
     backgroundColor: Colors.orangeStart,
     marginTop: 10,
@@ -1062,9 +1081,9 @@ const ApplicationStyles = {
   },
   // Float categorie selector stiles
   categoriePickerButton:{ 
-    width: 150, 
+    width: (screenWidth <= 600 ? 150 : 200), 
     color: 'white',
-    fontSize: (screenWidth <= 600 ? 15 : 30),
+    fontSize: (screenWidth <= 600 ? 15 : 20),
     padding: 5,
     paddingLeft: 15,
     alignItems: 'center',
@@ -1097,14 +1116,15 @@ const ApplicationStyles = {
     marginLeft: 'auto',
     flexDirection: 'row',
     alignItems: 'flex-start',
-    width: 190,
+    width: (screenWidth <= 600 ? 190 : 250),
     marginRight: 10,
   },
   categoriesLinksText: {
-    fontSize: (screenWidth <= 600 ? 20 : 30),
+    fontSize: (screenWidth <= 600 ? 20 : 25),
     color: Colors.white,
     width: '100%',
     flexWrap: 'wrap',
+    borderColor: 'transparent',
     borderBottomColor: Colors.white,
     borderWidth: 1,
   },

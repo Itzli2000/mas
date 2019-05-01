@@ -20,7 +20,11 @@ class CategoriesSelector extends Component {
   renderCategoriesList = (data) => {
     return  data.map((item, index) => {
       return (
-        <TouchableOpacity key={index} activeOpacity = { .5 } onPress={()=>{this.props.categorieSelectedFunction(item.value)}}>
+        <TouchableOpacity 
+          key={index} 
+          activeOpacity = { .5 } 
+          onPress={()=>{this.props.categorieSelectedFunction(item.value)}}
+        >
           <View 
            style={styles.categoriesLinks} 
           >

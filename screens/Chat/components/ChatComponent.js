@@ -52,7 +52,18 @@ class ChatComponent extends Component {
   
     this.state = {
     newEntry: '',
+    dataEntries: chatData,
     };
+  }
+
+  newEntryFunction = (data) => {
+    var entry = {
+      entry: Math.random(),
+      userChat: 'user',
+      text: data,
+    };
+    chatData.push(entry);
+    this.setState({dataEntries: chatData, newEntry: ''});
   }
 
   render() {
@@ -64,7 +75,7 @@ class ChatComponent extends Component {
           <View style={[styles.chatContainer]}>
             <View style={styles.chatView}>
               <ScrollView>
-                {chatData.map((item, index)=>
+                {this.state.dataEntries.map((item, index)=>
                   <View key={item.entry} style={item.userChat === 'user' ? styles.userChat : styles.auxChat}>
                     <Text style={item.userChat === 'user' ? styles.userChatText : styles.auxChatText}>{item.text}</Text>
                     <Triangle
@@ -86,7 +97,7 @@ class ChatComponent extends Component {
                 numberOfLines= {3}
                 onChangeText={(text) => this.setState({newEntry:text})}
                 value={this.state.newEntry}/>
-              <Button title='Entrar' onPress={()=>this.props.validateUserLogIn()} buttonStyle={styles.chatButton} />
+              <Button title='Entrar' onPress={()=>this.newEntryFunction(this.state.newEntry)} buttonStyle={styles.chatButton} />
             </View>
           </View>
         </UserCard>

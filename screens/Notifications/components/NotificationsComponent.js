@@ -93,17 +93,15 @@ class NotificationsComponent extends Component {
             <View style={[styles.row, styles.centered, styles.imageCaptureHeader, {marginBottom: 30}]}>
               <Text style={styles.imageCaptureHeaderText}>Notificaciones y Actualizaciones</Text>
             </View>
-            <View>
             {notifications.map((item, index)=>
                 <View key={index} style={styles.notificacionContainer}>
                   <View style={styles.notificationData}>
-                  <Icon name={item.icon} style={[styles.notificacionIcon,{color:item.iconColor}]}/> 
+                    <Icon name={item.icon} style={[styles.notificacionIcon,{color:item.iconColor}]}/> 
                     <Text style={styles.notificationTitle}>{item.title}</Text>
                     <Text style={styles.notificationSubtilte}>{item.subtitle}</Text>
                   </View>
                 </View>
               )}
-            </View>
           </View>
         </UserCard>
       );

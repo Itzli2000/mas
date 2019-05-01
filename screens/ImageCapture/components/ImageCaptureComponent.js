@@ -45,7 +45,7 @@ class ImageCaptureComponent extends Component {
           <View style={[styles.userCardfloatMenu, this.props.localState.menu ? styles.MenuShow : styles.MenuHide]}>
             <UserMenu {...this.props}></UserMenu>
           </View>
-          <View>
+          <View style={{flex: 1}}>
             <View style={[styles.row, styles.centered, styles.imageCaptureHeader]}>
               <Image style={styles.captureIcon} source={Images.filterIcon} />
               <Text style={styles.imageCaptureHeaderText}>Automotríz / Motores</Text>
@@ -74,24 +74,25 @@ class ImageCaptureComponent extends Component {
                 multiline={true}
                 numberOfLines={4}
                 onChangeText={(text) => this.setState({observations:text})}
-                value={this.state.observations}/>
-                <View style={styles.imageCaptureSection}>
-                  <View style={[styles.row, styles.pbDefault, styles.centered]}>
-                    <View style={[styles.imageCapturePhotoContainer]}>
-                      <Image 
-                        style={styles.imageCapturePhoto}
-                        resizeMode='cover'
-                        borderRadius={100}
-                        source={Images.userDemo}
-                        />
-                    </View>
-                    <View style={[styles.column, styles.imageCaptureDataContainer]}>
-                      <Button title='Tomar de nuevo' onPress={()=>this.setState({takePhoto: true})} buttonStyle={[styles.visitButton,styles.buttonGreen]} />
-                      <Text style={styles.textDivider}></Text>
-                      <Button title='Elmimnar' onPress={()=>this.setState({takePhoto: false})} buttonStyle={[styles.visitButton,styles.buttonRed]} />
-                    </View>
-                  </View>  
-                </View>
+                value={this.state.observations}
+              />
+              <View style={styles.imageCaptureSection}>
+                <View style={[styles.row, styles.pbDefault, styles.centered]}>
+                  <View style={[styles.imageCapturePhotoContainer]}>
+                    <Image 
+                      style={styles.imageCapturePhoto}
+                      resizeMode='cover'
+                      borderRadius={100}
+                      source={Images.userDemo}
+                      />
+                  </View>
+                  <View style={[styles.column, styles.imageCaptureDataContainer]}>
+                    <Button title='Tomar de nuevo' onPress={()=>this.setState({takePhoto: true})} buttonStyle={[styles.visitButton,styles.buttonGreen]} />
+                    <Text style={styles.textDivider}></Text>
+                    <Button title='Elmimnar' onPress={()=>this.setState({takePhoto: false})} buttonStyle={[styles.visitButton,styles.buttonRed]} />
+                  </View>
+                </View>  
+              </View>
             </View>
           </View>
           <View style={this.state.takePhoto ? styles.photoON : styles.photoOff}>
