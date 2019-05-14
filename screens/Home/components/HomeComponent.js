@@ -4,7 +4,8 @@ import FullCardComponent from './../../../components/FullCardComponent';
 import UserMenu from './../../../components/UserMenu';
 import UserCard from './../../../components/UserCard';
 import ProgressCircle from 'react-native-progress-circle';
-import { ApplicationStyles as styles, Images, Colors } from './../../../Themes';
+import { HomeStyles as styles } from './../styles/styles';
+import { ApplicationStyles as generalStyles, Colors } from './../../../Themes';
 
 import {
   View,
@@ -15,7 +16,6 @@ import {
   Dimensions
 } from 'react-native';
 
-const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
 
 
@@ -79,10 +79,10 @@ class HomeComponent extends Component {
             startColor={Colors.userCardStart}
             stopColor={Colors.userCardStop}
           >
-            <View style={[styles.fullCardInnerColumn, styles.fullCardInnerColumnLeft]}>
-               <Text style={styles.fullCardBody}>{'  '}{item.description}</Text>
+            <View style={[styles.homeCardInnerColumn, styles.homeCardInnerColumnLeft]}>
+               <Text style={styles.homeCardBody}>{'  '}{item.description}</Text>
             </View>
-            <View style={[styles.fullCardInnerColumn, styles.fullCardInnerColumnRight]}>
+            <View style={[styles.homeCardInnerColumn, styles.homeCardInnerColumnRight]}>
               <ProgressCircle
                 percent={item.percentage}
                 radius={screenWidth <= 600 ? 35 : 45}
@@ -109,10 +109,10 @@ class HomeComponent extends Component {
             startColor={Colors.orangeStart}
             stopColor={Colors.orangeStop}
           >
-            <View style={[styles.fullCardInnerColumn, styles.fullCardInnerColumnLeft]}>
-               <Text style={styles.fullCardBody}>{'  '}{item.description}</Text>
+            <View style={[styles.homeCardInnerColumn, styles.homeCardInnerColumnLeft]}>
+               <Text style={styles.homeCardBody}>{'  '}{item.description}</Text>
             </View>
-            <View style={[styles.fullCardInnerColumn, styles.fullCardInnerColumnRight]}>
+            <View style={[styles.homeCardInnerColumn, styles.homeCardInnerColumnRight]}>
               <AnimatedBar
                 progress={this.state.progress}
                 height={10}
@@ -131,7 +131,7 @@ class HomeComponent extends Component {
     const { navigation } = this.props;
     return (
         <UserCard  {...this.props} userCardData={()=>this.renderUserCardData()}>
-          <View style={[styles.userCardfloatMenu, this.props.localState.menu ? styles.MenuShow : styles.MenuHide]}>
+          <View style={[generalStyles.userCardfloatMenu, this.props.localState.menu ? generalStyles.MenuShow : generalStyles.MenuHide]}>
             <UserMenu {...this.props}></UserMenu>
           </View>
           <View>

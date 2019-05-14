@@ -1,7 +1,7 @@
 'use strict';
 import React, { Component } from 'react';
 import {  View, Text } from 'react-native';
-import { ApplicationStyles as styles } from './../Themes';
+import { ApplicationStyles as styles, Colors } from './../Themes';
 import { LinearGradient } from 'expo';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
