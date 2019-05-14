@@ -11,7 +11,8 @@ import {
 import { 
   Input, 
   CheckBox, } from 'react-native-elements';
-import { ApplicationStyles as styles, Images, Colors } from './../../../Themes';
+import { loginStyles as styles } from './../styles/styles';
+import { Colors } from './../../../Themes';
 
 class LoginForm extends Component {
   render() {

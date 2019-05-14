@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { ApplicationStyles as styles, Colors } from './../../../Themes';
+import { loginStyles as styles } from './../styles/styles';
 import { Switch } from 'react-native-switch';
+import { Colors } from './../../../Themes';
 
 import {
   View,

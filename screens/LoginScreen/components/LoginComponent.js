@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import LoginForm from './LoginForm';
 import CheckOptions from './CheckOptions';
 import { Button } from 'react-native-elements';
-import { ApplicationStyles as styles, Images } from './../../../Themes';
+import { loginStyles as styles } from './../styles/styles';
+import { Images } from './../../../Themes';
 
 import {
   View,
