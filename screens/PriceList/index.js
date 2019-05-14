@@ -1,12 +1,12 @@
 'use strict';
 import React, { Component } from 'react';
-import ScreenContainer from './../../../components/ScreenContainer';
-import TasksComponent from './../components/TasksComponent';
+import ScreenContainer from './../../components/ScreenContainer';
+import PriceListComponent from './components/PriceListComponent';
 import {
   Text,
 } from 'react-native';
 
-class TasksScreen extends Component {
+class PriceListScreen extends Component {
   constructor(props) {
     super(props);
 
@@ -30,9 +30,9 @@ class TasksScreen extends Component {
 
   async componentWillMount() {
     await Expo.Font.loadAsync({
-      'gotham-regular': require('./../../../fonts/GothamBook.otf'),
-      'gotham-medium': require('./../../../fonts/GothamMedium.ttf'),
-      'gotham-bold': require('./../../../fonts/GothamBold.ttf'),
+      'gotham-regular': require('./../../fonts/GothamBook.otf'),
+      'gotham-medium': require('./../../fonts/GothamMedium.ttf'),
+      'gotham-bold': require('./../../fonts/GothamBold.ttf'),
     });
     this.setState({ fontLoaded: true });
   }
@@ -42,11 +42,11 @@ class TasksScreen extends Component {
     return (
       <ScreenContainer {...this.props}>
         { this.state.fontLoaded ? (
-          <TasksComponent
-        {...this.props} 
-          hideMenu={this.hideMenu}
-          toogleMenu={this.toogleMenu} 
-          localState={this.state} 
+          <PriceListComponent
+            {...this.props} 
+            hideMenu={this.hideMenu}
+            toogleMenu={this.toogleMenu} 
+            localState={this.state} 
           />
           ) : <Text >Loading....</Text> 
         }
@@ -55,4 +55,4 @@ class TasksScreen extends Component {
   }
 }
 
-export default TasksScreen;
+export default PriceListScreen;

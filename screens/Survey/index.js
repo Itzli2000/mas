@@ -1,12 +1,12 @@
 'use strict';
 import React, { Component } from 'react';
-import ScreenContainer from './../../../components/ScreenContainer';
-import NewSignatureComponent from './../components/NewSignatureComponent';
+import ScreenContainer from './../../components/ScreenContainer';
+import SurveyComponent from './components/SurveyComponent';
 import {
   Text,
 } from 'react-native';
 
-class NewSignatureScreen extends Component {
+class SurveyScreen extends Component {
   constructor(props) {
     super(props);
 
@@ -30,9 +30,9 @@ class NewSignatureScreen extends Component {
 
   async componentWillMount() {
     await Expo.Font.loadAsync({
-      'gotham-regular': require('./../../../fonts/GothamBook.otf'),
-      'gotham-medium': require('./../../../fonts/GothamMedium.ttf'),
-      'gotham-bold': require('./../../../fonts/GothamBold.ttf'),
+      'gotham-regular': require('./../../fonts/GothamBook.otf'),
+      'gotham-medium': require('./../../fonts/GothamMedium.ttf'),
+      'gotham-bold': require('./../../fonts/GothamBold.ttf'),
     });
     this.setState({ fontLoaded: true });
   }
@@ -42,7 +42,7 @@ class NewSignatureScreen extends Component {
     return (
       <ScreenContainer {...this.props}>
         { this.state.fontLoaded ? (
-          <NewSignatureComponent 
+          <SurveyComponent 
             {...this.props} 
             hideMenu={this.hideMenu}
             toogleMenu={this.toogleMenu} 
@@ -55,4 +55,4 @@ class NewSignatureScreen extends Component {
   }
 }
 
-export default NewSignatureScreen;
+export default SurveyScreen;

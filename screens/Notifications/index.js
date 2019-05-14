@@ -1,7 +1,7 @@
 'use strict';
 import React, { Component } from 'react';
-import ScreenContainer from './../../../components/ScreenContainer';
-import NotificationsComponent from './../components/NotificationsComponent';
+import ScreenContainer from './../../components/ScreenContainer';
+import NotificationsComponent from './components/NotificationsComponent';
 import {
   Text,
 } from 'react-native';
@@ -30,9 +30,9 @@ class NotificationsScreen extends Component {
 
   async componentWillMount() {
     await Expo.Font.loadAsync({
-      'gotham-regular': require('./../../../fonts/GothamBook.otf'),
-      'gotham-medium': require('./../../../fonts/GothamMedium.ttf'),
-      'gotham-bold': require('./../../../fonts/GothamBold.ttf'),
+      'gotham-regular': require('./../../fonts/GothamBook.otf'),
+      'gotham-medium': require('./../../fonts/GothamMedium.ttf'),
+      'gotham-bold': require('./../../fonts/GothamBold.ttf'),
     });
     this.setState({ fontLoaded: true });
   }

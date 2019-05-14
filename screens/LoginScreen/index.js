@@ -1,12 +1,12 @@
 'use strict';
 
 import React, { Component } from 'react';
-import LoginComponent from './../components/LoginComponent';
+import LoginComponent from './components/LoginComponent';
 import {
   Text,
 } from 'react-native';
-import ScreenContainer from './../../../components/ScreenContainer';
-import SplashScreen from './../../../components/SplashScreen';
+import ScreenContainer from './../../components/ScreenContainer';
+import SplashScreen from './../../components/SplashScreen';
 
 class LoginScreen extends Component {
   constructor(props) {
@@ -20,9 +20,9 @@ class LoginScreen extends Component {
 
   async componentWillMount() {
     await Expo.Font.loadAsync({
-      'gotham-regular': require('./../../../fonts/GothamBook.otf'),
-      'gotham-medium': require('./../../../fonts/GothamMedium.ttf'),
-      'gotham-bold': require('./../../../fonts/GothamBold.ttf'),
+      'gotham-regular': require('./../../fonts/GothamBook.otf'),
+      'gotham-medium': require('./../../fonts/GothamMedium.ttf'),
+      'gotham-bold': require('./../../fonts/GothamBold.ttf'),
     });
     this.setState({ fontLoaded: true });
   }

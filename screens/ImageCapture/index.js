@@ -1,12 +1,12 @@
 'use strict';
 import React, { Component } from 'react';
-import ScreenContainer from './../../../components/ScreenContainer';
-import VisitsComponent from './../components/VisitsComponent';
+import ScreenContainer from './../../components/ScreenContainer';
+import ImageCaptureComponent from './components/ImageCaptureComponent';
 import {
   Text,
 } from 'react-native';
 
-class VisitsMapScreen extends Component {
+class ImageCaptureScreen extends Component {
   constructor(props) {
     super(props);
 
@@ -14,14 +14,6 @@ class VisitsMapScreen extends Component {
       fontLoaded: false,
       menu:false
     };
-  }
-
-  checkIn = () => {
-    this.props.navigation.navigate('VisitasMapa');
-  }
-
-  checkOut = () => {
-    this.props.navigation.navigate('VisitasMapa');
   }
 
   toogleMenu = () => {
@@ -38,9 +30,9 @@ class VisitsMapScreen extends Component {
 
   async componentWillMount() {
     await Expo.Font.loadAsync({
-      'gotham-regular': require('./../../../fonts/GothamBook.otf'),
-      'gotham-medium': require('./../../../fonts/GothamMedium.ttf'),
-      'gotham-bold': require('./../../../fonts/GothamBold.ttf'),
+      'gotham-regular': require('./../../fonts/GothamBook.otf'),
+      'gotham-medium': require('./../../fonts/GothamMedium.ttf'),
+      'gotham-bold': require('./../../fonts/GothamBold.ttf'),
     });
     this.setState({ fontLoaded: true });
   }
@@ -50,13 +42,11 @@ class VisitsMapScreen extends Component {
     return (
       <ScreenContainer {...this.props}>
         { this.state.fontLoaded ? (
-          <VisitsComponent
+          <ImageCaptureComponent
             {...this.props} 
             hideMenu={this.hideMenu}
             toogleMenu={this.toogleMenu} 
             localState={this.state} 
-            checkIn={this.checkIn}
-            checkOut={this.checkOut}
           />
           ) : <Text >Loading....</Text> 
         }
@@ -65,4 +55,4 @@ class VisitsMapScreen extends Component {
   }
 }
 
-export default VisitsMapScreen;
+export default ImageCaptureScreen;

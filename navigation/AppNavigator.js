@@ -1,18 +1,18 @@
 import React from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import LoginScreen from './../screens/LoginScreen/containers';
-import HomeScreen from './../screens/Home/containers';
-import PriceListScreen from './../screens/PriceList/containers';
-import VisitsScreen from './../screens/Visits/containers';
-import VisitsMapScreen from './../screens/VisitsMap/containers';
-import SurveyScreen from './../screens/Survey/containers';
-import ImageCaptureScreen from './../screens/ImageCapture/containers';
-import TasksScreen from './../screens/Tasks/containers';
-import TasksActiveScreen from './../screens/TasksActive/containers';
-import NotificationsScreen from './../screens/Notifications/containers';
-import SignatureScreen from './../screens/Signature/containers';
-import NewSignatureScreen from './../screens/NewSignature/containers';
-import ChatScreen from './../screens/Chat/containers';
+import LoginScreen from './../screens/LoginScreen/index';
+import HomeScreen from './../screens/Home/index';
+import PriceListScreen from './../screens/PriceList/index';
+import VisitsScreen from './../screens/Visits/index';
+import VisitsMapScreen from './../screens/VisitsMap/index';
+import SurveyScreen from './../screens/Survey/index';
+import ImageCaptureScreen from './../screens/ImageCapture/index';
+import TasksScreen from './../screens/Tasks/index';
+import TasksActiveScreen from './../screens/TasksActive/index';
+import NotificationsScreen from './../screens/Notifications/index';
+import SignatureScreen from './../screens/Signature/index';
+import NewSignatureScreen from './../screens/NewSignature/index';
+import ChatScreen from './../screens/Chat/index';
 
 const NoAuthRoutes = createStackNavigator({
   Login: { 

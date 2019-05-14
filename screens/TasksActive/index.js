@@ -1,7 +1,7 @@
 'use strict';
 import React, { Component } from 'react';
-import ScreenContainer from './../../../components/ScreenContainer';
-import TasksActiveComponent from './../components/TasksActiveComponent';
+import ScreenContainer from './../../components/ScreenContainer';
+import TasksActiveComponent from './components/TasksActiveComponent';
 import {
   Text,
 } from 'react-native';
@@ -30,9 +30,9 @@ class TasksActiveScreen extends Component {
 
   async componentWillMount() {
     await Expo.Font.loadAsync({
-      'gotham-regular': require('./../../../fonts/GothamBook.otf'),
-      'gotham-medium': require('./../../../fonts/GothamMedium.ttf'),
-      'gotham-bold': require('./../../../fonts/GothamBold.ttf'),
+      'gotham-regular': require('./../../fonts/GothamBook.otf'),
+      'gotham-medium': require('./../../fonts/GothamMedium.ttf'),
+      'gotham-bold': require('./../../fonts/GothamBold.ttf'),
     });
     this.setState({ fontLoaded: true });
   }

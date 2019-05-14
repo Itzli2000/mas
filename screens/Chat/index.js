@@ -1,12 +1,12 @@
 'use strict';
 import React, { Component } from 'react';
-import ScreenContainer from './../../../components/ScreenContainer';
-import SurveyComponent from './../components/SurveyComponent';
+import ScreenContainer from './../../components/ScreenContainer';
+import ChatComponent from './components/ChatComponent';
 import {
   Text,
 } from 'react-native';
 
-class SurveyScreen extends Component {
+class ChatScreen extends Component {
   constructor(props) {
     super(props);
 
@@ -30,9 +30,9 @@ class SurveyScreen extends Component {
 
   async componentWillMount() {
     await Expo.Font.loadAsync({
-      'gotham-regular': require('./../../../fonts/GothamBook.otf'),
-      'gotham-medium': require('./../../../fonts/GothamMedium.ttf'),
-      'gotham-bold': require('./../../../fonts/GothamBold.ttf'),
+      'gotham-regular': require('./../../fonts/GothamBook.otf'),
+      'gotham-medium': require('./../../fonts/GothamMedium.ttf'),
+      'gotham-bold': require('./../../fonts/GothamBold.ttf'),
     });
     this.setState({ fontLoaded: true });
   }
@@ -42,7 +42,7 @@ class SurveyScreen extends Component {
     return (
       <ScreenContainer {...this.props}>
         { this.state.fontLoaded ? (
-          <SurveyComponent 
+          <ChatComponent 
             {...this.props} 
             hideMenu={this.hideMenu}
             toogleMenu={this.toogleMenu} 
@@ -55,4 +55,4 @@ class SurveyScreen extends Component {
   }
 }
 
-export default SurveyScreen;
+export default ChatScreen;
